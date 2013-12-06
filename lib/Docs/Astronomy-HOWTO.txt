@@ -1,0 +1,433 @@
+  Linux Astronomy HOWTO
+  Elwood Downey and John Huggins howto@astronomy.net
+  $Revision: 1.35 $, $Date: 2001/06/18 18:48:42 $
+
+  This document shares tips and resources to utilize Linux solutions in
+  the pursuit of Astronomy.
+  ______________________________________________________________________
+
+  Table of Contents
+
+
+  1. Introduction
+
+     1.1 Knowledge Required
+     1.2 Scope
+     1.3 Version
+     1.4 Copyright
+     1.5 About the authors
+
+  2. Software
+
+     2.1 Collections
+     2.2 Planetarium Programs
+     2.3 Simulators
+     2.4 Libraries
+     2.5 Games
+     2.6 Other
+
+  3. Online Tools
+
+     3.1 Traditional Form Based Programs
+     3.2 Java Applets
+
+  4. Astronomical Images over the web
+
+     4.1 List
+
+  5. Organizations
+
+  6. Hardware Control
+
+     6.1 Telescope Control
+     6.2 CCD Camera Control
+
+  7. Installation Help
+
+  8. Projects using Linux
+
+
+
+  ______________________________________________________________________
+
+  1.  Introduction
+
+  1.1.  Knowledge Required
+
+  With all the help from major Linux distributions such as SuSE, Redhat,
+  Caldera and many others, Linux based systems are becoming easier to
+  use.  However, there is still some need of understanding of basic UNIX
+  skills to make the most of Linux.  Thus, this HOWTO will assume that
+  the reader has at least a basic knowledge of using a UNIX system
+  including the ability to compile and install programs.
+
+  A few resources we have found useful over the years include:
+
+
+  ·  "A Practical Guide to the UNIX System", Mark G. Sobel
+
+  ·  "Advanced Programming in the UNIX Environment", the late W. Richard
+     Stevens
+
+  ·  "Running LINUX", Matt Welsh et al.
+
+  ·  "LINUX Device Drivers", Alessandro Rubini
+
+  Similarly, this is not a tutorial or reference for astronomy
+  principles or astronomical instrumentation. Astronomy is perhaps the
+  grandest of all sciences, employing widely disparate disciplines in a
+  bold attempt to understand nothing less than the universe itself. Your
+  interests will lead in many directions. A few references we have used
+  include:
+
+
+  ·  "Explanatory Supplement to the Astronomical Almanac", P. Kenneth
+     Seidelmann
+
+  ·  "Astronomy with your Personal Computer", Peter Duffett-Smith
+
+  ·  "Astronomy on the Personal Computer", Oliver Montenbruck et al
+
+  ·  "Textbook on Spherical Astronomy", W. M. Smart
+
+  ·  "The Astronomy and Astrophysics Encyclopedia", Stephen P. Maran,
+     ed.
+
+
+  1.2.  Scope
+
+  The authors define the scope of this HOWTO as primarily an index to
+  Linux tools applicable in some fashion to the pursuit of Astronomy. It
+  is NOT our intention to list WWW astronomy references in general. Our
+  own interests tend more towards the technology than the pure science
+  and so we welcome contributions from others who have found Linux tools
+  which contribute in other ways to Astronomy. Please contact us at the
+  address above.
+
+  1.3.  Version
+
+  $Revision: 1.35 $
+
+  $Date: 2001/06/18 18:48:42 $
+
+  The latest version of this document is always available on the
+  Astronomy Net <http://astronomy.net/> at Astronomy HOWTO
+  <http://howto.astronomy.net/howto/Astronomy-HOWTO.html>.
+
+  We eagerly accept suggestions from you.  Send them to Astronomy HOWTO
+  Editors <mailto:howto@astronomy.net>.
+
+
+  1.4.  Copyright
+
+  Copyright 2000-2001 by Elwood Downey and John Huggins. This document
+  may be distributed only subject to the terms and conditions set forth
+  in the LDP License except that this document must not be distributed
+  in modified form without the author's consent.
+
+  A verbatim copy may be reproduced or distributed in any medium
+  physical or electronic without permission of the author. Translations
+  are similarly permitted without express permission if it includes a
+  notice on who translated it.  Commercial redistribution is allowed and
+  encouraged; however please notify authors of any such distributions.
+  Excerpts from the document may be used without prior consent provided
+  that the derivative work contains the verbatim copy or a pointer to a
+  verbatim copy.
+
+  Permission is granted to make and distribute verbatim copies of this
+  document provided the copyright notice and this permission notice are
+  preserved on all copies.
+
+  In short, we wish to promote dissemination of this information through
+  as many channels as possible. However, we wish to retain copyright on
+  this HOWTO document, and would like to be notified of any plans to
+  redistribute this HOWTO.
+
+
+  1.5.  About the authors
+
+  Elwood Downey has over twenty years experience in software engineering
+  for various astronomy projects.  Learn more about Elwood at Clear Sky
+  Institute
+  <http://www.clearskyinstitute.com/resumes/ecdowney/resume.html>.
+
+  John Huggins has eleven years experience in hardware engineering
+  including eight years associated with an astronomy project.  Learn
+  more at John's Site <http://www.va.net/~jhuggins/>.
+
+
+  2.  Software
+
+
+  2.1.  Collections
+
+  Here are some links to collections and other indexes of Linux
+  astronomy software.
+
+  ·  The Linux for Astronomy CDROM
+     <http://www.randomfactory.com/lfa.html>
+
+  ·  Scientific Applications on Linux (SAL), Physics and Astronomy
+     <http://SAL.KachinaTech.COM/Z/4/index.shtml>
+
+  ·  Linux Applications and Utilities Page, Science and Math
+     <http://home.xnet.com/~blatura/linapp3.html#science>
+
+  ·  AstroMake <http://bima.astro.umd.edu/nemo/linuxastro/astromake/> is
+     a utility intended to make installations of some common
+     astronomical packages (in binary form) easy.
+
+  ·  The linuxastro mailing list also contains a list of applications
+     and packages.  For more information, see linuxastro
+     <http://bima.astro.umd.edu/nemo/linuxastro>.
+
+  ·  Astronomy at sourceforge.net
+     <http://sourceforge.net/softwaremap/trove_list.php?form_cat=134>
+
+  If the above does not appeal to your needs, these links may help:
+
+  ·  Linux Astronomy Software from the Google Search Engine
+     <http://www.google.com/search?q=Astronomy+Software+Linux>
+
+  ·  Astronomy Software from the Yahoo Listings
+     <http://dir.yahoo.com/Science/Astronomy/Software/>
+
+
+
+  2.2.  Planetarium Programs
+
+  Here is discussion of programs which run on Linux for use in finding
+  objects, natural and man-made, in the sky.
+
+
+
+  ·  XEphem <http://clearskyinstitute.com/xephem/> has been the pet
+     project of one of us (Downey) for the past 15-odd years. It has
+     grown to become one of the more capable interactive tools for the
+     computation of astronomical ephemerides.
+
+  ·  XSky <http://www.astrotrf.net:8080/xsky_blurb.html> is by Terry R.
+     Friedrichsen, terry@venus.sunquest.com. XSky is essentially an
+     interactive sky atlas.
+
+  ·  Skymap <http://tdc-www.harvard.edu/software/skymap.html> is an
+     astronomical mapping program written in Fortran and C for unix
+     workstations by Doug Mink of the Smithsonian Astrophysical
+     Observatory Telescope Data Center.
+
+  ·  Xplns <http://www.astroarts.com/products/xplns/> reproduces real
+     starry sky on your display of X Window System.
+
+  ·  Nightfall <http://www.lsw.uni-
+     heidelberg.de/~rwichman/Nightfall.html> is an astronomy application
+     for fun, education, and science. It can produce animated views of
+     eclipsing binary stars, calculate synthetic lightcurves and radial
+     velocity curves, and eventually determine the best-fit model for a
+     given set of observational data of an eclipsing binary star system.
+
+  ·  NOVA <http://nova.sourceforge.net> free Integrated Observational
+     Environment for astronomers.
+
+
+  2.3.  Simulators
+
+  Programs that classify themselves as simulators.
+
+  ·  Celestia <http://www.shatters.net/celestia/> Real-time visual
+     simulation of space for Windows and Unix(Linux)
+
+  ·  OpenUniverse <http://openuniverse.sourceforge.net/> Simulates the
+     Solar System bodies in 3D in Windows and Linux
+
+  2.4.  Libraries
+
+  This section discusses bits and pieces of software that can be used to
+  form the basis for specialized projects.
+
+
+  ·  SLALIB
+     <http://rlspc5.bnsc.rl.ac.uk/star/docs/sun67.htx/sun67.html#xref_>,
+     part of the Starlink Project <http://star-www.rl.ac.uk>, is a
+     complete library of subroutines for astrometric computations.
+
+  ·  Astrophysics Source Code Library <http://ascl.net> is a collection
+     of links to numerical astrophysical process models.
+
+  ·  Astronomy and numerical software source codes
+     <http://people.ne.mediaone.net/moshier/index.html> is a collection
+     of C codes related to astronomy.
+
+  ·  How to compute planetary positions
+     <http://hotel04.ausys.se/pausch/comp/ppcomp.html>.
+
+  ·  CCD Astronomy on Linux. <http://dimensional.com/~ashe/ccd-
+     astro.html> A library of routines that help control SBIG cameras.
+
+  2.5.  Games
+
+  Yes, games.
+
+  ·  Orbit <http://www.head-crash.com/orbit/> - Be a space fighter pilot
+     in Windows or Linux.
+
+  2.6.  Other
+
+  Every list needs a miscellaneous section, and this is it for Software.
+
+
+  ·  IRAF <http://iraf.noao.edu> is a gigantic but exceptionally capable
+     astronomical analysis system, shepherded over the past 20-odd years
+     by Doug Tody of NOAO. It has accumulated innumerable authoritative
+     contributions from leading astronomers in all areas of astronomical
+     data analysis. If you have a serious interest in astronomical data
+     reduction and significant time to invest, this system will reward
+     you mightily.
+
+  ·  Nightfall Eclipsing Binary Star Program <http://www.lsw.uni-
+     heidelberg.de/~rwichman/Nightfall.html>
+
+  ·  Xplanet <http://xplanet.sourceforge.net> Very realistic rendering
+     program for Earth and other planets and moons. Uses X Windows and
+     OpenGL.
+
+  ·  StarPlot <http://www.princeton.edu/~kmccarty/starplot.html> A
+     3-Dimensional Star Chart Viewer for Linux. Uses C++ and Gtk+.
+
+  3.  Online Tools
+
+  I know we said we would not start listing Web sites, but here are a
+  few links to sites which offer fully operational tools running online
+  that we feel are especially useful or interesting, from a browser on
+  any platform.
+
+
+  3.1.  Traditional Form Based Programs
+
+
+  ·  Sun and Moon Rise and Set calculator
+     <http://aa.usno.navy.mil/data/docs/RS_OneYear.html>
+
+  ·  Web version of MICA
+     <http://aa.usno.navy.mil/data/docs/WebMICA_2.html>
+
+  ·  JPL Ephemeris Generator <http://ssd.jpl.nasa.gov/cgi-bin/eph>
+
+  ·  Solar System Simulator <http://space.jpl.nasa.gov>
+
+  3.2.  Java Applets
+
+
+  ·  GeoAstro Applet Collection by Juergen Giesen
+     <http://www.sweethome.de/giesen/GeoAstro/GeoAstro.html>
+
+  ·  Aladin Interactive Sky Atlas <http://aladin.u-strasbg.fr>
+
+  ·  Cluster simulator <http://www.astro.queensu.ca/~dursi/dm-
+     tutorial/cluster-sim.html>
+
+
+  ·  Sky Image Processor <http://www.phys.vt.edu/~jhs/SIP>
+
+  ·  J-Track 3D - Satellite Tracking
+     <http://liftoff.msfc.nasa.gov/RealTime/JTrack/3d/JTrack3D.html>
+
+  4.  Astronomical Images over the web
+
+  Much effort exists to allow access to Astronomical image file type
+  such as FITS from any web browser.  Here are some pointers.
+
+
+  4.1.  List
+
+  The folks at harvard have a list of Image Servers and Image Browsers.
+
+
+  ·  Astronomical Images Over the Web <http://tdc-
+     www.harvard.edu/astro.image.html>
+
+
+  5.  Organizations
+
+
+  ·  The yearly Astronomical Data Analysis Software and Systems, ADAAS,
+     <http://hea-www.harvard.edu/adass> Conference Series provides a
+     forum for scientists and computer specialists concerned with
+     algorithms, software and operating systems in the acquisition,
+     reduction and analysis of astronomical data.  The program includes
+     invited talks, contributed papers and poster sessions as well as
+     user group meetings and special interest meetings ("BOFs'').  All
+     these activities aim to encourage communication between software
+     specialists and users, and also to stimulate further development of
+     astronomical software and systems.
+
+  ·  The linuxastro mailing list, linuxastro@majordomo.cv.nrao.edu, is
+     for people who are interested in porting astronomical software to
+     linux.  For more information, see linuxastro
+     <http://bima.astro.umd.edu/nemo/linuxastro>.
+
+
+  6.  Hardware Control
+
+  More folks are using Linux to control equipment.  Users range from
+  amateur astronomers in the field to professional observatories.
+
+
+  6.1.  Telescope Control
+
+
+  ·  OCAAS <http://www.torusoptics.com/OCAAS.htm> is a complete
+     Observatory Control and Astronomical Analysis System for Linux.
+
+  ·  XEphem <http://clearskyinstitute.com/xephem> has the capability to
+     communicate with a telescope control daemon process.
+
+
+
+  6.2.  CCD Camera Control
+
+
+  ·  Apogee Instruments Inc <http://www.apogee-ccd.com/software.html>
+     supports their line of professional CCD cameras under Linux.
+
+  ·  SBIG <http://www.sbig.com/sbwhtmls/linux_announcement.htm> offers
+     some assistance with operating their ST7 and ST8 CCD cameras under
+     Linux.
+  ·  CCD Astronomy on Linux <http://dimensional.com/~ashe/ccd-
+     astro.html> These pages describe a number of facets of using
+     astronomical CCD cameras for image acquisition and processing under
+     Linux.
+
+
+  7.  Installation Help
+
+  You need to know what you're doing with Linux and installing programs,
+  but help is available for some programs.  Here are some ways to make
+  life easier.
+
+
+  ·  AstroMake <http://bima.astro.umd.edu/nemo/linuxastro/astromake/> is
+     is a utility intended to make installations of some common
+     astronomical packages (in binary form) easy.
+
+  ·  XEphem requires several elements to exist on your machine.  Life is
+     much simpler with the CDROM version of the program as it contains
+     an installation script which loads the appropriate precompiled
+     binary for most systems and places all auxiliary files to the
+     correct spots. See XEphem CDROM
+     <http://www.clearskyinstitute.com/ecommerce/xephem/order.html>
+
+
+  8.  Projects using Linux
+
+  Here is a list of astronomy projects using Linux in whole or in part
+  of their instrumentation:
+
+
+  ·  The CHARA Array <http://www.chara.gsu.edu/CHARA/index.html> is an
+     optical interferometer project using Linux in their control system.
+
+  ·  CAOS <http://www.eso.org/projects/caos> Club of Amateurs in Optical
+     Spectroscopy.
+
+
+

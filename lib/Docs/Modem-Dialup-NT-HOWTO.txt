@@ -1,0 +1,912 @@
+  Modem-Dialup-NT HOW-TO
+  Al Dev (Alavoor Vasudevan)
+  alavoor@yahoo.com
+  v1.1, 03 Sep 2001
+
+  This document will help you to setup the Modem to do Dial-up Network­
+  ing with remote server like Windows NT RAS or Linux RAS (Remote Access
+  Server). You can use the Modem to do Dial-Up Networking on Linux very
+  similar to that of MS Windows dialup networking.
+  ______________________________________________________________________
+
+  Table of Contents
+
+
+  1. Introduction
+
+     1.1 Preparations
+
+  2. Quick Steps to Dialup Networking
+
+     2.1 Troubleshooting
+     2.2 Graphical Tools
+
+  3. Remote connection with VNC
+
+     3.1 Microsoft "MS Outlook" Email from PPP
+
+  4. Related URLs
+
+  5. Other Formats of this Document
+
+     5.1 Acrobat PDF format
+     5.2 Convert Linuxdoc to Docbook format
+     5.3 Convert to MS WinHelp format
+     5.4 Reading various formats
+     5.5 Convert HTML to SGML html2sgml
+
+  6. Copyright
+
+  7. Appendix A Connecting Linux + PPP < -- >  NT + RAS...
+
+
+
+  ______________________________________________________________________
+
+  1.  Introduction
+
+  Most of the companies in USA and Europe provide "Remote Access
+  Servers"  (RAS), so that their employees can dial-in from remote
+  locations either from home or from field.  RAS servers are generally
+  Linux RAS servers or MS Windows NT RAS servers.
+
+  Nowadays, Virtual Private Network (VPN) is becoming quite popular
+  because it supports broadband and may eventually replace dial-up
+  networking which is very slow running at 56KB/sec.  See the VPN HOWTO
+  <http://linuxdoc.org/HOWTO/VPN-HOWTO.html> and VPN-Masquerade howto
+  <http://linuxdoc.org/HOWTO/VPN-Masquerade-HOWTO.html> and java based
+  MindTerm-SSH-HOWTO <http://linuxdoc.org/HOWTO/MindTerm-SSH-
+  HOWTO/index.html>.
+
+  Configuring a dial-up connection on Linux is about as simple as it is
+  in Windows.  We will use PPP.
+
+  Definition: PPP ('Point to Point Protocol') is a protocol, that makes
+  it possible to make IP-Links (Internet Protocol) between two computers
+  with a modem.
+  The operating system Linux has this protocol in the kernel (If you
+  compiled it into the kernel). For a ppp-link you need to start a
+  daemon called pppd.
+
+  With PPP you can make a link between two hosts which understand the
+  protocol. A link between a Linux host, acting as client and a Windows
+  NT server, acting as server, is called a (Microsoft term)
+
+  First, see if your modem is supported by linux.  Internal Modems
+  (WinModems) do not work with linux. Some WinModems require special
+  tweaking to make it work in linux.
+
+  1.1.  Preparations
+
+  Check if you have all the needed hardware, software and data and hand:
+
+
+  ·  A modem supported by Linux. Some modems, like most internal PCI
+     modems or some external USB modems are so-called WinModems. Which
+     means that they rely on Windows-only software to work.  Read
+     Winmodems are not modems
+     <http://www.idir.net/~gromitkc/winmodem.html> for more information
+     and a compability list and check out Linmodems.org
+     <http://linmodems.org> for (a few) drivers.
+
+
+
+  ·  The modem's init-string. GNU/Linux does not have an equivalent to
+     the Windows hardware information file (.inf) mechanism. You may
+     have to find out the init-string for your modem yourself. It
+     should(TM) be listed in your hardware's documentation or in the
+     modem's INF file, but there are also online sources like this list
+     of modem init-strings <http://www.spy.net/~dustin/modem/> . If you
+     have no clue at all, use ATZ, that works with many modems.
+
+
+
+  ·  Provider data. You'll need your login name, password and the
+     telephone number. DNS addresses would be fine, too, but are
+     optional for recent versions of pppd.
+
+
+  ·  Check if your modem is connected correctly to the system or
+     properly recognized by it.  With an external modem, that's pretty
+     easy. As 'root' do echo >/dev/ttyS0 and watch the modem LEDs. You
+     should see them flicker for a moment. If not, try echo >/dev/ttyS1
+     in case your modem is connected to the second serial port.  With an
+     internal modem, use HardDrake to check if the system sees the
+     modem. Or use this command to query the PCI list directly: cat
+     /proc/pci. If it's an ISA bus modem, check '/etc/isapnp.conf' if it
+     is listed there. If you don't have that file, you'll have to
+     generate it. Read isapnpfaq.txt in the isapnptools doc directory or
+     man isapnp or man isapnp.conf.
+
+  2.  Quick Steps to Dialup Networking
+
+  These quick steps will enable you to setup dial-up networking on Linux
+  in just five minutes.
+
+  You need the following packages:
+
+  ·  wvdial*.rpm
+
+  ·  ppp*.rpm
+
+     You can check with rpm -qa | grep -i  wvdial for the installed
+     packages on redhat linux. Use equivalent package commands in case
+     of other distributions like Debian or Slackware.
+
+  The steps below are for MS Windows NT RAS server. The NT RAS requires
+  noauth in wvdial file. The Linux RAS may need different settings.  In
+  the sample example given below, you should replace username john with
+  the user ID given to you to login into remote RAS server.
+
+
+  1. Edit the file /etc/wvdial.conf and insert lines like
+
+     ___________________________________________________________________
+     [Dialer myconnection]
+     Username = john
+     Password = passwordofjohn
+     Phone = 982 1956
+     Area Code = 713
+     Inherits = Dialer Defaults
+     Stupid mode = 1
+     ___________________________________________________________________
+
+
+  Change john with whatever.
+
+
+
+  2. Edit /etc/ppp/pap-secrets and insert lines like
+
+     ___________________________________________________________________
+     # Secrets for authentication using PAP
+     # client        server  secret                  IP addresses
+     john            ppp0    passwordofjohn
+     john            *       passwordofjohn
+     ___________________________________________________________________
+
+
+  Change john with whatever.
+
+
+
+  3. Edit /etc/ppp/chap-secrets and insert lines like
+
+     ___________________________________________________________________
+     # Secrets for authentication using CHAP
+     # client        server  secret                  IP addresses
+     john            ppp0    passwordofjohn
+     john            *       passwordofjohn
+     ___________________________________________________________________
+
+
+  Change john with whatever.
+
+
+
+  4. Edit /etc/ppp/options and insert lines like
+
+     ___________________________________________________________________
+     lock
+     defaultroute
+     noipdefault
+     idle 1200
+     usepeerdns
+     proxyarp
+     ___________________________________________________________________
+
+
+  5. Create a new file /etc/ppp/ip-up and insert lines like
+
+     ___________________________________________________________________
+     #!/bin/bash
+
+     # This file /etc/ppp/ip-up should not be modified -- make local changes to
+     # /etc/ppp/ip-up.local instead
+
+     LOGDEVICE=$6
+     REALDEVICE=$1
+
+     export PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
+     [ -f /etc/sysconfig/network-scripts/ifcfg-${LOGDEVICE} ] && /etc/sysconfig/network-scripts/ifup-post ifcfg-${LOGDEVICE}
+
+     [ -x /etc/ppp/ip-up.local ] && /etc/ppp/ip-up.local "$@"
+
+     exit 0
+     ___________________________________________________________________
+
+
+
+  6. Create a new file /etc/ppp/ip-up.local and insert lines like
+
+     ___________________________________________________________________
+     #!/bin/sh
+
+     echo "  "
+     echo "Before doing route add......"
+     echo "Output from netstat -nr is : "
+     netstat -nr
+     echo "  "
+
+     echo " Doing route add now....  "
+     # You should change the lines below and add the networks where
+     # your remote machines are ...
+     route add -net 156.15.24.0 netmask 255.255.255.0 dev ppp0
+     route add -net 172.28.36.0 netmask 255.255.255.0 dev ppp0
+     route add -net 172.28.39.0 netmask 255.255.255.0 dev ppp0
+     route add -net 172.28.26.0 netmask 255.255.255.0 dev ppp0
+
+     echo "After doing route add......"
+     echo "Output from netstat -nr is : "
+     netstat -nr
+
+     echo "  "
+     ___________________________________________________________________
+
+
+  When wvdial is started it automatically starts the pppd which automat­
+  ically calls this script to add route to your remote networks via the
+  PPP link.  See 'man pppd'.  In the example above I have to connect to
+  remote networks 156.15.24, 172.28.36, 172.28.39 via the PPP link. You
+  should replace these with your settings.
+
+  You can also manually add or delete the route after starting the PPP.
+
+  ______________________________________________________________________
+  bash$ su - root
+  bash# route add -net 172.28.26.0 netmask 255.255.255.0 dev ppp0
+  bash# route del -net 172.23.2.0 netmask 255.255.255.0 dev ppp0
+  ______________________________________________________________________
+
+
+  7. Create a new file /etc/ppp/ip-down and insert lines like
+
+     ___________________________________________________________________
+     #!/bin/bash
+
+     # This file /etc/ppp/ip-down should not be modified -- make local changes to
+     # /etc/ppp/ip-down.local instead
+
+     LOGDEVICE=$6
+     REALDEVICE=$1
+
+     export PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
+     [ -x /etc/ppp/ip-down.local ] && /etc/ppp/ip-down.local "$@"
+
+     /etc/sysconfig/network-scripts/ifdown-post ifcfg-${LOGDEVICE}
+
+     exit 0
+     ___________________________________________________________________
+
+
+
+  8. Create a new file /etc/ppp/ip-down.local and insert lines like
+
+     ___________________________________________________________________
+     #!/bin/sh
+
+     echo "  "
+     echo "Before doing route delete ......"
+     echo "Output from netstat -nr is : "
+     netstat -nr
+     echo "  "
+
+     echo " Doing route delete now....  "
+     # Lines below should be same as in ip-up.local but with delete
+     route del -net 156.15.24.0 netmask 255.255.255.0 dev ppp0
+     route del -net 172.28.36.0 netmask 255.255.255.0 dev ppp0
+     route del -net 172.23.2.0 netmask 255.255.255.0 dev ppp0
+
+     echo "After doing route delete ......"
+     echo "Output from netstat -nr is : "
+     netstat -nr
+
+     echo "  "
+     ___________________________________________________________________
+
+
+  When pppd is stopped it automatically calls this script to clean up
+  whatever ip-up script did.  See 'man pppd'.
+
+
+
+  9. Edit /etc/ppp/peers/wvdial and insert lines like
+
+     ___________________________________________________________________
+     noauth user john
+     name wvdial
+     ___________________________________________________________________
+
+
+  Change john with whatever.
+
+
+
+  10.
+     If you have an external modem, then just before dialing, switch
+     off/on the power to modem to reset it.
+
+     ___________________________________________________________________
+     bash$ su - root
+     bash# tail -f /var/log/messages
+
+     Bring up another xterm shell window and
+     bash$ su - root
+     bash# man pppd
+     bash# man wvdial
+     bash# cd /etc/ppp
+     bash# nohup wvdial myconnection &
+     bash# tail -f nohup.out
+
+     Bring up another xterm shell window and
+     bash$ su - root
+     bash# ifconfig -a
+     And you should see ppp device listed and up and running.
+     bash# netstat -nr
+     And you should see ppp device listed along with other interfaces.
+     ___________________________________________________________________
+
+
+
+  11.
+     By this step the pppd should have established the routes to remote
+     networks with ip-up.local script. Also pppd should have created the
+     /etc/ppp/resolv.conf for DNS servers. Now, try connect to remote
+     host and verify connections.
+
+     ___________________________________________________________________
+     bash$ su - root
+     bash# tail -100 /var/log/messages | less
+     bash# cat /etc/ppp/resolv.conf
+     bash# ifconfig -a
+     bash# netstat -nr
+     I looked for route to network 156.15.24.0 (You should see your
+     network as per /etc/ppp/ip-up.local)
+     bash# ping 156.15.24.68
+     bash# telnet 156.15.24.68
+
+     You can also edit /etc/hosts and add these hosts
+     156.15.24.64    starship
+     172.28.36.131   gemstone
+     bash# ping starship
+     bash# ping gemstone
+     bash# telnet gemstone
+     bash# ftp gemstone
+     ___________________________________________________________________
+
+
+
+  12.
+     To stop the PPP :
+
+
+
+     ___________________________________________________________________
+     bash$ su - root
+     bash# killall wvdial
+     bash# killall pppd
+     bash# man killall
+     ___________________________________________________________________
+
+
+
+  13.
+     Now enable non-root user to do dial-up networking with PPP.  Make
+     sure that the user belongs to the groups `uucp' and `dialout'.
+
+     ___________________________________________________________________
+     bash$ su - root
+     bash# su - someuser
+     bash$ id
+     uid=501(someuser) gid=501(maingid) groups=501(maingid),503(staroffice),505(staff)
+     This shows the groups 'someuser' belongs.
+
+     bash$ exit
+     bash# usermod --help
+     bash# usermod -g maingid -G staroffice,staff,uucp,dialout someuser
+     bash# chgrp -R uucp /etc/ppp
+     bash# chmod -R ug+r /etc/ppp
+     bash# chmod -R o-rwx /etc/ppp
+     bash# chmod go-rwx /etc/ppp/*secrets
+     bash# chmod u+s /usr/sbin/pppd
+     bash# su - someuser
+     bash$ id
+     This will display groups someuser belongs and you should see uucp.
+     bash$ nohup wvdial myconnection &
+     bash$ tail -f nohup.out
+     ___________________________________________________________________
+
+
+  It is very strongly recommended that you use wvdial as `normal' user,
+  and make sure that the user belongs to the groups `uucp' and
+  `dialout'.
+
+
+
+  14.
+     See also the frontend tool for wvdial at X-wvdial <http://console-
+     newsletter.hypermart.net/x-wvdial>.
+
+
+
+  15.
+     If you do not have any other interface ethernet cards for Cable
+     modem or DSL modem then you can setup telephone dial-up modem as
+     the default route for all outside conections to internet. Assuming
+     you only have modem connection via POTS (Plain Old Telephone
+     System) you can do -
+
+
+
+     ___________________________________________________________________
+     bash$ su - root
+     bash# man route
+     bash# ifconfig -a
+     And look for the IP address of the ppp device, and use it below
+     bash# route add default gw  IP_of_ppp_device
+     For example -
+     bash# route add default gw  172.28.36.3
+     ___________________________________________________________________
+
+
+
+  2.1.  Troubleshooting
+
+  In case you have problems:
+
+  ______________________________________________________________________
+  bash$ su - root
+  bash# tail -f /var/log/messages
+  And then start myconnection in /etc/wvdial.conf
+  bash# wvdial myconnection
+
+  bash# ifconfig -a
+  Should list ppp
+
+  bash# netstat -nr
+  Should list ppp
+
+  If you have multiple interfaces, like ethernet cards to DSL or Cable modem,
+  to check which route is being used, do:
+  bash# traceroute www.yahoo.com
+  bash# traceroute remotehostname
+  ______________________________________________________________________
+
+
+
+  2.2.  Graphical Tools
+
+  Preference should be given the console line commands as in previous
+  section, but some people prefer GUI interface.  You can use graphical
+  tools like Linuxconf, KPPP, GnomePPP and many others.
+
+  Note: I very strongly recommend using command-line console commands
+  'wvdial' as demonstrated in previous sections, as they are lot simpler
+  and easy to use.
+
+
+  ______________________________________________________________________
+  bash$ su - root
+  bash# linuxconf &
+  And select Networking->Client Tasks->Routing & Gateways->Set Other Routes to networks->Add network
+  . Also select Networking->PPP
+
+  bash# rp3 &
+  bash# rp3-config &
+  ______________________________________________________________________
+
+
+
+  3.  Remote connection with VNC
+
+  Once you have connection through PPP to remote machines, you can use
+  the VNC to display remote machines on your local display.
+
+  ·  The VNC is at   <http://www.uk.research.att.com/vnc>
+
+  ·  Get VNC rpms from rpmfind
+     <http://rpmfind.net/linux/rpm2html/search.php?query=vnc>.
+
+
+  ·  See also the List of X11 Windows Managers
+     <http://www.dlhoffman.com/publiclibrary/RPM/X11_Window_Managers.html>.
+
+
+  ·  The best Window manager for VNC is QVWM which is like MS Windows
+     98/NT/2000 interface, get it from  <http://www.qvwm.org>.
+
+  3.1.  Microsoft "MS Outlook" Email from PPP
+
+
+  1. At office, start VNC server on your Windows NT/2000 desktop.
+
+  2. Connect from home using modem via PPP.
+
+  3. Once the PPP is established, you can start the vncviewer program.
+     Just type /usr/bin/vncviewer.
+
+  4. Enter your office Windows NT/2000 desktop's hostname and vnc
+     password
+
+  5. The entire desktop of your remote office Windows NT/2000 is
+     displayed.  Now you can read your MS Outlook email.
+
+  4.  Related URLs
+
+
+  ·  The best document is : Mandrake Dial up networking
+     <http://www.mandrakeuser.org/docs/connect/cppp.html>
+
+  ·  Suse PPP wvdial document
+     <http://sdb.suse.de/sdb/en/html/daniel_wvdial.html> and PPP
+     categories <http://sdb.suse.de/sdb/en/html/katlist.INETPPP.html>
+
+
+  ·  PPP HOWTO <http://www.linuxdoc.org/HOWTO/PPP-HOWTO/index.html>
+
+  ·  PPP-NT-HOWTO <http://www.van-dijk.net/PPP-NT-HOWTO/PPP-NT-
+     HOWTO.html>
+
+  ·  Modem HOWTO <http://www.linuxdoc.org/HOWTO/Modem-HOWTO/index.html>
+
+  ·  ISP Hookup HOWTO: Chapter 6 <http://www.linuxdoc.org/HOWTO/ISP-
+     Hookup-HOWTO-6.html>
+
+
+  ·  Linux PPP FAQ <http://sunsite.unc.edu/pub/Linux/docs/faqs/PPP-
+     FAQ/PPP-FAQ>
+
+  ·  PPP Design & Debugging
+     <http://people.ne.mediaone.net/carlson/ppp/index.html>
+
+  ·  Suomeksi PPP page <http://oh3tr.ele.tut.fi/~oh3fg/index.html>
+
+  ·  Unix Serial Port Resources
+     <http://www.stokely.com/unix.serial.port.resources/ppp.slip.html>
+
+  ·  Linux Dial-in server <http://www.swcp.com/~jgentry/dialin2.html> -
+     Setup guide.
+
+
+  ·  List of PPP utilities <http://freshmeat.net/search.php3?query=ppp>
+     go here and type "ppp" in the search box.
+  ·  General PPP and IPX over PPP
+     <http://www.tartu.customs.ee/linux/index.shtml>
+
+
+  ·  VPN HOWTO <http://linuxdoc.org/HOWTO/VPN-HOWTO.html>
+
+  ·  VPN-Masquerade howto <http://linuxdoc.org/HOWTO/VPN-Masquerade-
+     HOWTO.html>
+
+  ·  Java based MindTerm-SSH-HOWTO <http://linuxdoc.org/HOWTO/MindTerm-
+     SSH-HOWTO/index.html>
+
+
+  Linux goodies main site is at  <http://www.aldev.8m.com> Mirror sites
+  are at - <http://aldev0.webjump.com>, angelfire
+  <http://www.angelfire.com/country/aldev0>, geocities
+  <http://www.geocities.com/alavoor/index.html>, virtualave
+  <http://aldev0.virtualave.net>, 50megs <http://aldev0.50megs.com>,
+  theglobe <http://members.theglobe.com/aldev1/index.html>, NBCi
+  <http://members.nbci.com/alavoor>, Terrashare
+  <http://aldev.terrashare.com>, Fortunecity
+  <http://members.fortunecity.com/aldev>, Freewebsites
+  <http://aldev.freewebsites.com>, Tripod
+  <http://members.tripod.lycos.com/aldev>, Spree
+  <http://members.spree.com/technology/aldev>, Escalix
+  <http://www.escalix.com/freepage/aldev>, Httpcity
+  <http://www.httpcity.com/aldev/index.html>, Freeservers
+  <http://aldev.freeservers.com>.
+
+  5.  Other Formats of this Document
+
+  This document is published in 14 different formats namely: DVI,
+  Postscript, Latex, Adobe Acrobat PDF, LyX, GNU-info, HTML, RTF(Rich
+  Text Format), Plain-text, Unix man pages, single HTML file, SGML
+  (Linuxdoc format), SGML (Docbook format), and MS WinHelp format.
+
+  This howto document is located at:
+
+  ·  <http://www.linuxdoc.org> and click on HOWTOs and search for the
+     howto document name using CTRL+f or ALT+f within the web-browser.
+
+  You can also find this document at the following mirrors sites:
+
+  ·  <http://www.caldera.com/LDP/HOWTO>
+
+  ·  <http://www.linux.ucla.edu/LDP>
+
+  ·  <http://www.cc.gatech.edu/linux/LDP>
+
+  ·  <http://www.redhat.com/mirrors/LDP>
+
+  ·  Other mirror sites near you (network-address-wise) can be found at
+     <http://www.linuxdoc.org/mirrors.html> select a site and go to
+     directory /LDP/HOWTO/xxxxx-HOWTO.html
+
+
+
+  ·  You can get this HOWTO document as a single file tar ball in HTML,
+     DVI, Postscript or SGML formats from -
+     <ftp://www.linuxdoc.org/pub/Linux/docs/HOWTO/other-formats/> and
+     <http://www.linuxdoc.org/docs.html#howto>
+
+
+  ·  Plain text format is in:
+     <ftp://www.linuxdoc.org/pub/Linux/docs/HOWTO> and
+     <http://www.linuxdoc.org/docs.html#howto>
+  ·  Single HTML file format is in:
+     <http://www.linuxdoc.org/docs.html#howto>
+
+     A single HTML file can be created with the command (see man
+     sgml2html) - sgml2html -split 0   xxxxhowto.sgml
+
+
+  ·  Translations to other languages like French, German, Spanish,
+     Chinese, and Japanese are in
+     <ftp://www.linuxdoc.org/pub/Linux/docs/HOWTO> and
+     <http://www.linuxdoc.org/docs.html#howto> Any help from you to
+     translate to other languages is welcome.
+
+     The document is written using a tool called "SGML-Tools" which can
+     be got from: <http://www.sgmltools.org> Compiling the source you
+     will get the following commands like:
+
+  ·  sgml2html xxxxhowto.sgml     (to generate html file)
+
+  ·  sgml2html -split 0   xxxxhowto.sgml (to generate a single page html
+     file)
+
+  ·  sgml2rtf  xxxxhowto.sgml     (to generate RTF file)
+
+  ·  sgml2latex xxxxhowto.sgml    (to generate latex file)
+
+  5.1.  Acrobat PDF format
+
+  A PDF file can be generated from postscript file using either acrobat
+  distill or Ghostscript.  And a postscript file is generated from DVI
+  which in turn is generated from a LaTex file.  You can download
+  distill software from  <http://www.adobe.com> and from unix
+  <http://www.adobe.com/support/downloads/acdunix.htm> and from windows
+  <http://www.adobe.com:80/support/downloads/acdwin.htm> . Given below
+  is a sample session:
+
+  ______________________________________________________________________
+  bash$ man sgml2latex
+  bash$ sgml2latex filename.sgml
+  bash$ man dvips
+  bash$ dvips -o filename.ps filename.dvi
+  bash$ distill filename.ps
+  bash$ man ghostscript
+  bash$ man ps2pdf
+  bash$ ps2pdf input.ps output.pdf
+  bash$ acroread output.pdf &
+  ______________________________________________________________________
+
+
+  Or you can use the Ghostscript command ps2pdf.  ps2pdf is a work-alike
+  for nearly all the functionality of Adobe's Acrobat Distiller product:
+  it converts PostScript files to Portable Document Format (PDF) files.
+  ps2pdf is implemented as a very small command script (batch file) that
+  invokes Ghostscript, selecting a special "output device" called
+  pdfwrite. In order to use ps2pdf, the pdfwrite device must be included
+  in the makefile when Ghostscript was compiled; see the documentation
+  on building Ghostscript for details.
+
+  5.2.  Convert Linuxdoc to Docbook format
+
+  This document is written in linuxdoc SGML format. The Docbook SGML
+  format supercedes the linuxdoc format and has a lot more features than
+  linuxdoc.  The linuxdoc is very simple and easy to use. To convert
+  linuxdoc SGML file to Docbook SGML use the program ld2db.sh and some
+  Perl scripts.  The ld2db output is not 100% clean and you need to use
+  the clean_ld2db.pl Perl script. You may need to manually correct a few
+  lines in the document.
+
+  ·  Download the ld2db program from
+     <http://www.dcs.gla.ac.uk/~rrt/docbook.html> or from Al Dev site
+     <http://www.aldev.8m.com/cppsrc.html>
+
+  ·  Download the cleanup_ld2db.pl perl script from from Al Dev site
+     <http://www.aldev.8m.com/cppsrc.html>
+
+     The ld2db.sh is not 100% clean, so you will get some errors when
+     you run it.
+
+     ___________________________________________________________________
+             bash$ ld2db.sh file-linuxdoc.sgml db.sgml
+             bash$ cleanup.pl db.sgml > db_clean.sgml
+             bash$ gvim db_clean.sgml
+             bash$ docbook2html db.sgml
+     ___________________________________________________________________
+
+
+  And you may have to manually edit some of the minor errors after run­
+  ning the Perl script. For example you may need to put closing tag <
+  /Para> for each < Listitem>
+
+  5.3.  Convert to MS WinHelp format
+
+  You can convert the SGML howto document to a Microsoft Windows Help
+  file, First convert the sgml to html using:
+
+  ______________________________________________________________________
+          bash$ sgml2html xxxxhowto.sgml     (to generate html file)
+          bash$ sgml2html -split 0   xxxxhowto.sgml (to generate a single page html file)
+  ______________________________________________________________________
+
+
+  Then use the tool HtmlToHlp <http://javadocs.planetmirror.com/html­
+  tohlpe.html>.  You can also use sgml2rtf and then use the RTF files
+  for generating winhelp files.
+
+  5.4.  Reading various formats
+
+  In order to view the document in dvi format, use the xdvi program. The
+  xdvi program is located in tetex-xdvi*.rpm package in Redhat Linux
+  which can be located through ControlPanel | Applications | Publishing
+  | TeX menu buttons.  To read a dvi document give the command:
+
+
+               xdvi -geometry 80x90 howto.dvi
+               man xdvi
+
+
+
+  And resize the window with the mouse.  To navigate use Arrow keys,
+  Page Up, Page Down keys, also you can use 'f', 'd', 'u', 'c', 'l',
+  'r', 'p', 'n' letter keys to move up, down, center, next page, previ­
+  ous page etc.  To turn off expert menu press 'x'.
+
+  You can read a postscript file using the program 'gv' (ghostview) or
+  The ghostscript program is in the ghostscript*.rpm package and the gv
+  program is in the gv*.rpm package in Redhat Linux which can be located
+  through ControlPanel | Applications | Graphics menu buttons. The gv
+  program is much more user friendly than ghostscript.  Also ghostscript
+  and gv are available on other platforms like OS/2, Windows 95 and NT.
+  You  can view this document even on those platforms.
+
+  ·  Get ghostscript for Windows 95, OS/2, and for all OSes from
+     <http://www.cs.wisc.edu/~ghost>
+
+  To read a postscript document give the command:
+
+
+                       gv howto.ps
+                       ghostscript howto.ps
+
+
+
+  You can read an HTML format document using Netscape Navigator,
+  Microsoft Internet explorer, Redhat Baron Web browser or any of the 10
+  other web browsers.
+
+  You can read the latex, LyX output using LyX an X Window front end to
+  LaTex.
+
+  5.5.  Convert HTML to SGML html2sgml
+
+  To convert any HTML document to Linuxdoc SGML use the tool 'html2sgml'
+  from  <http://www.abc.se/~m9339/prog/html2sgml.html>.
+
+  6.  Copyright
+
+  Copyright policy is GNU/GPL as per LDP (Linux Documentation project).
+  LDP is a GNU/GPL project.  Additional restrictions are - you must
+  retain the author's name, email address and this copyright notice on
+  all the copies. If you make any changes or additions to this document
+  then you should intimate all the authors of this document.
+
+  7.  Appendix A Connecting Linux + PPP < -- >  NT + RAS...
+
+  This section is written by John Newbigin, Email: jn@it.swin.edu.au
+  Below is extract from
+  <http://uranus.it.swin.edu.au/~jn/linux/ppp/linuxppp.htm>
+
+  See also PPP HOWTO <http://www.linuxdoc.org/HOWTO/PPP-
+  HOWTO/index.html>
+
+
+  ·  Part 1... The easy bit : Use minicom or your favourite terminal
+     program to dial the NT RAS Server. Once you have a connection you
+     can proceed to Part 2. Make sure you can quit your terminal without
+     resetting the modem.
+
+
+
+  ·  Part 2... The harder bit : Setting up the /etc/ppp/options file may
+     be a bit tricky. The important things to do are...  Make sure you
+     do not have any of the following entries:
+
+  ·  auth #This will demand that the NT machine authenticate it's self
+     to your machine, this is generally not possible, or needed
+
+
+
+  ·  +pap #This will demand that the NT machine authenticates it's self
+     using PAP, see above
+
+
+
+  ·  -pap #This says that you won't agree to use PAP
+
+
+  ·  +chap #This will demand that the NT machine authenticates it's self
+     using CHAP, see above
+
+
+     Make sure the RAS server will accept plain text passwords. You need
+     this to use PAP authentication. This can be set by going to Control
+     Panel -> Network -> Services -> Remote Access Service ->
+     Properties. Select the modem or dial up device, go to Network ->
+     Server Settings -> Encryption Settings and select "allow any
+     authentication including plain text". Then hit OK, Save etc. to
+     close it all.
+
+
+
+  ·  Part 3... The hardest bit (without this document) : NOTE: If you
+     use my pppd patch, you will not have to do this
+
+     In the /etc/ppp/pap-secretes file, add the following lines:
+
+
+     ___________________________________________________________________
+     "" * ""
+     "jn" * "MyPassword"
+     ___________________________________________________________________
+
+
+
+  Where jn is your user name on the NT machine. But what if you are a
+  member of a domain? Then use this instead (where csse-mm is replaced
+  with your domain name)
+
+  ______________________________________________________________________
+  "" * ""
+  "csse-mm\\jn" * "MyPassword"
+  ______________________________________________________________________
+
+
+
+  Note that you must escape the "\" character as "\\". then, back to the
+  /etc/ppp/options file and add the following line:
+
+
+  ______________________________________________________________________
+  name "jn"
+  or
+  name "csse-mm\\jn"
+  ______________________________________________________________________
+
+
+
+  depending what you put in the pap-secretes file.
+
+
+
+  ·  Part 4... Another easy bit : Dial in to the server, like in step
+     one, or using your custom script. Start ppp with the following
+     line:
+
+     pppd 115200 /dev/cua1
+
+     or whatever your settings might be.
+
+     You may want to enable debug information if something does not
+     work, but everything should.
+
+     Run "ifconfig" and you should see an entry for ppp0. If you do then
+     you are cooking with gas. Restart pppd using the "defaultroute"
+     option and start surfing the internet.
+
+     If you are still having trouble, or can't understand any of these
+     instructions, drop me an e-mail
+
+     John Newbigin ( jn@it.swin.edu.au ).
+
+
+

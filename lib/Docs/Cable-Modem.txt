@@ -1,0 +1,2739 @@
+Cable Modem Providers HOWTO
+
+Vladimir Vuksan
+
+            vuksan@veus.hr
+         
+Revision History                                                             
+Revision v4.30          June 13, 2001             Revised by: vv             
+Many different updates.                                                      
+
+
+This document attempts to answer basic questions on how to connect your Linux
+box to cable modem or cable Internet provider.
+
+-----------------------------------------------------------------------------
+Table of Contents
+1. Introduction
+    1.1. New Versions of this Document
+    1.2. Feedback
+    1.3. Contributors
+    1.4. Standard Disclaimer
+    1.5. Copyright Information
+   
+   
+2. Setting up your Ethernet Card
+3. Regular Cable Modem ISPs
+    3.1. ATT (formerly MediaOne)
+    3.2. @Home
+        3.2.1. Notes from Hampton Roads VA, Phoenix AZ, Arlington TX and
+            Champaign/Urbana IL
+        3.2.2. Notes for Baltimore, MD and Colleyville,TX
+        3.2.3. Notes for Milpitas, CA, USA
+        3.2.4. Notes for Salt Lake City, UT, USA
+        3.2.5. Notes from Connecticut, USA
+        3.2.6. Notes from Dallas, TX or anyone using Motorola CyberSurfr
+        3.2.7. Notes from Louisville, KY by Devin Bundrent <
+            mrscoobdoo@home.com>
+        3.2.8. Notes from Madison, WI and Lakeridge, VA
+        3.2.9. Notes from Baton Rouge, LA by Van Goodwin <
+            positron@redstroke.com>
+        3.2.10. Notes from Richmond, VA and its surroundings by Robert
+            Marshall <no_robmars_spam@yahoo.com>
+        3.2.11. Notes from Mobile, Alabama R. Jason Valentine <
+            miracle@procyon.com>:
+        3.2.12. Notes from Auburn, Alabama by Andrew W. Jones <
+            andywjones@home.com>
+        3.2.13. Notes from Santa Barbara, California by Tim Newsome <
+            nuisance@DELETE_BEFORE_SENDINGcmu.edu>
+        3.2.14. Notes from Connecticut, USA
+       
+       
+    3.3. RoadRunner
+    3.4. Rogers@Home
+    3.5. Sunflower Cablevision
+    3.6. Jones Intercable
+    3.7. GTE Worldwind
+    3.8. SpeedChoice, Phoenix, Arizona
+    3.9. Cedar Falls Utilities Cybernet, Cedar Falls, Iowa
+    3.10. Telstra Big Pond Advance, Australia
+    3.11. Fibertel, Buenos Aires, Argentina
+    3.12. Videotron (Videon), Canada
+    3.13. Telekabel (Teleweb), Austria
+    3.14. Shaw Cable, Canada
+    3.15. Cogeco Cable, Canada
+    3.16. Optimum Online, New York and Connecticut
+    3.17. Singapore Cable Vision, Singapore
+    3.18. Cable Wanadoo, France and Netherlands (formerly Casema)
+    3.19. Prime Cable Expressnet, Las Vegas, NV
+    3.20. Chello Belgium, formerly TVD, Belgium
+    3.21. Telenet Vlaanderen, Belgium
+    3.22. Total-Web, United States
+    3.23. CyberCable, Paris, France
+    3.24. Chello (UPC) Stockholm, Sweden (formerly StjärnTV)
+    3.25. GCI.Net, Alaska
+    3.26. Saturn Communication NZ Ltd, New Zealand
+    3.27. Chello, Netherlands
+    3.28. Adelphia Powerlink, USA
+    3.29. 21st Century Telecom, Chicago, IL, USA
+    3.30. HTVi, Helsinki, Finland
+    3.31. Garden State Cable, New Jersey
+    3.32. Zoom Internet, Butler County, PA
+    3.33. Charter Pipeline
+    3.34. Netcabo, TV Cabo, Portugal
+    3.35. Supercable, Spain
+    3.36. NTL, United Kingdom
+    3.37. Virtua, São Paulo, Brazil
+    3.38. Hathway, Bombay, India
+    3.39. Siti Cable, Bangalore, India
+    3.40. Com Hem, Sweden
+        3.40.1. 1. Setting up a single node
+        3.40.2. 2. Connecting your home LAN (if you have more than one
+            machine)
+        3.40.3. You from the internet
+        3.40.4. Problems:
+       
+       
+    3.41. SwissOnLine HiSpeed Internet, Switzerland
+    3.42. Liwest, Austria
+    3.43. Blueyonder from Telewest, United Kingdom
+    3.44. CableNet, Colombia
+    3.45. Brutele, Belgium
+    3.46. Optus @Home, Australia
+    3.47. Destiny Cable, Philippines
+    3.48. Retecal, Spain
+    3.49. Netvisao, Portugal
+    3.50. Longview Cable - Cablelynx
+    3.51. Soon Communications Plc, Finland
+    3.52. InstaNet, Oregon
+   
+   
+4. Hybrid Cable modem ISPs
+    4.1. Adelphia Powerlink, USA
+    4.2. LinkExpress, Brasil
+    4.3. ExpressNet, Maryland
+    4.4. Charter Pipeline, Riverside, CA
+    4.5. Chambers Cable, Chico, CA / Fundy Cable, New Brunswick
+    4.6. Smyrna Cable, Atlanta, GA
+    4.7. Amnet de Costa Rica, Costa Rica
+    4.8. Prime Cable, Chicago, IL
+    4.9. Millennium Digital Media, Maryland
+    4.10. Rock Hill Telephone (RHTC) and Fort Mill Telephone (FMTC), South
+        Carolina
+   
+   
+
+1. Introduction
+
+The main goal of this document is to get your system running with your cable
+modem, and cable internet provider. Unfortunately, many ISPs that provide
+cable modem services, give you Windows and Macintosh software only.
+
+This document attempts to explain how to setup some cable modems and internet
+providers in Linux, the tricks to get them working correctly, and the traps
+not to fall down. It is hoped that this document will assist you, however we
+make no claims for the validity of the information contained within.
+-----------------------------------------------------------------------------
+
+1.1. New Versions of this Document
+
+The newest version of this HOWTO will always first be made available on
+
+[http://www.cs.unm.edu/~vuksan/linux/Cable-Modem.html] http://www.cs.unm.edu/
+~vuksan/linux/Cable-Modem.html
+-----------------------------------------------------------------------------
+
+1.2. Feedback
+
+Feedback is most certaintly welcome for this document. Without your
+submissions and input, this document wouldn't exist. So, please send your
+additions, comments and criticisms to <vuksan-feedback@veus.hr>.
+-----------------------------------------------------------------------------
+
+1.3. Contributors
+
+The following people have contributed to this mini-HOWTO.
+
+  * Dan Sullivan <dsulli@home.com>
+   
+  * Andrew Novick
+   
+  * Michael Strates
+   
+
+-----------------------------------------------------------------------------
+1.4. Standard Disclaimer
+
+No liability for the contents of this documents can be accepted. Use the
+concepts, examples and other content at your own risk. As this is a new
+edition of this document, there may be errors and inaccuracies, that may of
+course be damaging to your system. Proceed with caution, and although this is
+highly unlikely, I don't take any responsibility for that.
+
+Also bear in mind that this is NOT official information. Obtaining official
+information is usually an impossibility with many ISPs. Much content in this
+document are assumptions, which appear to work for people. Use the
+information at your own risk.
+-----------------------------------------------------------------------------
+
+1.5. Copyright Information
+
+This document is copyrighted (c) 1998 Vladimir Vuksan and distributed under
+the terms of the OpenContent License (OPL). Full text of the license can be
+found at [http://www.opencontent.org/opl.shtml] http://www.opencontent.org/
+opl.shtml
+-----------------------------------------------------------------------------
+
+2. Setting up your Ethernet Card
+
+All of the setups below use ethernet cards (network cards) to connect you
+somehow to the Internet. That is why first we need to check if your ethernet
+card is working and most importantly can be used (read is supported) in
+Linux. There is a comprehensive Ethernet HOWTO at [http://www.linuxdoc.org/
+HOWTO/Ethernet-HOWTO.html] http://www.linuxdoc.org/HOWTO/Ethernet-HOWTO.html
+if you would like to read it otherwise try this.
+
+Boot into Linux, During boot up a message like this should appear...
+eth0: 3c509 at 0x300 tag 1, 10baseT port, address  00 20 af ee 01 23, IRQ 10. 
+3c509.c:1.07 6/15/95 becker@cesdis.gsfc.nasa.gov                              
+
+If you missed it type dmesg.
+
+If you see a message like that you are set and you can go to the next
+section. If you can't see a message like this there are two possible
+explanations, your ethernet card is PNP (plug-n-play) and you need to use
+tools such as isapnptools to get it recognized (I am not quite sure on this
+because I don't have a single PNP card so correct me if I am wrong). The
+other explanation is that you need to set up your card.
+
+Most cards today come with DOS programs that are used to setup your card. For
+example to get my 3COM 3c509 to work all I needed to do is boot into DOS and
+use a utility to configure my card. There is usually a Auto Configure option.
+If that does not solve your problem try changing the IRQ for the card using
+the same utility. I find that usually IRQs 10,11 and 12 work well. If none of
+this solves your problem please read the Ethernet HOWTO referenced above or
+post to a newsgroup such as comp.os.linux.setup or comp.os.linux.networking.
+-----------------------------------------------------------------------------
+
+3. Regular Cable Modem ISPs
+
+If you think you have the card recognized you have to now look at the entry
+for your ISP. I have sorted the information according to a provider because
+setups are mostly ISP specific.
+-----------------------------------------------------------------------------
+
+3.1. ATT (formerly MediaOne)
+
+MediaOne Express is a Internet cable service provided by MediaOne. The
+hardware setup consists of a cable modem produced by LanCity or General
+Instruments which plugs into an ethernet card using a 10BaseT (UTP-45) cable.
+Assignment of IP addresses and other networking information is done using
+DHCP which stands for Dynamic Host Configuration Protocol. The only thing you
+need to do is read the DHCP mini-HOWTO and configure your system
+appropriately. There is no other necessary configuration. DHCP mini-HOWTO can
+be found at [http://www.oswg.org/oswg-nightly/DHCP.html] http://www.oswg.org/
+oswg-nightly/DHCP.html.
+
+Most of Mediaone/RoadRunner tracks you're MAC (ethernet) address, and won't
+allow any other MAC address to use the CableModem.
+
+To get around this you could either call Mediaone and ask them to change
+you're MAC address to you're current one. They do allow you to have multiple
+allowed MAC addresses, but they might not allow more than two. Other approach
+is to tell your ethernet card what MAC address to use. Most cards will allow
+it. So first make sure you write down the MAC address of the card you used
+when Mediaone technicians showed up and they type something like this:
+ifconfig eth0 hw ether 00:23:56:74:25:12                                     
+
+Additional notes by Peter Zurich:
+
+Pump will not work without specifying the hostname ("-h fubar") on the
+command line. It doesn't seem to matter what exactly you give it as the
+hostname, as long as you give something.
+
+Notes from Seattle, Washington area
+
+You have to supply the -h option to dhcpcd if you want to get your service
+running. "windowsidentification" is the one ATT provides you and is REQUIRED
+for it to work. it ends in a "-a". For example
+dhcpd -h {windowsidentification -->'cXXXXXX-a'} eth0                         
+
+Alternatively if you would like to use pump check out the notes of user in 
+Mobile, Alabama.
+
+Information about ATT Broadband can be found at [http://
+www.broadband.att.com] http://www.broadband.att.com.
+-----------------------------------------------------------------------------
+
+3.2. @Home
+
+@Home uses a similar setup to ATT (formerly MediaOne). However, there are a
+few fundamental differences, outlined by contributors. Since @Home spans
+different geographic locations you might get assigned different kind of
+equipment and have slightly different kind of setups.
+
+Before you try anything, go to control panel, network, and properties for
+your network card. Write down all of the information. You will need it later.
+
+TCI, the company that runs @Home issues a Etherlink III 3c509b NIC for all of
+their customers. What TCI does not tell you is that when they install your
+ethernet card, it is in PnP mode. Now in Slakware, if you uncomment the
+proper line for this card, everything will appear to be working fine. There
+will be no system problems, but the 'PC' light on your CyberSURFR modem will
+never turn on. If you are using Slakware, and are having this problem, reboot
+in DOS and skip the next paragraph.
+
+In RedHat 5, your system will have some trouble autodetecting the card. If
+you try to pass the paramaters manually, the system will hang. This should be
+obvious that your card is not setup properly. Before wasting anymore time,
+reboot in DOS (This is a must because as of 12/25/97, there is no utility
+written for Linux to turn off PnP and turn on ISA.)
+
+TCI does not give out a utility disk for your ethernet card, so you must
+download the utility from one of 3Com's sites. Here is a link to 3COM's page
+for driver download.
+
+[http://support.3com.com/infodeli/tools/nic/index.htm] http://
+support.3com.com/infodeli/tools/nic/index.htm
+
+Once you have downloaded your driver files you will need to run them and
+disable the PNP mode of your network card.
+
+What you've now done will make your ethernet card 'broken' in Windows 95.
+You'll need to go to Control Panel, Network, and remove the network card and
+the adapter. Reboot your computer, and again go back to control panel. Go to
+add/remove new hardware, and have it autodetect. It will automatically setup
+the correct i/o address for you. You will most likely need to reboot again.
+Now you should be in Windows 95, with the 'PC' light on your cable modem on.
+You will also notice that none of your internet applications seem to work,
+you can't ping, and you can't resolve DNS. You now must go back to control
+panels, network, and click on properties for your network card (not the
+adapter). Re-enter all the data you wrote down, and reboot.
+
+With a little luck, your ethernet card should be working in Windows 95, and
+ready to rock in Linux.
+-----------------------------------------------------------------------------
+
+3.2.1. Notes from Hampton Roads VA, Phoenix AZ, Arlington TX and Champaign/
+Urbana IL
+
+With the @home service in Hampton Roads, VA, it is absolutly neccessary to
+run dhcpcd-0.70 (or higher) that supports the "-h" option to specify the
+hostname of your computer. Without this switch the @home dhcpcd server will
+not assign addresses.
+
+@Home user from Hampton Roads Scott Stancil <sstancil@home.com> has provided
+an RPM that can be used to easily configure @Home connection. Check it out at
+[http://www.linuxforum.com/plug/projects.html] http://www.linuxforum.com/plug
+/projects.html
+
+More information on setting up dhcpcd-0.70 and @Home service with Intel Ether
+Express cards can be found at [http://www.monmouth.com/~jay/Linux/] http://
+www.monmouth.com/~jay/Linux/
+-----------------------------------------------------------------------------
+
+3.2.2. Notes for Baltimore, MD and Colleyville,TX
+
+In Baltimore subscribers are issued Intel Ether Express Pro 10 nics and a
+static IP number.
+-----------------------------------------------------------------------------
+
+3.2.3. Notes for Milpitas, CA, USA
+
+Information provided by Joe Byrne
+
+@Home service assignes 3Com 509b cards. IP addresses assigned statically.
+-----------------------------------------------------------------------------
+
+3.2.4. Notes for Salt Lake City, UT, USA
+
+Information provided by <akaiceman@hotmail.com>.
+
+@home (at least in the Salt Lake City, Utah areas, i'm not sure if this is
+everywhere yet) has started giving out 3com 900B NIC's, unless you ask for a
+ISA card in particular. 3COM 900B are PCI based ethernet cards which might
+require kernel recompilation.
+-----------------------------------------------------------------------------
+
+3.2.5. Notes from Connecticut, USA
+
+Information provided by <dan@sidhe.org>.
+
+The @Home folks are using Motorola cable modems (I know, I got one) in
+addition to any other brand folks have reported. If it's getting hooked into
+a hub it needs to either get plugged in with a twisted-pair cross-over cable
+or go into the 'to other hubs' port if your hub has one. (Which is standard,
+I expect, for these things, but useful to keep in mid if, like me, you're
+hooking the thing on to an existing local network) I have a plain Compaq 10/
+100 ethernet card (I think it's the NC3131, but I'm not 100% sure) in my
+linux box and it worked without a hitch.
+
+Also, they are handing out fixed IP addresses, at least in Connecticut, and
+you can get up to three. (They charge $4.95/mo for each extra IP address they
+allocate) They make no requirements on the OSes on these extra machines--I've
+a Vax running VMS and they didn't bat an eye when I signed it up. They did
+want the initial machine to be something they recognized (I booted over to
+Win98 for the duration) but they would've handled a linux-only install if
+really, *really* pressed
+-----------------------------------------------------------------------------
+
+3.2.6. Notes from Dallas, TX or anyone using Motorola CyberSurfr
+
+If you have a Motorola CyberSurfr cable modem you will need to press the
+reset key on the back of the modem if you switch network cards. The ethernet
+card hardware address is read by the modem and once it is setup if the card
+is switched it must be reset.Just press the reset key for 10+ seconds and it
+will reread.
+
+If you are still not able to get your cable connection going check out
+mini-HOWTO for cable modems and Cox@Home at [http://www.kernel-panic.com/
+user_files/cox.at.home.html] http://www.kernel-panic.com/user_files/
+cox.at.home.html
+
+Update from James Stormes <jstormes@gtfcu.com>
+
+@Home has been upgrading the cable modem system in Bedford Texas (the area
+around Dallas Texas). I have found that with the new system your NIC's MAC
+address must match what the cable system has. That is the Linux system you
+plug into the cable modem must use the same MAC that is programmed into the
+board you got from @Home. I use two diffrent computers on the cable modem
+(Linux and Windows) so this was a problem.
+
+For some NIC drivers you can specify the MAC. For example in n REDHAT 6.1 in
+the /etc/sysconfig/network-scripts/ifcfg-eth0 you can add the line MACADDR=
+"0F4F3E54A659". Where eth0 is the NIC card attached to the cable modem and
+the 0F4F3E54A659 is the MAC that the cable modem system is expecting.
+-----------------------------------------------------------------------------
+
+3.2.7. Notes from Louisville, KY by Devin Bundrent <mrscoobdoo@home.com>
+
+As of now, @Home/Insight issues Realtek RTL8029(AS) PCI Ethernet NICs, and
+Static IP addresses. In addition, the customers of the service are given(by
+default, others can be bought, and used) the RCA DCM105 Digital Cable Modem,
+without utilities disk.
+-----------------------------------------------------------------------------
+
+3.2.8. Notes from Madison, WI and Lakeridge, VA
+
+I have a cable modem from Bresnan in madison wi, they use the @home network
+for internet trafic and supply there users with the RCA cable modems. In the
+howto it states that the -h flag should be used for the host name with
+dhcpcd. That didn't work for me. They provided me with a machine name of
+cb46597-a.mdsn1.wi.home.com, the cd46597-a obviously being my hosts name....
+anyway.. the flag I had to use to get dhcpcd working was the -I flag for
+ClientID. ClientID is actually the MAC (Ethernet) address of your NIC e.g.
+00:00:21:61:7C:F0.
+-----------------------------------------------------------------------------
+
+3.2.9. Notes from Baton Rouge, LA by Van Goodwin <positron@redstroke.com>
+
+Here, @Home doesn't seem to have a standard ethernet card. They gave me a
+"SMC EtherEZ" ISA card, but I've seen them install totally different cards in
+other systems. The installer told me they gave static IP addresses to people
+who use Windows NT and dynamic to everyone else. Don't ask me why.
+-----------------------------------------------------------------------------
+
+3.2.10. Notes from Richmond, VA and its surroundings by Robert Marshall <
+no_robmars_spam@yahoo.com>
+
+In Chesterfield County, Virginia (a suburb of Richmond), @Home offers cable
+modem service through the local cable provider, Comcast. The service runs
+very well with Linux. As with many @Home locations, IP addresses are assigned
+via dhcp, and they require that all dhcp request packets contain the user's
+@Home-assigned hostname. The dhcpcd package works well for this, using the -h
+parameter. Personal best download - 16Mbytes in 54 seconds.
+
+In Henrico County, Hanover County, and the city of Richmond, Virginia,
+MediaOne is offerring their Road Runner service. IP addresses are assigned
+using dhcp, but are exclusively reserved by MAC address. This requires that
+the user call MediaOne support if the MAC address attached to the cable modem
+ever changes. The MediaOne people refused to re-register my friend's new MAC
+address when he told them that he had purchased a personal firewall from
+NetGear. They even tried to insist that he purchase commercial service, even
+though he was only going to have one PC connected to the service. Thus, I
+strongly agree with your wording in the HOWTO that MediaOne customers
+carefully avoid mentioning the words "router", "firewall", or "Linux".
+-----------------------------------------------------------------------------
+
+3.2.11. Notes from Mobile, Alabama R. Jason Valentine <miracle@procyon.com>:
+
+In Mobile, Comcast cable provides cable modem service through the @home
+network. An RCA cable modem (model DCM205) is issued along with a SMC EZ-Card
+(10/100) if you don't already have a cable modem.
+
+Static IPs are not given, but rather assigned through DHCP. You need to make
+your ethernet card (eth*) use DHCP - linuxconf is the easiest way to set that
+up. Next, you'll need to find the following line in /sbin/ifup
+-----------------------------------------------------------------            
+if [ -n "$PUMP" ]; then                                                      
+     echo -n "Determining IP information for $DEVICE..."                     
+     if /sbin/pump -i $DEVICE; then                                          
+         echo " done."                                                       
+     else                                                                    
+         echo " failed."                                                     
+         exit 1                                                              
+     fi                                                                      
+ else ...                                                                    
+-----------------------------------------------------------------            
+
+and change it to
+-----------------------------------------------------------------            
+if [ -n "$PUMP" ]; then                                                      
+     echo -n "Determining IP information for $DEVICE..."                     
+     if /sbin/pump -i $DEVICE -h YOURHOSTNAME; then                          
+         echo " done."                                                       
+     else                                                                    
+         echo " failed."                                                     
+         exit 1                                                              
+     fi                                                                      
+ else ...                                                                    
+-----------------------------------------------------------------            
+
+Where YOURHOSTNAME is the computer name (cc123456-a - or whatever yours may
+be.)
+-----------------------------------------------------------------------------
+
+3.2.12. Notes from Auburn, Alabama by Andrew W. Jones <andywjones@home.com>
+
+I would like to note that Auburn's @home service supports DHCP. If you simply
+issue `dhcpcd -h hostname` all your network settings are taken care of...
+-----------------------------------------------------------------------------
+
+3.2.13. Notes from Santa Barbara, California by Tim Newsome <
+nuisance@DELETE_BEFORE_SENDINGcmu.edu>
+
+My provider (Cox@Home, in Santa Barbara, CA) does the same thing as Notes
+from Hampton Roads VA, Phoenix AZ, Arlington TX and Champaign/Urbana IL. I'm
+using Debian, with dhclient version 2.0. I added the following line to my /
+etc/dhclient.conf: send host-name "cx803168-a"; Where cx803168-a is the
+hostname I've been assigned. It is listed on the purchase order.
+
+Information about @Home Service can be found at [http://www.home.com/] http:/
+/www.home.com/.
+-----------------------------------------------------------------------------
+
+3.2.14. Notes from Connecticut, USA
+
+Information provided by John Cusick <JCusick@SPELLNET.com>.
+
+In Hartford, Connecticut, TCI (now AT T) is issuing a Farallon PnP ISA
+Ethernet card. This card may be detected with the isapnp tools or jumpered.
+The info is on Farallon's website for this card. It is NE2000 compatible.
+-----------------------------------------------------------------------------
+
+3.3. RoadRunner
+
+RoadRunner is an Internet cable service provided by Excalibur Group (Time
+Warner). The hardware setup consists of a cable modem produced by Motorola
+and Toshiba which plugs into an ethernet card using a 10BaseT (UTP-45) cable.
+From what I can gather RR uses DHCP for IP assignment. In order to set up
+Linux to use DHCP you need to read the DHCP mini-HOWTO [http://www.oswg.org/
+oswg-nightly/DHCP.html] http://www.oswg.org/oswg-nightly/DHCP.html.
+
+If this doesn't work out for you you should check out [http://
+www.math.uakron.edu/RoadRunner/] http://www.math.uakron.edu/RoadRunner/ for
+Akron, Ohio and [http://people.qualcomm.com/karn/rr/index.html] http://
+people.qualcomm.com/karn/rr/index.html for San Diego, California. It might
+help solve your problem.
+
+Another good site is [http://www.vortech.net/rrlinux/] http://www.vortech.net
+/rrlinux/.
+
+One more thing that might be worth mentioning: you will need a Windows NT,
+95, or 98 or Macintosh PC for the RoadRunner installers to configure the
+modem. It's not technically necessary, but they will insist, and will not
+install on a Linux system. It's also best not to mention the IPFW system
+while they're around.
+
+Additional notes by Phil Baird <pjb@rocsoft.com> from Rochester, NY:
+
+About getting hooked up initially. It is true the RR techs don't want to talk
+about Linux. However, they now offer us a "self-install" that is half the
+price ($50). Basically, they come out, run the cable, and make sure the
+signal gets to the modem. You must supply your own nic card and do the rest
+of the setup on your own.
+
+Information about RoadRunner Service can be found at [http://www.rr.com/]
+http://www.rr.com/.
+-----------------------------------------------------------------------------
+
+3.4. Rogers@Home
+
+The hardware setup consists of a cable modem produced by LanCity which plugs
+into an ethernet card using a 10BaseT (UTP-45) cable.
+
+When the cable modem is installed by Rogers@Home technicians you are assigned
+a static IP address. They should also provide you with information on your
+subnet mask, router (gateway) numbers and DNS numbers.
+
+If above doesn't help you can check out Randal Leavitt's <
+randal.leavitt@home.com> "Connection Notes" for Rogers@Home at [http://
+members.home.net/randal.leavitt/CableModemConnectionNotes.html] http://
+members.home.net/randal.leavitt/CableModemConnectionNotes.html.
+
+Notes from Greg Jacobs <gregjacobs@home.com>
+
+They now only give out dynamic IP's. The techs says its pretty much fixed
+after first issue, they just want to use DHCP so any network changes on their
+end can just be 'pushed out' so to speak.
+
+Also Make sure any cablemodem uses ensure they don't use a DHCP server on
+their cablemodem interface. The cable company gets very angry and often pull
+the plug then tell you ;).
+
+Other information about Rogers@Home Service can be found at [http://
+rogers.home.com/] http://rogers.home.com/.
+-----------------------------------------------------------------------------
+
+3.5. Sunflower Cablevision
+
+This information is provided by Frank Wiles <admin@sunflower.com>:
+
+In order to get online with Sunflower all you have to do is enable DHCP. DHCP
+mini-HOWTO ( [http://www.oswg.org/oswg-nightly/DHCP.html] http://www.oswg.org
+/oswg-nightly/DHCP.html) has instructions how to set up DHCP under Linux.
+
+Also they should contact me at admin@sunflower.com for lawrence.ks.us domains
+
+We use DOCSIS compliant modems now, not the old Zenth stuff.
+-----------------------------------------------------------------------------
+
+3.6. Jones Intercable
+
+This information is provided by Bob Kimble:
+
+Jones Internet Cable supplies a Hybrid cable modem that connects to your
+machine / network via 10BaseT ethernet. They provide you with a static IP
+address for your machine, and another static IP address for the modem. The
+modem acts as a gateway to their network. Your IP address and the modem IP
+address are on the same network and have the same network mask (in my case
+255.255.255.0 -- 24 bits). They also provide two DNS IP addresses which you
+enter into your configuration. I just entered the numbers when I installed
+Red Hat Linux 5 and it worked like a champ from the beginning. Since then I
+have configured my Linux machine to enable IP masquerading and domain name
+services, and it now acts as a router for my entire private network. My other
+machines are connected via a private network using the addresses 192.168.0.x.
+They are running Windows 95, Windows NT (Intel and Alpha) and OS/2. My Linux
+machine has two IP addresses -- the one from the cable company and one from
+the 192.168.0.x private network. Everything works like a champ. All six
+machines can browse the web simultaneously. My kids are even able to connect
+to their favorite game site, "The Realm" from Sierra.
+-----------------------------------------------------------------------------
+
+3.7. GTE Worldwind
+
+This information is provided by Blake R. Swopes (bhodi@bigfoot.com):
+
+GTE WorldWind service is available in only a few areas (parts of California
+and Florida), its home page is located at [http://www.gtecablemodem.com/]
+http://www.gtecablemodem.com/.
+
+GTE will send a technician out to hook up the cable modem to the wall, but
+does not do any configuration of your computer. The cable you hook up to your
+computer is the ethernet standard 10baseT (and you'll probably need to buy
+your own, since the one they left with me was only about two feet long).
+
+The technician should leave you some information about configuring your
+system (IP address, gateway address, netmask, DNS addresses) and the number
+for GTE's support line (1-800-GTE-VIDEO, since WorldWind is attached to GTE's
+Americast cable service). If you have read the Ethernet-HOWTO and the DHCP
+mini-HOWTO, you should have no trouble configuring your system to work with
+WorldWind.
+
+GTE provides one e-mail address, which they assign to you, but you can create
+aliases to that account and web mail accounts through gte.net.
+
+According to GTE, they block inbound traffic on several ports for security
+purposes and to keep people from running servers that will eat into other
+users' bandwidth (e.g., telnet, DNS, News, and Netbios (Good news for Windows
+users)). In actual practice, I have found that I was able to telnet into my
+system from remote hosts.
+
+GTE does not provide technical support for Linux users, so you will pretty
+much be on your own. My experience was that as soon as I mentioned Linux,
+they tried to get me off the phone, but that might have been the particular
+tech I was speaking to at the time.
+
+GTE also advised me that they do not support users who have IBM Aptivas,
+however I was able to briefly connect an IBM Aptia 2176-C77 with a SOHOWare
+PCI 10/100 Ethernet Card to the service with no trouble at all.
+
+I regularly test my connection speed through the bandwidth test at MSN (
+[http://computingcentral.msn.com/topics/bandwidth/speedtest.asp] http://
+computingcentral.msn.com/topics/bandwidth/speedtest.asp and regularly find my
+connection speed to be between 320-390Kbps. Depending on the site, I have
+seen transfers at up to 135K, though the average is probably 35-45. 
+-----------------------------------------------------------------------------
+
+3.8. SpeedChoice, Phoenix, Arizona
+
+According to Micah <peenchee@asu.edu>:
+
+Just thought I'd let you know that in my area (Phoenix, AZ, usa) there is a
+company called speedchoice that provides cable modem service. The service
+uses a hybrid cable modem and the set up is almost identical to that of Jones
+intercable described in the howto. See Jones Intercable. For any other issues
+mail Micah.
+-----------------------------------------------------------------------------
+
+3.9. Cedar Falls Utilities Cybernet, Cedar Falls, Iowa
+
+This information is provided thanks to Joe Breu <breu@cfu.net>
+
+We are an ISP in Cedar Falls, Iowa that uses a mix of Zenith, Lancity, and
+DOCSIS Cable Modems over our own Hybrid Fiber/Coax system. Our system uses no
+proprietary connection software and is straight TCP/IP connections. We do use
+DHCP, but will offer static IP addresses to customers with older Macintosh
+machines or computers unable to use DHCP. We will answer basic questions if
+you want to hook up a Linux box to our network but it should be drop and
+surf.
+-----------------------------------------------------------------------------
+
+3.10. Telstra Big Pond Advance, Australia
+
+This information is provided by Mike Battersby <mib@post.com>
+
+Linux is not an officially supported platform for Telstra Big Pond Advance
+cable internet. Do not report faults regarding Big Pond Advance and Linux to
+them, as they will not help you.
+
+Big Pond Advance user Shane Hyde wrote an excellent open source BIDS v2 login
+client, BPALogin, which is now maintained by David Parrish. The BPALogin web
+site is: [http://bpalogin.sourceforge.net/] http://bpalogin.sourceforge.net/.
+Available at the same site is a page of instructions on getting BPALogin to
+work with Linux: [http://bpalogin.sourceforge.net/tutorial.html] http://
+bpalogin.sourceforge.net/tutorial.html .
+-----------------------------------------------------------------------------
+
+3.11. Fibertel, Buenos Aires, Argentina
+
+This information is provided by Pablo Godel.
+
+My name is Pablo Godel and want report that I'm using the cable service of
+Fibertel in Buenos Aires, Argentina and it works perfectly with Linux.
+
+They gave me a static IP. The brand of the cablemodem is COM21 and the model
+is ComPort.
+
+I connect it to the nic properly, configured in Linux and it worked
+perfectly.
+
+Update by Albert Claret <albert.claret@fibertel.com.ar>:
+
+Besides the static IP/COM21 cablemodem setup you already list in the HOWTO,
+the company is also providing a DHCP/motorola surfboard cablemodem service,
+and AFAIK, they are planning to remove all of the static IP cablemodems and
+replace them. As far as the setup for the dhcp/motorola, just firing your
+plain old [http://www.oswg.org/oswg-nightly/DHCP.html] DHCP client will get
+you up and running without any problems. At present time, there are no ports
+filtered by them.
+
+More information about Fibertel can be found at [http://www.fibertel.com.ar]
+http://www.fibertel.com.ar.
+-----------------------------------------------------------------------------
+
+3.12. Videotron (Videon), Canada
+
+I don't have much information about Videotron except the fact that they use
+DHCP for the assignment of IP addresses and other networking information.
+Just read the DHCP mini-HOWTO and configure your system appropriately. There
+is no other necessary configuration. Also important thing to note is that the
+Ethernet card that Videotron distributes is a NE2000 compatible PCI card for
+which you need to use.
+
+ne2k-pci driver
+
+Additional information from Philip Gwyn <gwynp@artware.qc.ca>:
+
+They use Motorola CyberSURFR (sic) modems. This will give you an ethernet NIC
+when you sign up. They gave me a TMC NE2000 PCI clone, which Linux recognises
+as a "RealTek RTL-8029". It couldn't configure it propperly however, until I
+downloaded the manufacturer's driver disk and changed the media type to
+"auto-config".
+
+While they can't guarantee to get it working with Linux, they will do a bit
+of hand holding so it works. Many of the tech-support have Linux-clues, as it
+were, even asking questions like "what kernel are you running?" "do you have
+the latest version of dhcpcd?". When their DHCP server broke, they even
+suggested I delete the cache files in /etc/dhcpcd to start over from zero, as
+it were. This worked.
+
+Additional information from Mihai Petre <mihaip@videotron.ca>:
+
+Yes they are using DHCP for the tcp settings. You can also try posting your
+problems on news.powersurfr.com newsgroup videon.linux.
+
+As far as running servers using your cable connection according to Alex Nuta
+says that "contract explicitly states that *no* servers of any kind are
+permitted; HTTP, FTP or otherwise".
+
+Additional information from Stasnilav Kogan <s_kogan@alcor.concordia.ca>:
+
+The modem they provide is now Samsung InfoRanger (SCM-100R). The ISA card
+they provide is an SMC NE2000 compatible (FCC ID: HED1661EN2). It is
+necessary to configure the card from DOS to NE2000 mode before attempting to
+get it to work under Linux. (Generally, this card is horrible. I replaced
+with a 3Com card as soon as possible).
+
+The technical support in Videotron is absolutely HORRIBLE. (Not to mention
+Linux support). So, whoever signs up with them, should expect to work alone.
+However, aside from the NIC problems, the setup was a breeze. They use DHCP,
+so all the standard procedures apply.
+
+Information provided by John Brzustowski
+
+The following bash-style shell script, run as root, was sufficient for me to
+get connected. In my case, it is a fragment from /etc/pcmcia/network but you
+could equally place it by itself in /etc/init.d and link to it from /etc/
+rc2.d, possibly deleting some of the network init scripts already there.
+#!/bin/bash                                                                  
+                                                                             
+DEVICE=eth0                                                                  
+                                                                             
+# In the following XXXXXXXX represents the 8-digit serial number             
+# affixed to the underside of the Motorola CyberSURFR modem.                 
+# It is the same number the person who installed my cable link had           
+# to phone in to the central office for activation.                          
+# (Substitute your actual number, of course.)                                
+                                                                             
+SERIAL_NUM=XXXXXXXX                                                          
+/sbin/ifconfig $DEVICE up 0.0.0.0                                            
+/sbin/route add default dev $DEVICE                                          
+rm /etc/dhcpc/dhcp*                                                          
+                                                                             
+# I'm not sure both the -h and the -I flags are required, but                
+# this works for me.                                                         
+                                                                             
+/sbin/dhcpcd -h $SERIAL_NUM -I $SERIAL_NUM $DEVICE                           
+. /etc/dhcpc/dhcpcd-$DEVICE.info                                             
+
+It is also a good idea to set a hostname using the Hostname page available
+via [http://home.powersurfr.com/Customers/index.cgi] http://
+home.powersurfr.com/Customers/index.cgi Your dhcpcd client will receive this
+hostname from Videon's server. Some linux mail set-ups require a legitimate
+hostname in order to work.
+
+Information about Videotron can be found at [http://www.videotron.ca] http://
+www.videotron.ca.
+-----------------------------------------------------------------------------
+
+3.13. Telekabel (Teleweb), Austria
+
+There are two approaches to setting up your Telekabel connection. First one
+is the approach used by Andreas Kostyrka:
+
+  * You may want to mention, that the Austrian Telekabel (Teleweb) ISP works
+    with Linux. It seems quite similiar like MediaOne Express (3c509+dhcp,
+    etc.)
+   
+  * Second there are 3COM configuration utilities for Linux (But don't fool
+    around with them on a busy system, 3c509 may lock the bus if touched the
+    wrong way :( ):
+   
+      + [ftp://ftp.redhat.com/pub/contrib/hurricane/SRPMS/
+        3c5x9utils-1.0-3.src.rpm] ftp://ftp.redhat.com/pub/contrib/hurricane/
+        SRPMS/3c5x9utils-1.0-3.src.rpm
+       
+      + [ftp://ftp.redhat.com/pub/contrib/readmes/3c5x9utils-1.0-1.README]
+        ftp://ftp.redhat.com/pub/contrib/readmes/3c5x9utils-1.0-1.README
+       
+   
+
+Second approach is provided by Marcel Ebmer <marcel.ebmer@chello.at>
+
+  * Do NOT bother using dhcpcd or pump!
+   
+  * In case you don't know, ask the provider for your IP-address, which is
+    static, for the DNSs, the Gateway and use linuxconf to configure the
+    network. For Vienna: 960 60 333 is the helpdesk's telephone number They
+    officially do not support linux, but you need not mention you are running
+    linux.
+   
+  * Choose a unique name for your PC....not "localhost"
+   
+
+Information about Telekabel can be found at [http://www.telekabel.at/] http:/
+/www.telekabel.at/.
+-----------------------------------------------------------------------------
+
+3.14. Shaw Cable, Canada
+
+According to Peng F. Mok <pmok@shaw.wave.ca>:
+
+I recently signed up for a cable modem service from Shaw Cable here in
+Canada, which runs under Shaw@Home brand. Shaw has been upgrading their cable
+network for about a year and a half now, and now offer cable-modem service to
+a number of locations across Canada. Information about the `Shaw@Home'
+service can be found at [http://shaw.home.com] http://shaw.home.com General
+information about Shaw Cable can be found at [http://www.shaw.ca] http://
+www.shaw.ca.
+
+I thought I'd just drop you a line to inform you that your DHCP mini-HOWTO,
+was very useful in helping me set up Linux to work with my cable-modem
+service, and that you might want to add `Shaw@Home' to your Cable-Modem
+mini-HOWTO as another entry. I don't have specific information on the
+`Shaw@Home' service yet, but from conversations I've had with Shaw technical
+support it seems that `Shaw@Home' is a partnership with @Home and involves
+the same features and setup procedure as that already described for @Home in
+the Cable-Modem mini-HOWTO document.
+
+In both services Shaw Cable techs will come over and bring you two pieces of
+hardware -- a Motorola CyberSURFR cable-modem and either a 3Com EtherLink III
+16-Bit ISA 3C509B-TPO NIC or an EtherLink XL PCI 3C900-TPO NIC. You have your
+choice of either an ISA or a PCI card depending on your needs, and these
+models only have the RJ-45 (UTP) connectors. The ISA cards come with PnP-mode
+enabled by default, so it may be necessary to boot into DOS, disable PnP
+operation, and configure the card to some base I/O address and IRQ setting
+which are available. Once this is done Linux should have no problems
+detecting the NIC at boot-time. I'm not sure about what needs to be done in
+the case of a PCI card since I don't currently have a PC which supports
+either PCI or PnP.
+
+Note from another user:
+
+Shaw now also issues SMC PCI ethernet cards. They give these out without
+boxes or manuals. I found out that these are the SMC EtherPower PCI RJ45 card
+(model 8432T). They use the DEC 21041 chip so the tulip ethernet driver is
+needed for it.
+
+If you need to set up your POP3 mailboxes you can do that at following URL:
+[https://profile.home.net/Users/menu.htm] https://profile.home.net/Users/
+menu.htm and you can login and setup the POP3 mailboxes that way.
+
+Oh, and for the record, Shaw's technical support is horrendous. The best
+place to go for information is the athome.users-unix newsgroup (which is not
+even mentioned by any of the documentation) or please consult [http://
+www.ee.ualberta.ca/~pmok/linux/] http://www.ee.ualberta.ca/~pmok/linux/.
+
+Information provided by Eric De Schepper:
+
+Shaw Cable Winnipeg provides the user with either a 3Com EtherLink III 16-Bit
+ISA 3C509B-TPO NIC or an EtherLink XL PCI 3C900-TPO (depending on which slot
+(s) you have available) and a Terayon TeraPro Cablemodem ( [http://
+www.terayon.com/tools/products/view.html?phase=show&id=973669299&famid=
+973595996&cat_id=9.4.1] http://www.terayon.com/tools/products/view.html?phase
+=show&id=973669299&famid=973595996&cat_id=9.4.1 ). You have to disable PNP on
+the NIC's - Shaw gives a static IP via DHCP.
+-----------------------------------------------------------------------------
+
+3.15. Cogeco Cable, Canada
+
+This information is provided thanks to Sean O'Grady <sean@incisive.dhs.org>:
+
+I have a Cable Modem through a company called Cogeco Cable located in various
+parts of Canada. They are part of the "Wave" system which includes Rogers
+Cable and Shaw Cable. The technical setup is different for each provider
+though. They supplied me with a D-Link ethernet card (the version of that has
+changed since then but I believe are still using D-Link) and a Zenith modem.
+The Ip setup is easy since they use DHCP so all I did was install the DHCP
+daemon and that was that. If you like you can list my e-mail address <
+togrady@cgocable.net> for anyone with questions.
+
+I contacted you awhile ago with information regarding setting up a cable
+modem under Cogeco (the mail came from togrady@cgocable.net). Well I have
+some updates to give you. Cogeco has now joined the @HOME network although I
+haven't seen anything good come out of yet. The modems have changed as well,
+instead of the old Zenith modems we now are using a Samsung InfoRanger
+SCM-100R modem. The modem changed has not affected the ease of setting up
+Linux with the cable modem. All that is still required is a functioning
+network card and working DHCP client and you will be able to get the network
+functioning quickly. Many people send questions to me regarding various cable
+modem/dhcp/networking issues and as a result I have started to put together
+some help pages. The are located at [http://incisive.dhs.org/] http://
+incisive.dhs.org.
+
+Additional info has been provided Craig Kossowski:
+
+Cogeco seems to be slowly getting themselves sorted out wrt cable modems and
+is now part of the set of Canadian cable companies that have cooperated on
+the @Home network. A network card is provided as part of their large (but
+currently waived) hookup fee; the D-Link 528CT for PCI capable systems, and,
+I believe, D-Link 220T for ISA systems (and possibly PCI capable computers
+that will accept the ISA card, they tried it in my roommate's system first,
+only when that didn't work did they put in the PCI 528CT). I'd recommend
+asking for the PCI if you have the choice, as I know that setup can work with
+Linux from my experience.
+
+Both of these are NE2000 boards to the best of my knowledge. I got the PCI
+D-Link 528CT which uses the RealTek 8029 chipset, and Linux can deal with
+easily. I just recompiled the kernel, and after a little hiccup due to RedHat
+5.2's lilo default not looking for the kernel at /vmlinuz, I was up and
+running. DHCP (with a 24 hour lease lifetime) is used for IP resolution and
+everything worked automaticaly (I had selected a DHCP config when I installed
+Linux, others may need to do slightly more configuration, but it doesn't
+require anything non-standard). The 528 is supposedly plug & play, but I had
+no problems using it in my Linux box (2.0.34). Note that you need to compile
+in (either built in or module, I used built in) the PCI NE2k code, and unlike
+what is implied in the Ethernet HOWTO, you don't need to also include the ISA
+NE2000 code to use this chipset. I don't have experience with the ISA D-Link
+220T, but I would assume it's just as easy to set up, it's listed as a
+supported card in the Ethernet HOWTO.
+
+The Cable modem I got was a great heavy thing that looks like a heatsink for
+a small nuclear reactor. Nearly a square foot in desk space, made by LANcity,
+and I believe rated for 10Mbps shared bandwidth on the cable subset side of
+things, it has a reasonably good set of LEDs to show you what it's doing once
+you figure out what each one is. While throughput will obviously vary, I see
+transfer rates around 10kB/s (80kbit/s) and up during the day, to 50-60kB/s
+at night, when presumably thinks are quieter on the backbone. Subjectively,
+it's very fast, and beats even fast modems hands down. I haven't had it long
+enough to determine uptime yet, so I can't comment there.
+
+At the time of this writing (Jan 99), Cogeco's service runs $150 for
+installation, including the card, and $39.99 a month for the service. They're
+currently waiving the modem rental fee "until they are available for
+purchase" but the information there is mixed from 15.04/month as of early
+1999 (from the web page) to "not for some time" from their phone staff.
+Included with this is up to five email addresses, and 5MB of Web space. They
+also say there is a 1GB/month limit, though I'm told (by their tech support
+people) that this isn't strictly enforced, and is more to discourage ftp
+sites with high traffic bogging down the subnets, and to provide them with an
+avenue to prevent such. Although their literature doesn't say so, additional
+computers are an extra 10.70 a month, though unsupported, and you have to
+provide the hub, wiring and additional ethercards if you do this, they're
+basicly charging the extra for the lease of an additional IP as far as I can
+tell from their information.
+-----------------------------------------------------------------------------
+
+3.16. Optimum Online, New York and Connecticut
+
+This information is provided by Seth Greenfield <islesfan@nassau.cv.net>:
+
+Optimum Online uses DHCP, and rrclientd in Linux, by John Clark. Check out
+[http://www.netaxis.com/~wharris/optimum/index.html] http://www.netaxis.com/
+~wharris/optimum/index.html for instructions on how to set up your service
+with Linux.
+
+Tell people who had private ips who have public ips now to change their /etc/
+resolv.conf to look like this...
+domain nassau.cv.net (or optonline.net depenind on the users mood)           
+nameserver 167.206.112.3                                                     
+nameserver 167.206.112.4                                                     
+
+Other Than that its the same setup procedure note: the rrclientd software
+will work if you tell it dce-server and you specify the domain as
+optonline.net
+-----------------------------------------------------------------------------
+
+3.17. Singapore Cable Vision, Singapore
+
+This information is provided by Jieyao <jieyao@letterbox.com>:
+
+SCV provides Motorola Cybersurfer modem connected to the network card via UTP
+cable. The IP setup is easy since they use DHCP so all you need to do is 
+install the dhcp daemon. If you can't make access the first time, turn the
+modem off then on again.
+-----------------------------------------------------------------------------
+
+3.18. Cable Wanadoo, France and Netherlands (formerly Casema)
+
+This information is provided by Jerome Sautret <Jerome.Sautret@wanadoo.fr>
+and it applies to Wanadoo's French customers:
+
+I just read your Cable Modem HOWTO. I live in France, and I use Cable
+Wanadoo, the cable service of France Telecom, which is the main telecom
+operator in France. It is available in a few cities in France at the moment,
+like Angers and Metz. This service provides a dynamic IP address via DHCP. It
+uses a COM 21 modem plugged in a 10BaseT Ethernet card. The IP setup is easy
+just read the DHCP mini HOWTO.
+
+Information about Netherlands is provided by Costyn van Dongen <
+cvd@casema.net>:
+
+The current Casema cable modems operate via the serial port, acting like
+normal modems, answering AT commands like phone modems. The setup is really
+very easy, because all the chat script needs to do is dial ATDT4. (this is in
+ppp-on-dialer). Hence it uses PPP, which is unusual for most cable modems.
+
+Relevant files are included /etc/ppp/ppp-on
+DIALER_SCRIPT=/etc/ppp/ppp-on-dialer                                         
+exec /usr/sbin/pppd -detach /dev/ttyS0 115200 connect $DIALER_SCRIPT &       
+
+/etc/ppp/ppp-on-dialer
+exec /usr/sbin/chat -e '' AT '' ATDT4                                        
+
+/etc/ppp/ppp-off
+#!/bin/sh                                                                    
+######################################################################       
+#                                                                            
+# Determine the device to be terminated.                                     
+#                                                                            
+                                                                             
+sleep 5                                                                      
+                                                                             
+if [ "$1" = "" ]; then                                                       
+        DEVICE=ppp0                                                          
+else                                                                         
+        DEVICE=$1                                                            
+fi                                                                           
+#                                                                            
+######################################################################       
+#                                                                            
+# If the ppp0 pid file is present then the program is running. Stop it.      
+if [ -r /var/run/$DEVICE.pid ]; then                                         
+        kill -INT `cat /var/run/$DEVICE.pid`                                 
+#                                                                            
+# If the kill did not work then there is no process running for this         
+# pid. It may also mean that the lock file will be left. You may wish        
+# to delete the lock file at the same time.                                  
+        if [ ! "$?" = "0" ]; then                                            
+                rm -f /var/run/$DEVICE.pid                                   
+                echo "ERROR: Removed stale pid file"                         
+                exit 1                                                       
+        fi                                                                   
+#                                                                            
+# Success. Let pppd clean up its own junk.                                   
+        echo "PPP link to $DEVICE terminated."                               
+        exit 0                                                               
+fi                                                                           
+#                                                                            
+# The ppp process is not running for ppp0                                    
+echo "ERROR: PPP link is not active on $DEVICE"                              
+exit 1                                                                       
+
+/etc/ppp/keepalive.sh
+#!/bin/sh                                                                    
+                                                                             
+# keepalive.sh                                                               
+                                                                             
+# This is a keepalive script for the Casema cable modems. This script was    
+# lifted from the /usr/doc/HOWTO/unmaintained/mini/Dynamic-IP-Hacks          
+# document. There should be an entry in your crontab looking like:           
+# */2 * * * * /etc/ppp/keepalive.sh                                          
+# to run this script every 2 minutes to see if your connection is still      
+# up, if not, gracefully kill the pppd process and remake it.                
+# Modify paths as necessary.                                                 
+                                                                             
+                                                                             
+if [ -f /var/run/ppp0.pid ]; then                                            
+ ping -c4 -l3 195.96.96.97 2>&1 | grep "0 packets" > /dev/null && \          
+ { /etc/ppp/ppp-off > /dev/null 2>&1 ; sleep 2 ; /etc/ppp/ppp-on }           
+else                                                                         
+ /etc/ppp/ppp-on                                                             
+fi                                                                           
+
+/etc/resolv.conf
+search dynip.com                                                             
+nameserver 195.96.96.97                                                      
+nameserver 195.96.96.33                                                      
+
+/etc/sysconfig/network (this file applies only to RedHat and Mandrake
+distributions, adapt accordingly for other distributions)
+GATEWAYDEV=ppp0                                                              
+GATEWAY=195.96.96.97                                                         
+
+I've documented some things in the files themselves. The ppp-on script is
+called during boot time from /etc/rc.d/init.d/ppp and the ppp-off script
+during shutdown. The ppp-on-dialer is called from the ppp-on script. The
+keepalive script for keeping the connection alive as long as the computer is
+on (might as well, right?) is called from crontab (see the keepalive file for
+details). The /etc/sysconfig/network file specifies the default gateway for
+routing. The resolv.conf tells the computer which IP of casema.net to send
+DNS queries to (this is pretty standard across all unixes, I believe).
+
+I've forgotten to include the /etc/ppp/pap-secrets which should be the same
+as the ExpressNet, Maryland, Maryland. There's also the question of the
+ip-up, ip-down. These however, didn't need to be changed. I've also included
+the options.ttyS0 file, which should be in /etc/ppp/ppp-on. It is read by the
+pppd daemon as it logs on. There are a couple options like defaultrouteadd
+that should be on. ttyS0 is the port where you install your modem mine is on
+COM1 == ttyS0. Change accordingly.
+
+/etc/ppp/options.ttyS0
+asyncmap 0                                                                   
+crtscts                                                                      
+defaultroute                                                                 
+lock                                                                         
+modem                                                                        
+name cvd                                                                     
+
+I received notice from Casema a couple days ago that they will be changing
+their name to [http://www.wanadoo.nl/] wanadoo.nl. So you might, in your
+document, refer to both: "wanadoo.nl (formerly casema.net)" This will be
+happening as of Sept. 20th.
+
+I will be happy to provide you with information and answer any more
+questions. I my explanations aren't Red Hat only. I haven't used other
+systems, so I can't judge. I hope this is useful to you.
+-----------------------------------------------------------------------------
+
+3.19. Prime Cable Expressnet, Las Vegas, NV
+
+This information is provided by jedi <jedi@penguin.lcvm.com>:
+
+They use the Com21 which can either be connected directly to your 10baseT
+input or inserted into the downlink input on your router. Static IPs are
+available for $10 per month and the usual address assignment is through DHCP
+( [http://www.oswg.org/oswg-nightly/DHCP.html] http://www.oswg.org/
+oswg-nightly/DHCP.html )
+
+More information can be obtained from [http://penguin.lvcm.com] http://
+penguin.lvcm.com.
+-----------------------------------------------------------------------------
+
+3.20. Chello Belgium, formerly TVD, Belgium
+
+This information is provided by Pierre-Yves Keldermans <pykeldermans@usa.net
+>:
+
+At home, my cable-TV company is "TVD", it is the first company to offer
+internet on the cable in Belgium.
+
+  * Hardware : LanCity cable modem & 10-Base-T NIC ( DLink ISA if you buy it
+    from TVD )
+   
+  * Config : DHCP ( [http://www.oswg.org/oswg-nightly/DHCP.html] http://
+    www.oswg.org/oswg-nightly/DHCP.html )
+   
+  * Prices :
+   
+      + Cheap : for home use, real IP address but dynamic, DHCP expires every
+        10 min, 1 user only (theorically ... ), no problem with firewall, the
+        web server on my computer is even reachable from outside..., full
+        speed FROM internet, small speed TO internet.
+       
+      + Not so cheap : for small office use, same as 1) but not limited to 1
+        user and more speed TO internet.
+       
+      + Expensive : for WWW servers & ... , Static IP addresses and reserved
+        bandwidth TO internet following price.
+       
+   
+  * Speed :
+   
+      + From TVD's mirror site : up to 30Kbytes/sec, very nice ( and YES,
+        they have some Linux mirrors like redhat ... :-) )
+       
+      + From internet : variable but rather good if the remote server isn't
+        overloaded.
+       
+   
+  * For more info : [http://www.chello.be] http://www.chello.be and [http://
+    www.upcbelgium.be/] http://www.upcbelgium.be/.
+   
+
+Note from another user:
+
+TVD gives you an IP via DHCP and when it is activated they log the
+MAC-Address. So if you want to connect to the internet via another computer
+with another ethernetcard it won't work. You have to change your MAC-Address
+to the 1 that can connect. I just put somewhere in a startupscript :
+ifconfig eth0 hw ether 00:23:56:74:25:12                                     
+
+This was not all, TVD gives some problems with pump in RedHat 6.2 but with
+DHCPcd 1.3 it works like a charm. (that dhcpcd is on the install cd in Redhat
+/rpms)
+-----------------------------------------------------------------------------
+
+3.21. Telenet Vlaanderen, Belgium
+
+This information provided by Karel Goderis <karel.goderis@pandora.be> and
+Kris Carlier <kris@iguana.be>:
+
+  * Operator: Telenet Vlaanderen - Operatial in flemish speaking (northern)
+    part of Belgium
+   
+  * Hardware: Motorola CyberSURFR Wave Cable Modem using an RJ-45 Ethernet
+    straight cable to a PC
+   
+  * Software: Standard config is Windoze + Modified Netscape for newbie
+    installations, although Linux i386 support is there under the form of
+    mirrored redhat.com software on the internal ftp servers. A dedicated
+    linux newsgroup is available for support. Most users depend on ipchains/
+    ipfwadm in 2.2.x, or have a "Linux Router"-project implementation.
+   
+  * IP Setup: DHCP address assignment, single address only. Outgoing : all
+    ports accepted, except mandatory use of Netscape Proxy on port 8080, and
+    thus port 80 blocked. Incoming : ports 0-1024 blocked, but re-allocation
+    of ports on Linux works fine.
+   
+  * Pricing: Installation is 8000,- BFr (~200US$), warranty of 2000,- BFr for
+    the cablemodem (50$). They ask 50$ for a NIC if you don't have any, which
+    is of course a ripoff, as you get them almost for free if you buy a
+    hamburger these days. Monthly fee still is 1500,- BFr (37,5$)
+   
+    Optional: Telenet Internet + : here, you can install a HUB (which they'll
+    sell you for 50$ if you don't have any). This way you can hook up up to 4
+    PC's to your connection. Higher installation price and about 1000,- BFr
+    per PC per month extra.
+   
+    Telenet XL: standard, you can download up to 10 GB per month, 20% of that
+    may be upload traffic. The XL costs 3500,- per month (88$), and you get
+    15 GB download. 2000,- BFr (50$) per extra 5 GB.
+   
+  * Services: redhat.com netscape.com mirrors, quake I and II servers, proxy
+    (5 NetCAcHe proxies proxy[1-5].pandora.be:8080), mail relay and pop
+    account with 10 MB mailbox (5 aliases) and the other usual stuff you need
+    to survive on the net.
+   
+  * Caveats: Telenet states that you can download 300Mbytes/month, but this
+    rule is not enforced unless there is a obvious abuse (i.e. you download
+    300Mbytes/*day* ;-) ).
+   
+    Till 2 weeks ago, the limits were only for external traffic. As they have
+    mirrors of all kinds of things (tucows, freebsd, freethemes,
+    allmacintosh, suse,...), and a proxy, the 2 GB per week they had before,
+    counted only for external traffic, was OK. Now EVERYTHING is counted,
+    including DHCP-traffic (30' leases), ARP, IGMP (they are experimenting
+    with it so every 2' you get some traffic from them...)
+   
+    Blocked outgoing ports: apart from what Karel specified, 25 is also
+    blocked, you have to use their mailserver. From time to time this beast
+    seams to be pretty overloaded.
+   
+
+More info at [http://www.pandora.be/] http://www.pandora.be/ or [http://
+www.telenet.be/] http://www.telenet.be/.
+-----------------------------------------------------------------------------
+
+3.22. Total-Web, United States
+
+This information is provided by iota <iota@inaxx.net>:
+
+I work for Convergence.com, a cable internet company who provides the network
+monitoring, technical support, and advice to cable providers (who, in turn,
+provide the internet service to their customers). Most of our markets are
+through Cablevision, one of the more popular cable providers in the eastern
+US. The service name that they operate their cable internet service under is
+"Total-Web". Customers are provided with a static IP; simply set this up like
+you would any other ethernet device under Linux. The modems we use are
+LanCity LCP's and COM21 ComPort's, but these devices should be transparent to
+your computer.
+
+Total-Web is available in limited areas, including: Miami Beach, FL; Gwinnett
+County and Roswell, GA; Cookeville, Lebanon, and Columbia, TN; and many other
+test markets.
+-----------------------------------------------------------------------------
+
+3.23. CyberCable, Paris, France
+
+This information is provided by David Monniaux:
+
+CyberCable gives you an ethernet card if you need one. It is a cheap NE2000
+clone, ISA-Pnp or PCI I think. They only know how to set up the stuff for
+Windows, but reports from other people say that they let you use their access
+with other systems, provided you do the software setup yourself.
+
+They use [http://www.oswg.org/oswg-nightly/DHCP.html] DHCP (DHCPcd) in RedHat
+and it worked immediately. In RedHat's netcfg, this means selecting "DHCP
+configuration". There are still some problems sometimes: DHCP outputs some
+error messages, but things still work afterwards generally (?). This seems
+related to rebooting; it looks like the cable system doesn't reallocate the
+line for one minute after reboot.
+
+CyberCable's web site is at [http://www.cybercable.fr/] http://
+www.cybercable.fr/.
+-----------------------------------------------------------------------------
+
+3.24. Chello (UPC) Stockholm, Sweden (formerly StjärnTV)
+
+This information is provided by <dinky@chello.se>:
+
+UPC are providing their customers with SURFboard SB31000 Cable Modems, and if
+needed a NetGear Network card(ISA or PCI) can be purchased for an additional
+300 swedish crows.
+
+They offer 2 different services: Chello: 1 IP 512kbit downstream 128 upstream
+Chello Maestero: 4 IPs, 640kbit downstream, 128kbit upstream
+
+[http://www.oswg.org/oswg-nightly/DHCP.html] DHCP is used to configure the
+network interface (dhcpcd).
+
+More info about their services can be found at [http://www.upc.se] http://
+www.chello.se/ and [http://www.upc.se] http://www.upc.se/.
+-----------------------------------------------------------------------------
+
+3.25. GCI.Net, Alaska
+
+This information is provided by GCI Tech Support <support@gci.net>:
+
+GCI provides CableModem services in Alaska, currently in Anchorage, Juneau,
+and Fairbanks. GCI uses Com21 which can either be connected directly to your
+10baseT input or inserted into the downlink input on your router. Static IPs
+are available for $10 per month and the usual address assignment is through
+[http://www.oswg.org/oswg-nightly/DHCP.html] DHCP. More information can be
+obtained from [http://www.gci.net] http://www.gci.net.
+-----------------------------------------------------------------------------
+
+3.26. Saturn Communication NZ Ltd, New Zealand
+
+This information is provided by Nigel Win <nigelwin@the.net.nz> and David
+Sims <david.sims@paradise.net.nz>:
+
+This was tested on Debian 2.1 (Slink) Using Kernel 2.0.34 and 2.2.17
+
+First of all you need to get the following information to fill in the gaps
+
+IPADDR -> This is the IP Address Saturn have given you eg IPADDR=
+203.79.92.214
+
+NETWORK -> This is the first 3 Decimal places of your IP Address and then 0
+at the end eg NETWORK=203.79.92.0
+
+BROADCAST -> This is the first 3 Decimal places of your IP Address and then
+255 at the end eg BROADCAST=203.79.92.255
+
+GATEWAY -> This is the first 3 Decimal places of your IP Address and then 1
+at the end eg GATEWAY=203.79.92.1
+
+Edit the file /etc/init.d/network and put this in to setup your cable modem.
+#! /bin/sh                                                                   
+ifconfig lo 127.0.0.1                                                        
+route add -net 127.0.0.0                                                     
+IPADDR=                                                                      
+NETMASK=255.255.255.0                                                        
+NETWORK=                                                                     
+BROADCAST=                                                                   
+GATEWAY=                                                                     
+ifconfig eth0 ${IPADDR} netmask ${NETMASK} broadcast                         
+${BROADCAST}                                                                 
+route add -net ${NETWORK}                                                    
+[ "${GATEWAY}" ] && route add default gw ${GATEWAY} metric 1                 
+
+This is what my /etc/init.d/network file would look like
+#! /bin/sh                                                                   
+ifconfig lo 127.0.0.1                                                        
+route add -net 127.0.0.0                                                     
+IPADDR=203.79.92.214                                                         
+NETMASK=255.255.255.0                                                        
+NETWORK=203.79.92.0                                                          
+BROADCAST=203.79.92.255                                                      
+GATEWAY=203.79.92.1                                                          
+ifconfig eth0 ${IPADDR} netmask ${NETMASK} broadcast                         
+${BROADCAST}                                                                 
+route add -net ${NETWORK}                                                    
+[ "${GATEWAY}" ] && route add default gw ${GATEWAY} metric                   
+1                                                                            
+
+They use Com21 Cable Modem [http://www.com21.com] http://www.com21.com and
+provide free D-Link PCI or ISA network card if you require. The monthly fee
+already includes Cable Modem rental and they offer 2 connection speed plans (
+512k/128k and 2Mbps/256K ). But they charge you on how much traffic you
+transfer :). The speed is not bad since I am getting around 90K for download
+speed at peak time.
+
+Information provided by Stewart Frater
+
+For Redhat users, the suggested scripting should be added to the /etc/
+sysconfig/network file (as opposed to the /etc/init.d/network file as
+detailed). In any event, the scripted change may be checked for effectiveness
+by issuing the following command as root :
+/etc/sysconfig/network-scripts/ifup eth0                                     
+
+A final check is to ping an external IP successfully. You should also expect
+to be able to hot-swap your cable between your Linux and Win boxes at will;
+ie. no rebooting of pc's or re-cycling of modems should be necessary during
+normal use.
+
+More info about Saturn is available at [http://www.saturn.co.nz] http://
+www.saturn.co.nz.
+-----------------------------------------------------------------------------
+
+3.27. Chello, Netherlands
+
+This information is provided by Jaco de Groot <jaco@dynasol.com>:
+
+I'm from The Netherlands and use a Terayon cable modem under Red Hat 6.0. My
+provider is Chello. I have installation instructions in Dutch on my homepage
+[http://www.dynasol.nl/~jaco/redhat6.0/install.html] http://www.dynasol.nl/
+~jaco/redhat6.0/install.html. Chello has replaced all LAN-City modem in my
+city with Terayon modems (configuration remains the same because it uses the
+same network card).
+
+If you are not using RedHat check out the [http://www.oswg.org/oswg-nightly/
+DHCP.html] DHCP mini-HOWTO on instructions how you can get your computer to
+connect to Chello network.
+
+Notes from Henkjan Huisman <henkjan@m14-017.azn.nl>
+
+Got my RH6.1 box on the net by installing dhcp3.0 ( [ftp://ftp.isc.org/isc/
+dhcp/] ftp://ftp.isc.org/isc/dhcp/dhcp-3.0b2pl6.tar.gz), and produce an EMPTY
+/etc/dhclient.conf. Change /sbin/ifup where it says:
+
+if /sbin/pump $PUMPARGS -i $DEVICE ; then
+
+to:
+
+if /sbin/dhclient $DEVICE ; then
+
+Info about Chello can be found at [http://www.chello.nl/] http://
+www.chello.nl/
+-----------------------------------------------------------------------------
+
+3.28. Adelphia Powerlink, USA
+
+This information is provided by Kevin Pfohl <kspfohl@adelphia.net>:
+
+If you have a Adelphia service with a two way modem connection (e.g. you
+don't need a regular phone modem to dial in) all you have to do is install
+Linux and use [http://www.oswg.org/oswg-nightly/DHCP.html] DHCP to get your
+network connection going. If you have a one-way modem please read info on 
+Adelphia Powerlink, USA.
+-----------------------------------------------------------------------------
+
+3.29. 21st Century Telecom, Chicago, IL, USA
+
+This information is provided by Jens B. Jorgensen <jjorgens@bdsinc.com>:
+
+21st Century uses a "Regular" cable modem, that is up-stream and down-stream
+are both over the cable connection. The equipment is made by Zenith. The
+installer will bring along a NIC with them, (mine was an OEM Intel
+EtherExpress Pro 10/100) which is connected via a 10-base-T cable
+(crossover?) directly to the cable modem. All 21st Century customers are
+assigned a static IP address. Just make sure your kernel is configured to
+support this card or insmod the module for it a configure the IP. You'll also
+be provided with a gateway address which you'll need to set the default route
+to. Be mindful of the netmask (255.255.0.0 for me) on the ether interface.
+Also note that the cable modem seems to 'learn' the ethernet address of the
+adapter you're provided with and will only work wit that adapter. I don't
+know if reseting the cable modem would cause it to relearn the address or
+not. I didn't feel the need to try the cable modem with another adapter.
+
+Additional notes by Mark Howard <mark@xanderbelly.com>
+
+Please note that this service has been changed; they now only use Nortel
+cable modems and everyone is assigned a dynamic IP address now. Also, my
+Nortel cable modem does not seem to care which machine or MAC address is
+connected to it; I have set up multiple machines on it and they all worked
+fine. In fact, if you hang a hub directly off the cable modem, you can get
+multiple valid IP adresses assigned through DHCP! I wouldn't recommend this,
+however, as a long term solution. I have a RH box set up as a firewall doing
+NAT for me on the one address, and it works just great. This service is
+particularly good - I consistently get 95-100KBps, or just about a 1Mbps
+rate. I also live in a coach house rental here in Chicago, and although they
+wanted to run new cable in the apartment, I told them to use the old cable
+because it was not my place. They said they could not guarantee that the
+service would work, but of course it does work just fine! So don't let them
+talk you into running new cable if you can avoid it.
+
+Also, if you want to set up your own web server from home, I used a great
+service called [http://www.easydns.com/] EasyDNS.com where you pay them $25
+per year per domain and you can control your DNS settings (even SOA, TTL,
+etc...) 24/7/265 through a web based (PHP no less) interface. So if I ever
+need to reboot my Linux box (which I never do really) I can go in and update
+the IP address that my web server www.xanderbelly.com and mail server
+
+Additional notes:
+
+The terms and conditions of 21st Century cable modem contains the following
+statement:
+
+Distributing unsolicited information in any manner is prohibited on 21st
+Century's network and will result in termination of 21st Century service.
+(I.e. junk email, etc...) Any use of a server type application or service on
+a computer system connected to 21st Century Cable Modem Service is prohibited
+and may result in termination of 21st Century Cable Modem Service (i.e. web,
+ftp, or game servers, etc...). 21st Century Cable Modem Service is for client
+type applications ONLY.
+
+Also, technically, each additional dynamic IP address beyond the first one
+carries a $4.95 monthly charge.
+-----------------------------------------------------------------------------
+
+3.30. HTVi, Helsinki, Finland
+
+This information is provided by Markku Immonen <wired.poet@sci.fi>:
+
+HTV is the local cable TV company. Their Internet product is called HTVi.
+They issue a Motorola CYBERSURFR Wave cable modem for all customers. It plugs
+into an ethernet card using a 10BaseT (RJ-45) cable. Customers have two
+options: [http://www.oswg.org/oswg-nightly/DHCP.html] DHCP or a static IP
+address. The [http://www.oswg.org/oswg-nightly/DHCP.html] DHCP (dynamic IP
+address) option is 50 Finnish marks cheaper; in October 1999 the prices were
+245 FIM per month for a dynamic address and 295 FIM for a static one.
+
+I opted for a static IP. Configuration was incredibly easy. They give you a
+couple of info brochures which contain the necessary IP and networking
+information.
+
+About speed: it varies but is generally acceptable, from 30 kbytes/sec to 200
+kbytes/sec. Your best bet is the early morning hours. The fastest download
+speed so far was 470 kbytes/sec from a Finnish Linuxberg mirror.
+
+More information about HTVi can be found at [http://www.htvi.net/] http://
+www.htvi.net/.
+-----------------------------------------------------------------------------
+
+3.31. Garden State Cable, New Jersey
+
+This information is provided by Denis Voitenko <denis@o3m.com>:
+
+In New Jersey Garden State Cable offers @Home. They give you a 3Com CMX
+series cable modem and a SMC PCI NIC with the DIGITAL chip. It works just
+perfect with the Tulip driver. They assign static IP addresses.
+
+One more interesting thing. Unlike in most places, upstream speed is not
+limited to 128kbs.
+
+Garden State cable web pages are located at [http://www.gardenstatecable.com
+/] http://www.gardenstatecable.com/.
+-----------------------------------------------------------------------------
+
+3.32. Zoom Internet, Butler County, PA
+
+This information is provided by Jim Garrison <garrison@olga.net>:
+
+Zoom internet [http://www.zoominternet.net/] http://www.zoominternet.net/ is
+a cable ISP. They provide a Bay Networks cable modem, which connects to a
+10-Base-T ethernet card. The only thing required to set it up is to enable
+[http://www.oswg.org/oswg-nightly/DHCP.html] DHCP.
+
+Note: They provide the cable modem, but you must have your ethernet card
+working properly with [http://www.oswg.org/oswg-nightly/DHCP.html] DHCP
+before the installation guys come.
+-----------------------------------------------------------------------------
+
+3.33. Charter Pipeline
+
+This information is provided by Chris Weiss <chris@free-source.com>:
+
+Charter gave me a 3Com cable modem that uses DHCP. I simply followed the DHCP
+mini-HOWTO and my 256Kbps connection was running at over 350Kbps!
+-----------------------------------------------------------------------------
+
+3.34. Netcabo, TV Cabo, Portugal
+
+This information is provided by Marco Soeima <msoeima@netcabo.pt>:
+
+It's a Portuguese ISP and it's available through TV Cabo. The hardware
+consists of a RealTek ethernet card (just use the rtl8139.o module) and a
+3Com U.S. Robotics CMX cable modem. The only thing required to get one's
+cable access up and running is configure the ethernet card and install [http:
+//www.oswg.org/oswg-nightly/DHCP.html] DHCP. After that it works like a
+charm!
+
+More information about Netcabo can be found at [http://www.netcabo.pt/] http:
+//www.netcabo.pt.
+-----------------------------------------------------------------------------
+
+3.35. Supercable, Spain
+
+This information is provided by Mario Galan <galan@arquired.es>:
+
+The setup isn't so much different than other Cable providers. They offer a
+SMC (I think) network card but you can use yours if you want. They then
+install a cable modem made by com21 (http://www.com21.com). IP setup is easy
+since it uses DHCP so I don't think you should have any problems under a
+modern linux distribution.
+
+For more information check out Mario's web page at [http://www.supercable.es/
+%7Egabu/] http://www.supercable.es/%7Egabu/.
+
+Last thing worth to be said is that Supercable doesn't provide support for
+Linux but you can always ask your questions in news.supercable.es in the
+Linux area. Their web page is located at [http://www.supercable.es/] http://
+www.supercable.es/ (WARNING: get ready to download an almost 1MB of useless
+Macromedia's Flash garbage).
+-----------------------------------------------------------------------------
+
+3.36. NTL, United Kingdom
+
+This information is provided by cogNiTioN <cog-cablemodem@cognite.net>:
+
+This assumes that you've spoken to NTL, you have the cable modem, the cable
+line installed and your network card installed and recognised. You should
+also have you MAC address registered with NTL. (NTL contact: [http://
+www.ntl.com/cablemodems/] http://www.ntl.com/cablemodems/)
+
+Now all you have to do is connect your cable modem to your network card and
+run the DHCP client. I've found that you have to specify the username you
+supplied during the registration process, on the command line: e.g. root #
+dhcpcd -h cognition (substitute cognition for your user name.). For any other
+problems with DHCP please check out the [http://www.oswg.org/oswg-nightly/
+DHCP.html] DHCP mini-HOWTO.
+
+I've also found that occasionally the 3COM CMX modem used needs to be
+rebooted (power off, press the reset button on the back, power on) if left
+connected 24/7.
+
+Nameservers used by NTL are: 194.168.4.100 and 194.168.8.100, so those should
+be added to your /etc/resolv.conf.
+
+I've found NTL's tech support to be close to useless, most the time and they
+don't officially support Linux, so you're probably better off contacting your
+local LUG ([http://www.lug.org.uk/] http://www.lug.org.uk/ ), or you could
+even try mailing me direct (but I don't promise to be able to respond).
+-----------------------------------------------------------------------------
+
+3.37. Virtua, São Paulo, Brazil
+
+This information is provided by Thiago Macieira <thiagom@mail.com>:
+
+IP is assigned dynamically via DHCP. Just run dhcpcd or pump to get the IP
+and you're done. For more detailed instructions on how to get DHCP running
+read the [http://www.oswg.org/oswg-nightly/DHCP.html] DHCP mini-HOWTO.
+
+Notes: operator blocks incoming connections to ports below 1024
+-----------------------------------------------------------------------------
+
+3.38. Hathway, Bombay, India
+
+This information is provided by Rishi Gangoly <rishi@w-o-i.com>:
+
+The tech support guys at Hathway were not Linux Savvy at all, but I must say
+were quite helpful. They even referred me to another customer who got Linux
+to work with it. However, that person was only able to get it to work on
+Linux as a stand-alone workstation and not as a gateway (as a router) for his
+entire network.
+
+Since I was not even able to get it to work as a stand-alone workstation I
+knew I had a long way to go. The Windows 98 Workstation configuration was a
+Celeron Workstation and it had a 10/100 D-Link Lan Card Chipset RTL 8139 .
+The IP address was manually entered, so I knew that there was no DHCP Client
+required etc.
+
+Even the DNS and Gateway address was manually entered.
+
+I was able to do a ping without any problem in Windows to any site and things
+were just happening. However, I had no luck with it in Linux. I installed
+Linux on the same machine (Dual Boot) to make sure there was any Hardware
+compatibility problems.
+
+I even got the workstation to hook up on the LAN successfully in Linux. So I
+knew that the Lan Card was working.
+
+I noticed that when I connected the Cable Modem to the LAN card I was not
+able to see any of the Link LED light up on the LAN Card. So I figured that
+could be part of the problem. I booted the PC in DOS and ran the DIAG DOS
+based utility to check the configuration of the Card. I just decided to take
+a chance and re-configured the LAN Card. I configured it to operate in 10
+MBPS Half Duplex Mode instead of Auto Sense.
+
+.......... Guess what..... The problem got solved ;-)
+
+Even the lights (LED Link indicators) started to work, so all was good. ;-)
+At the end of everything it all worked out. I plugged that lan card into the
+linux server (since I knew it worked) and got it to work as a router /
+gateway too. I still wonder why the other customer was not able to get the
+Linux Box to work as a gateway for the rest of his network. That was no big
+deal at all. It just worked. The Cable Modem that was used (provided by
+Hathway) was a SurfBoard 3100
+-----------------------------------------------------------------------------
+
+3.39. Siti Cable, Bangalore, India
+
+This information is provided by Vinay Avasthi <vinay@avasthi.com>:
+
+Zee Telefilms has partnered with Siti Cable in Bangalore, India to provide
+cable modem service. I subscribed to this service and it kind of worked out
+of the box from linux.
+
+I am using Redhat 6.1 on a IBM Thinkpad 600 with Xircom Realport Ethernet
+card. On autodetect links mentions that the card will be used in 10MB/s only.
+
+Only problem that I faced was on shutdown, the system will hang while
+shutting down pump. To temporarily fix the problem I just put that particular
+like in rc-scripts to background.
+
+The steps that one needs to perform are as follows.
+
+  * - Need to have an ethernet card that works with Linux.
+   
+  * - Enable DHCP by using pump. For some reason dhcpd does not seem to work.
+   
+
+Only thing that I would suggest is to be careful regarding support since the
+tech support do not seem to know much about software.
+-----------------------------------------------------------------------------
+
+3.40. Com Hem, Sweden
+
+This information is provided by Zoltan Arpadffy <arpadffy@altavista.net>:
+
+com hem [http://www.comhem.se/] http://www.comhem.se/ is a Swedish cable TV/
+Internet provider, a sub-company of Telia [http://www.telia.com/] http://
+www.telia.com/ the biggest Scandinavian carrier. com hem does not support any
+other OS but Windows and Mac-OS (as com hem support claims ), but it is not
+so complicate to set up on Linux as well.
+
+com hem sells NetGame's cable modem (NeMo) [http://www.ngcable.com/
+nemo.shtml] http://www.ngcable.com/nemo.shtml. It is a very fast and flexible
+2-way cable modem with initial speed of 512 kb/s but it can be set up to 10Mb
+/s by the cable provider. You can order it with or without Ethernet card. com
+hem Internet service is available in the bigger cities all over Sweden.
+-----------------------------------------------------------------------------
+
+3.40.1. 1. Setting up a single node
+
+  * set up your network card to work properly ([http://www.linuxdoc.org/HOWTO
+    /Ethernet-HOWTO.html] Ethernet HOWTO)
+   
+  * configure DHCP to that card ([http://www.oswg.org/oswg-nightly/DHCP.html]
+    DHCP mini-HOWTO)
+   
+  * try to ping login1.telia.com (10.0.0.6)
+   
+  * you need a browser what supports Java-script (Netscape or Mozilla) and go
+    to the login site [http://login1.telia.com/] http://login1.telia.com/
+   
+  * - fill in your user-name and password (provided by com hem) ... and
+    you're there.
+   
+
+Network what you'd become a member is:                                       
+        IP address: Assigned by com hem                                      
+        Subnet mask: 255.255.255.0                                           
+        Default GW: Assigned by com hem                                      
+        Hostname: Assigned by com hem                                        
+        Domain name: telia.com                                               
+        Primary DNS server (nameserver): 10.0.0.1                            
+        Secondary DNS server (nameserver): 10.0.0.2                          
+-----------------------------------------------------------------------------
+
+3.40.2. 2. Connecting your home LAN (if you have more than one machine)
+
+We have to turn one computer to gateway (I did it with an old Pentium 66MHz/
+16M)
+
+  * install two network cards in your gateway [http://www.linuxdoc.org/HOWTO/
+    NET3-4-HOWTO.html] NET3-4 HOWTO
+   
+  * first set up (and connect) to your LAN
+   
+  * second network card have to use DHCP ([http://www.oswg.org/oswg-nightly/
+    DHCP.html] DHCP mini-HOWTO)
+   
+  * enable ip forwarding
+    net.ipv4.ip_forward = 1 in /etc/sysctl.conf or                                
+    set FORWARD_IPV4 to true in /etc/sysconfig/network (RedHat or Mandrake) or by 
+    echo "1" > /proc/sys/net/ipv4/ip_forwarding                                   
+   
+  * set up IP masquerade ([http://www.linuxdoc.org/HOWTO/
+    IP-Masquerade-HOWTO.html] IP Masquerade mini-HOWTO)
+    ipchains -P forward DENY                                         
+    ipchains -A forward -s your_network_here/24 -j MASQ              
+    (for me it was ipchains -A forward -s 192.168.10.0/24 -j MASQ) check your
+    routing table with route command... it should be something like below:
+    Destination     Gateway         Genmask         Flags Metric Ref    Use Iface 
+    gate.polarfox.h *               255.255.255.255 UH    0      0        0 eth0  
+    telia-net       *               255.255.255.0   U     0      0        0 eth1  
+    polarfox-net    *               255.255.255.0   U     0      0        0 eth0  
+    127.0.0.0       *               255.0.0.0       U     0      0        0 lo    
+    default         h2n5fdt22o429.t 0.0.0.0         UG    0      0        0 eth1  
+    Useful literature for security issues is [http://www.linuxdoc.org/HOWTO/
+    IPCHAINS-HOWTO.html] Linux IPCHAINS HOWTO 
+   
+  * configure default gateway for all other hosts in your LAN. On unix nodes
+    it should look something like:
+    Destination     Gateway         Genmask         Flags Metric Ref    Use Iface 
+    sea.polarfox.ho *               255.255.255.255 UH    0      0        0 eth0  
+    polarfox-net    *               255.255.255.0   U     0      0        0 eth0  
+    127.0.0.0       *               255.0.0.0       U     0      0        0 lo    
+    default         gate.polarfox.h 0.0.0.0         UG    0      0        0 eth0  
+    Default gateway setup for other OSs you can find a very nice description
+    in IP Masquerade mini-HOWTO
+   
+  * configure name server on your gateway DNS HOWTO or just set up your hosts
+    to use Telia's name server (10.0.0.1)
+   
+  * log in from any host [http://login1.telia.com/] http://login1.telia.com/
+    and you're on the road with all your LAN.
+   
+
+ 
+-----------------------------------------------------------------------------
+
+3.40.3. You from the internet
+
+There are no limitations in traffic, protocols or ports so far from com hem
+side, So you can easily set up your web, irc or ftp server at home or in the
+office. But is very uncomfortable to use URL like http://
+h2n5fdt22o429.telia.com. You probably need a new usable domain name, but
+there is a problem with DHCP. Anyhow there is one solution.
+
+  * Find one independent DNS server
+   
+  * Buy your desired domain name
+   
+  * Set up the DNS server as a forwarder to you DHCP address
+   
+
+if the DNS server is running on Unix probably add to /etc/named.conf
+zone "private.net"{                                                          
+        type forward;                                                        
+        forward only;                                                        
+        forwarders{                                                          
+                YOUR.DHCP.ADDRESS;                                           
+        };                                                                   
+};                                                                           
+
+Set up your own DNS server to be master for your domain
+zone "private.net"{                                                          
+        type master;                                                         
+        file "private.net-ZONE-FILE";                                        
+        notify no;                                                           
+};                                                                           
+
+  * Edit the zone file as it has been written in DNS-HOWTO
+   
+  * Add your name server to etc/resolv.conf
+   
+
+search private.net telia.com                                                 
+nameserver 127.0.0.1                                                         
+nameserver 10.0.0.1                                                          
+
+  * ... and your domain is alive
+   
+  * If your IP address is changing it is enough to re-set the forwarder DNS
+    server and after few hours your server will be visible as usual, so far
+    you are keeping your line alive
+   
+
+-----------------------------------------------------------------------------
+3.40.4. Problems:
+
+  * If you don't use browser with Java-script support, you can not log in.
+    Solution: there is no elegant solution. Without it you can not log in and
+    open the connection.
+   
+  * After some network inactivity period (10-15 minutes) your connection will
+    be terminated and you have to log in again... meanwhile your gateway and
+    all your inner services will be unreachable from outside as well (if
+    you're running some web server at home etc). Solution: start one ping
+    process or even more elegant solution is to submit one cron job for every
+    5-10 minutes on the gateway, to "do something" through the network.
+   
+    I did it with /etc/cron.d/keep-alive file when contains:
+    # fake connection in order to keep line alive                    
+    # every 5 minutes send some packages                             
+    MAILTO=""                                                        
+    */5 * * * * ping -f -c 5 ftp.sunet.se                            
+   
+  * Security: your computer or whole LAN is on the Internet now without any
+    protection against attacks from outside.
+   
+    Solution: []Security-HOWTO can help you to set up your system quite safe.
+    This is an important issue, you should not just bypass it. Your gateway
+    should be your firewall as well.
+   
+  * Applications: If you have LAN at home you have to face IP masquerade
+    problem with some applications as ftp, irc, Quake or RealAudio.
+   
+    Solution: You have to load necessary modules for proper work.
+    /sbin/depmod -a                                                  
+    /sbin/modprobe ip_masq_autofw                                    
+    /sbin/modprobe ip_masq_ftp                                       
+    /sbin/modprobe ip_masq_raudio                                    
+    /sbin/modprobe ip_masq_irc                                       
+    /sbin/modprobe ip_masq_mfw                                       
+    /sbin/modprobe ip_masq_user                                      
+    /sbin/modprobe ip_masq_cuseeme                                   
+    /sbin/modprobe ip_masq_portfw                                    
+    /sbin/modprobe ip_masq_vdolive                                   
+    /sbin/modprobe ip_masq_quake                                     
+   
+  * DNS problem: Periodically DHCP configuration of your network interface
+    will be reload (pumpd) and it will overwrite your own DNS setup in /etc/
+    resolv.conf. To avoid this behavior of pump daemon add to /etc/pump.conf
+    file:
+    device eth1 {                                                    
+        nodns                                                        
+    }                                                                
+   
+  * Windows install: even if you are running Windows on your computer, DO NOT
+    install com hem from the provided CD, because the configuration on
+    Internet Explorer are permanent and even the com hem support can not help
+    you to de-install :-). The problem is not serious, but you have to dig
+    deep with regedit.
+   
+    Solution: In control panel/network set up your network card to and
+    eventually DNS server to 10.0.0.1. Reboot (as usual) and log in. It's so
+    easy without any complications.
+   
+  * Cable modem: You have to be aware that your cable modem is a peripheral
+    of your computer and not a standalone network unit. So you should not
+    expect that your network will survive the "modem reboot". The order is
+    always: first modem and after the computer. Note: if the modem is on, you
+    may reboot or switch off/on your computer without any problem.
+   
+
+-----------------------------------------------------------------------------
+3.41. SwissOnLine HiSpeed Internet, Switzerland
+
+This information is provided by Nick Barnes <nick@debau.ch>:
+
+This assumes that you have registered (either on-line or via snail mail) with
+SwissOnLine and you have received your cable modem, have plugged it in and
+ensured that it boots correctly as per the installation instructions.
+
+At the time of speaking, SwissOnLine HiSpeed provide COM-21 modems (http://
+www.com21.com) complete with two different kinds of Antanae leads and an
+antenna splitter.
+
+You will require a standard 10BaseT ethernet cable to plug the modem into
+either a network card installed in a PC or the uplink port of a 10BaseT hub.
+To plug the modem into a normal hub port, you will require a crossover cable.
+
+All information is provided to the host via DHCP, with no special parameters
+needed in the call. The modem is not locked down by MAC address.
+
+Providing it is not rebooted, the modem appears to grant the same IP address
+to the host. While this is not guaranteed with anything other than the static
+IP address option on the business account, I have not seen my address change
+in the time I have had the modem.
+
+Be wary of any device on your local ethernet which makes DHCP requests. The
+modem is not fussy which devices it allocates addresses to and it appears to
+offer the same IP address to _any_ machine which makes a DHCP request.
+
+SwissOnLine do not support Linux directly, but they are aware of its
+existance!
+
+Notes from Thomas Holenstein <thomas@hex.ch>
+
+I had problems installing my cable modem as well under Linux and under Win98,
+because the DHCP server of swiss online did not to respond. If you encounter
+similar problems, you may want call the hotline (0848 852 800). Hold the MAC
+number of your modem ready if you call, you can find it at the bottom of the
+modem. If you are only using linux, it might prove difficult to convince the
+hotline people you did things right. It was difficult with windows already.
+Be sure you get a number for your problem (Bearbeitungsnummer).
+
+If you want to analyze the problems you may install a network sniffer: [http:
+//ethereal.zing.org/] ethereal is available for linux and for windows. In my
+case, I saw that I was sending bootp packages to swissonline but did not
+receive bootp packages from them. However, I could get other packets.
+
+Notes from Stefan Buckmann for SuSe users:
+
+I use SuSE Linux (currently 7.1). I have had difficulties getting an IP
+address using the supplied version of dhclient (2.0pl5-4). Suggestion for
+SuSE users setting up a cable account with Swissonline : Get the latest
+release of ISC DHCP (currently V3.0b2pl23), compile it and replace /sbin/
+dhclient with the freshly compiled one. This solved the problems immediately.
+-----------------------------------------------------------------------------
+
+3.42. Liwest, Austria
+
+Information provided by Bernd Haug <haug@liwest.at>:
+
+I'm connected through an Austrian cable provider called Liwest. The support
+eMail is <helpdesk@liwest.at>, the homepage is [http://www.liwest.at/] http:/
+/www.liwest.at/.
+
+The modem is a Terayon, the box gets connected via TP cable. The modem works
+great with my ethernet hardware (3com 905b, vortex driver) as well under
+Linux as under Windows. Macs are supported, too.
+
+None of my Friends, who use very various hardware and/or OS(versions) have
+any problems with incompatibilities.
+
+The configuration is done manually (no DHCP, but it's *really* easy since the
+information sheets are very compact & informative), customers get fixed IPs
+and DNS entries. Running servers over the cable line is forbidden, no
+firewall, but ports 80, 21 usw are scanned on a regular base.
+
+Use of bandwidth is limited neither in volume nor in time.
+
+The provider had great availability problems a while ago, but they seem more
+or less fixed now; I am content with the Service. Transfers go up to ~30k
+(intercontinental, too).
+
+Please contact Bernd if you have additional questions. He has kindly agreed
+to provide assistance to any current or new Linux user.
+-----------------------------------------------------------------------------
+
+3.43. Blueyonder from Telewest, United Kingdom
+
+Information provided by Mike Watson <mike@prog99.com>:
+
+Plugged in the ethernet card, booted up and turned on [http://www.oswg.org/
+oswg-nightly/DHCP.html] DHCP.
+
+Worked first time!! Nameservers were added to resolve.conf so I had to do
+very little other than follow the home networking howto to get the IP
+masquerading working.
+
+They also dont mind people running masq'd connections or linux but will only
+support a win9x setup. But when it was this easy....
+-----------------------------------------------------------------------------
+
+3.44. CableNet, Colombia
+
+Information provide by Marco Muskus <muskus@gamebox.net>:
+
+CableNet uses CyberSurf from Motorola, and a 3Com 905 10Base-T Ethernet NIC.
+Set up is mostly done using [http://www.oswg.org/oswg-nightly/DHCP.html] DHCP
+but some people also receive static IPs.
+-----------------------------------------------------------------------------
+
+3.45. Brutele, Belgium
+
+Information provided by Fabrice Timmermans <Fabrice.Timmermans@ITSoftware.be
+>:
+
+Operator: BRUTELE - covers part of Brussels and South of Belgium
+
+Hardware: Teraillon Cable Modem using an RJ-45 Ethernet straight cable to a
+PC
+
+Software: Standard config is Windows, although Linux i386 support is there
+under the form of mirrored Linuxberg on the internal servers.
+
+IP Setup: [http://www.oswg.org/oswg-nightly/DHCP.html] DHCP address
+assignment, single address only. More available depending on subscription
+mode.
+
+Pricing: one-off installation : BF 2500 (+-$ 85) + BF 5000 ($175) deposit for
+the cable modem. Monthly fee : BF 1500 ($40) + Modem loan BF 500 (12$)
+
+Services: Tucows and Linuxberg mirrors, quake I and II servers, proxy, mail
+relay and pop account (3 aliases) and the other usual stuff you need to
+survive on the net.
+
+More info at [http://www.brutele.be/] http://www.brutele.be/.
+-----------------------------------------------------------------------------
+
+3.46. Optus @Home, Australia
+
+Information provided by Simon Butcher <pickle@alien.net.au>:
+
+For Optus @Home here in Australia (Competitor to Telstra Bigpond) -
+Originally they used to be running some sort of really weird DHCP server, so
+a mate of mine hacked a DHCP client and got it running, but recently they've
+fixed their problems and ordinary dhcpcd will run fine off the shelf. The
+trick is that Optus use your "Client ID" for authentication. Your client id
+is also your hostname, and if you're already running windows, your computer
+name. If your computer name is CO3012345-A then that's your hostname, and
+therefore your client id.
+
+You feed dhcpcd this information and everything should run perfectly dhcpcd
+-H CO3012345-A eth1.
+
+Alternatively if you would like to use pump check out the notes of user in 
+Mobile, Alabama.
+
+A word of warning though, Optus are very strict on running servers on their
+network, so before you connect linux up to Optus @Home, firewall your
+computer or disable running daemons.
+
+Optus supplies a SurfBoard SB3100 cable modem and a network card. Don't say
+you've already got a NIC as they will insist you use it and not give you the
+freebie. I got an SMC EZ-10 PCMCIA card.
+-----------------------------------------------------------------------------
+
+3.47. Destiny Cable, Philippines
+
+Information provided by Juan Paolo L. Carballo <jplcarballo@mydestiny.net>:
+
+It used to be just for our capital Manila, but has lately expanded to the
+province of Cebu as well. There are only three of us Destiny Cable
+subscribers in our local LUG and so far, no one yet in the province. Destiny
+Cable is not the first to offer cable internet services but is the cheapest,
+considering that they give a free cable TV feed in addition to unlimited
+Internet access. Unlike other cable internet providers, they have Linux as an
+OS option to choose when you fill up their application form.
+
+There have two subscription options:
+
+1. Residential                                                                               
+Modem: Motorola Cybersurfer Wave                                                             
+NIC: Any                                                                                     
+Connection: Dynamic IP - DHCP ([http://www.oswg.org/oswg-nightly/DHCP.html] DHCP mini-HOWTO) 
+* Free cable tv feed upon subscription.                                                      
+* Free first 200 feet of cable from service point to your PC.                                
+* Option to rent, lease-to-own or buy the cable modem.                                       
+* Minimum of one year subscription contract.                                                 
+2. Corporate                                                                 
+Modem: No information but definitely not Motorola Cybersurfer                
+NIC: Any                                                                     
+Connection: Static IP                                                        
+
+Destiny requires you to buy and install your own NIC/Lan card *before* they
+will setup your service line. In my case, I bought a Linksys etherfast 10/100
+LNE100TX ver. 2.0 PnP card and installed it in my Mandrake 7.1 (helium) box
+using the tulip.c driver, version 0.91g. The NIC was recognized as: Lite-On
+PNIC-II rev 37 at 0x6200, IRQ 10. When the linemen arrive, they will bring
+with them only the cable modem, aside from the cable line to your pc. The
+coaxial cable plugs into the modem from the data splitter on the main line,
+which it shares with the cable TV. A 10BaseT Ethernet cable with RJ-45 jacks
+is included with the cable modem. One end plugs into the cable modem and the
+other end into the ethernet card. Finally, there are six LEDS, one each for
+POWER, CABLE, PC, TEST, RD and TD. Once the power cycle has been completed,
+the POWER, CABLE and PC LEDS should be on and not blinking. The TEST LED may
+light up for a few seconds but this should pass. When a connection is stable,
+the TEST LED is OFF and the RD "Receive" LED will blink every once in a
+while. The TD "Transmit" LED will of course light up when you send data.
+-----------------------------------------------------------------------------
+
+3.48. Retecal, Spain
+
+Information provided by David Grajal Blanco <picholas@wanadoo.es>:
+
+Retecal [http://www.retecal.es] www.retecal.es offers a PCI network card
+NE2000 compatible [Realtek 8129/8139 card] that is supported very well in
+Linux. Of course you can use any card if you want.
+
+The cablemodem is made by Com21 [www.com21.com] and retecal have a dhcp
+server so it's easy to configure on a linux-box.
+
+Of course, if you ask retecal about some support for Linux they cannot help
+you. But in case of problems you can ask in the private news
+[news.retecal.es] in the linux group, or if you want, you can ask in the
+local lug [www.augcyl.org].
+
+Retecal uses a proxy that caches all the traffic but it works on transparent
+mode, so is unneccesary to configure.
+
+Ah, retecal only works on a region of spain named "Castilla y Leon", and
+Supercable, that is other ISP provider only works in "Andalucia"
+-----------------------------------------------------------------------------
+
+3.49. Netvisao, Portugal
+
+Information provided by Bruno Guerreiro <bruno dot guerreiro at ine dot pt>:
+
+At home i've signed up with Netvisao, which is part of Cabovisao, a cable TV
+Operator in Portugal. Their site is at [http://www.netvisao.pt] http://
+www.netvisao.pt They have several packages with diferent bandwidth limits,
+that go from 128Kbps to 512Kbps. I think they´re thinking about going to
+increase speeds up to 2 Mbps, but there isn't much information about that The
+card they supplied is a generic ne2k PCI, with DHCP assigned IP, which almost
+never changes :-). The out-of-the-box installation of Linux worked perfectly.
+I'm capable of running FTP , HTTP, IMAP, POP3 servers, with no problem at
+all.No problems with Telnet or SSH either.
+-----------------------------------------------------------------------------
+
+3.50. Longview Cable - Cablelynx
+
+Information provided by John Jeffers:
+
+Cablelynx.com is a consortium of smaller cable systems that have recently
+gone on line in the Texas, Arkansas, Oklahoma area.
+
+Primarily they use DOCSIS 1.1 and up compliant cable modems such as a Terayon
+LJ110. Currently they are configured like the ATT cable system.
+
+The computer is provisioned with Ethernet and [http://www.oswg.org/
+oswg-nightly/DHCP.html] DHCP is selected a host name is presented. The cable
+modem returns hostname.cablelynx.com and locks into the initial MAC address.
+The user then enters all his particulars including credit card from a Web
+Browser. DHCP is renewed to a different IP and full access is obtained. The
+only method to add different equipment is to spoof the MAC address per the AT
+&T entry or to leave the equipment on and configured and phone technical
+support and point out that you have changed computers in which case tech
+support will make the modem change authorized MAC address/es.
+
+I should point out that these providers are amongst the first to provide a
+pure DOCSIS network (i.e. completely standardized) that will allow users to
+buy any DOCSIS compliant modem and log it into the network with no contact
+other than the initial webform with the cable company.
+
+I will also point out that in Beta Site it was discovered that although this
+will work most of the time a many homes have too many or very poor splitters
+in line that will not give adequate bidirectional signal strength to the
+cable modem that will result in the Cable LED flashing in and out to indicate
+this.
+-----------------------------------------------------------------------------
+
+3.51. Soon Communications Plc, Finland
+
+Information provided by Edvard Majakari <ed@krypton.mikroneuvos.fi>:
+
+Soon Communications Plc is an ISP located in Tampere, Finland (former Tampere
+Telephone Plc). Soon provides cable modem services for its customers, though
+as of this writing (9th of May, 2001) only some of the regions in Tampere are
+covered by the cable modem service.
+
+Package offered by soon contains the cable modem (Cool alien-like
+thingamajick design, manufactured by 3Com), ethernet cable, USB cable (in
+Windows, you can connect the modem directly via USB cable), coaxial cable
+splitter (so that you can use your TV and modem at the same time, even if you
+have only one socket in the wall) and some Windows software I haven't used,
+as I use it with Linux. Soon doesn't offer Linux support for the modem, but
+because of the system they use (client acquires IP addresses by DHCP) it can
+be used with Linux, or actually any machine capable of fetching network
+information via [http://www.oswg.org/oswg-nightly/DHCP.html] DHCP), because
+of the ethernet interface provided by the cable modem.
+
+Installing and using the modem in Debian GNU/Linux is very simple. You should
+first make sure that your network adapter is supported and installed in your
+kernel (if you are unsure, type dmesg|grep eth0 in command line and you
+should see a line saying eth0: (device information) etc). Also make sure that
+CONFIG_PACKET and CONFIG_FILTER are defined in your kernel configuration, for
+DHCP won't work without these.
+
+After that, you might use eg. apt to install dhcp-client:
+root@bespin # apt-get install dhcp-client                                    
+
+If I remember correctly, after installing the client apt launches it right
+over, and you should now be connected to the net. You can use - of course -
+manual method of stopping, starting and restarting the client via script /etc
+/init.d/dhcp-client.
+-----------------------------------------------------------------------------
+
+3.52. InstaNet, Oregon
+
+Information provided by Tucker McLean <tucker@noodleroni.com>
+
+I have some info for you on my cable ISP (InstaNet). I don't have any idea if
+just my cable company (in Bend, Oregon) does this service, but here goes. The
+dynamic IP is assigned via DHCP. They supplied me with a Motorola SURFboard
+modem. I couldn't figure out how I'm supposed to get a pair of name servers
+assigned to me, so I just typed in the IP's of some name servers. The
+technician that came to my house was afraid of Linux, or something, and
+almost didn't put in the RF cable for me. He did, and it works fine. I also
+have a 486 as a router so I don't have to pay $10.95 /month for my 2 other
+computers to guarantee them an IP address. Hope this is helpful.
+-----------------------------------------------------------------------------
+
+4. Hybrid Cable modem ISPs
+
+If you think you have the card recognized you have to now look at the entry
+for your ISP. I have sorted the information according to a provider because
+setups are mostly ISP specific.
+
+This section is for people who are using so-called "hybrid" cable modems.
+Hybrid modems are modems that need two hookups (connections), one to the (TV)
+cable and one to the phone line. TV cable is used for downloading while phone
+line is used for uploading.
+-----------------------------------------------------------------------------
+
+4.1. Adelphia Powerlink, USA
+
+Instructions on how to get your Adelphia Powerlink hybrid modem running under
+Linux can be found at [http://linuxpower.cx/~cable/] http://linuxpower.cx/
+~cable/
+-----------------------------------------------------------------------------
+
+4.2. LinkExpress, Brasil
+
+This information is provided by Rodrigo Severo <rodrigo@who.net>:
+
+First of all, let me tell you that here we have the MMD Cable Modem from
+General Instrument. We use SurfBoard 1000 ISA board for download and a
+regular telephone modem for upload. I would prefer to use an external board
+like the SurfBoard 1200 which is available only to corporate users, i.e.,
+willing to pay US$ 200,00 instead of the regular US$ 30,00 so I found out
+this driver for the internal ISA board. For home users, Linkexpress (my ISP)
+just installs and supports the internal ISA board - Surfboard 1000. If you
+want to use it, you have to install Windows 95/98 on your computer and let
+the guy from Linkexpress install the equipment. After that, make your Linux
+installation as you like.
+
+I started from the files I downloaded from [http://linuxpower.cx/~cable/]
+http://linuxpower.cx/~cable/.
+
+Here is the relevant data:
+
+  * ISP: LinkExpress [http://www.linkexpress.com.br] http://
+    www.linkexpress.com.br
+   
+  * DNS: 200.252.88.20
+   
+  * Frequency: 351 MHz
+   
+  * Phone number: 321 3300
+   
+  * City: Brasilia
+   
+  * Province: Distrito Federal
+   
+  * Upload speed: regular 33.6K (just the download goes through the cable
+    modem)
+   
+
+During a download from a local tucows mirror I got 70KB~300KB per second.
+From distant sites I managed to get 30KB/s a few times.
+
+More information about LinkExpress can be found at [http://
+www.linkexpress.com.br/] http://www.linkexpress.com.br/.
+-----------------------------------------------------------------------------
+
+4.3. ExpressNet, Maryland
+
+I recently accuired an expressnet cable modem for the maryland area. it is a
+com21 one way modem and I had a hell a time making it work so id like to
+share my knowledge in your faq maybe? well heres what I learned inorder for
+the PPP connection to authenticate the user must be running PAP which
+consists of editing the /etc/ppp/pap-secrets file accordingly:
+#/etc/ppp/pap-secrets                                                        
+#this is the PAP secrets file for PPP                                        
+#the quotes are required on both                                             
+"username"      *       "password"                                           
+
+after that they must create a PPP-on script what ever name it must execute
+this command:
+exec /usr/sbin/pppd debug persist /dev/ttyS1 38400 0.0.0.0:0.0.0.0 connect "chat -v TIMEOUT 3 ABORT 'BUSY' ABORT 'NOANSWER' '' ATH TIMEOUT 30 'OK' ATDTTELEPHONE CONNECT ''"
+
+this must be done with no carrage returns either
+
+next step is to modify the /etc/ppp/ip-up.local file if it does not exist it
+should be created it should read the following:
+#!/bin/bash                                                                  
+#/etc/ppp/ip-up.local                                                        
+#this will set up the route to the ppp device as default everytime the modem 
+#authenticates dont include it if you do not want this option                
+route add default ppp0                                                       
+
+then the user must configure their ethernet card on box I have a 3c905.
+
+I configured it the following way:
+ifconfig eth0 up                                                             
+ifconfig eth0 10.0.0.1 broadcast 10.0.0.15 netmask 255.255.255.240           
+
+then I added some more routes to the kernel routing table as follows:
+route add -host 10.0.0.1 eth0                                                
+route add -net 10.0.0.0 eth0                                                 
+
+all of these commands can be added into a script file as follows
+#!/bin/bash                                                                     
+#This is a script file for establishing the cable modem IF device properties as 
+#well as the route properties                                                   
+ifconfig eth0 up                                                                
+ifconfig eth0 10.0.0.1 broadcast 10.0.0.15 netmask 255.255.255.240              
+route add -host 10.0.0.1 eth0                                                   
+route add -net 10.0.0.0 eth0                                                    
+
+thats all and the cable modem connection is setup fast as hell I might add.
+
+Contributors: Chris <chris@wrm.grdn.net> and Mike Milbert <mike@milbert.com>.
+-----------------------------------------------------------------------------
+
+4.4. Charter Pipeline, Riverside, CA
+
+This information is provided by Gabriel Peters <gpx1@earthlink.net>:
+
+(I have Charter Pipeline, Powered by Earthlink, Riverside, CA) The modem is a
+Com21 ComPORT 2000.. connected to the computer via 10 BaseT ethernet cable to
+a Linksys 10/100 ethernet card (Cable modem, ethernet cabling, and ethernet
+card supplied) The ethernet card driver that I had to compile into the kernel
+was for the DEC Tulip. auto-detected the card and set it up nicely.
+
+This is the information I needed:
+eth0 IP address - 10.0.0.1                                                   
+DNS Servers - 207.217.126.81, 207.217.120.83                                 
+Subnet Mask - 255.255.255.240                                                
+Gateway: None                                                                
+Your hostname should be CBL-(your username).hs.earthlink.net                 
+
+Then you need to configure PPP to dial up your access number as normal.. What
+I had to do to get it to work was this: I typed ifconfig eth0 down to
+shutdown the ethernet, ppp-go to dial in, once it reported my IP addresses, i
+typed ifconfig eth0 up and voila, it worked perfectly.
+
+Editor's comment:
+
+Each time PPP link is brought up or down pppd executes scripts /etc/ppp/ip-up
+(link up) and /etc/ppp/ip-down (link down) so in order to have Ethernet
+network go up and down with PPP link simply add:
+ifconfig eth0 up                                                             
+
+before exit 0 statement in /etc/ppp/ip-up and ifconfig eth0 down in ip-down.
+-----------------------------------------------------------------------------
+
+4.5. Chambers Cable, Chico, CA / Fundy Cable, New Brunswick
+
+This information is provided by Brian Moore <bem@cmc.net>:
+
+For those using Chambers Cable in Chico, CA, the product is the Scientific
+Atlanta data Xcellerator(tm) modem. Mike Cumings of Cal State University
+wrote a nifty driver for it, available at [http://www.ecst.csuchico.edu/
+~mcumings/cablemodem/] http://www.ecst.csuchico.edu/~mcumings/cablemodem/.
+This should also work for others using the same modem, such as Fundy Cable of
+New Brunswick. If you encounter problems compiling the client program from
+the above address try a client provided by Timothy Legge <tlegge@fundy.net>
+at [http://user.fundy.net/tlegge/DataX/cable0.99-1.tar.gz] http://
+user.fundy.net/tlegge/DataX/cable0.99-1.tar.gz
+-----------------------------------------------------------------------------
+
+4.6. Smyrna Cable, Atlanta, GA
+
+This information is provided by Blake Sorensen <librarian@unseen.net>:
+
+I have Smyrna Connect, supported by Smyrna Cable in Atlanta, GA. They are
+currently (June, 1999) using half-duplex but are scheduled to have
+full-duplex within six months. The Cable Modem is a ComPort Com21. Here is
+the configuration stuff I needed to get my linux box running as my dialup.
+
+My eth0 device is a 3com ISA card set to IP 10.0.0.1, Bcast 10.0.0.255, Mask
+255.255.255.0.
+
+The machine is set to the hostname Smyrna418.smyrnacable.net where Smyrna418
+is my username. I don't think this is that important, but I haven't fiddled
+with it to see if it will still work once I change the hostname.
+
+My modem is an external 56K X2 US Robotics on /dev/ttyS0.
+
+I also have eth1 (a DEC tulip based pci card) set up as 192.168.0.1 as the
+gateway for the rest of my network to masquerade behind.
+
+Smyrna Connect does not give you DNS info for the cablemodem since you are
+supposed to use the Windows PPP feature of using the default DNS for the
+server you dial in to. However, they do have one that works at
+209.116.152.252.
+
+I use a ppp connection script to dial in, but the guts of it is this:
+/usr/sbin/pppd modem /dev/ttyS0 persist mru 1000 asyncmap 0 \                
+-detach crtscts user Smyrna??? defaultroute connect '/usr/sbin/chat \        
+ABORT BUSY ABORT ERROR "" ATZ OK ATDT7704365664 CONNECT' \                   
+57600 0.0.0.0:0.0.0.0 &                                                      
+
+I keep the persist in there since Smyrna Connect has a habit of dropping the
+connection every once in awhile, and this way it automatically dials back in.
+You will need to replace the Smyrna??? in the above command with your own
+username and put the line:
+Smyrna???       Smyrna???       password                                     
+
+in the file /etc/ppp/pap-secrets.
+-----------------------------------------------------------------------------
+
+4.7. Amnet de Costa Rica, Costa Rica
+
+This information is provided by Roberto Salvatierra <chuby@internettico.com>:
+
+Ok to set up a Hybrid cable modem conection using Costa Rica's Amnet Provider
+is not all that hard ( once you get the hang of it ) is like the other
+providers that use com21 modems, but with some minor diferences.
+
+My Hardware is:
+CableModem: Com21 ComPort 1000                                               
+Modem     : Rockwell 56k                                                     
+Ethernet  : Ne2k PCI clone                                                   
+Machine   : i386                                                             
+Os        : Debian 2.1                                                       
+Kernel    : either a 2.2.x or a 2.3.x*                                       
+
+The first thing I did was disable my whole networking system, mainly because
+i had a real mess on my routing tables, hosts, and resolv.conf files ( I was
+using several ISP's and an intranet ) so I opted for this but that was just
+me, I even stopped lo so I started with a clean config.
+
+okey first of all if you have a dual system ( win/linux ) make sure the
+system is working under windows, that way we can make sure everything is up
+and running, after that, reboot to linux**.
+
+If you don't have a dual system I found something interesting that MIGHT help
+you state if the cablemodem and the eth card are functional, first, type this
+on your system:
+ifconfig eth0 up                                                             
+ifconfig eth0 10.0.0.1 netmask 255.255.255.240                               
+route add -host 10.0.0.1 eth0                                                
+
+after that look in your system log files for pings from 10.0.0.4 ( I have no
+idea why but this machine keeps "pinging" my box ,I asked amnet's help desk
+what was this all about, and they didn't give me an answer I guess they do It
+to check the network integrity) well anyhow, if you get this pings means that
+amnet connection is working okey.
+
+well after we have stated that the cable modem is up and running the rest is
+quite easy.
+
+if you did the above step now lets bring eth0 down ( ifconfig eth0 down )
+
+first lets place amnet's DNS where it sould be in /etc/resolv.conf so we need
+to add this:
+search amnet.co.cr                                                           
+nameserver 196.40.3.10                                                       
+
+okey now we need a ppp script for the modem
+
+this one works: ( we all use the same username "amnet" and password
+"conexion" so for this to work just cut and paste)
+exec /usr/sbin/pppd /dev/ttyS1 57600 0.0.0.0:0.0.0.0 debug user amnet        
+defaultroute connect "chat -v TIMEOUT 60 ABORT 'BUSY' ABORT 'NOANSWER' ''    
+ATH TIMEOUT 60 'OK' ATDT2969130 CONNECT ''"                                  
+
+amnet uses PAP (password authentication protocol) to authenticate users so we
+need to add a line to /etc/ppp/pap-secrets:
+"amnet" * "conexion"                                                         
+
+okey now you need to bring ppp up so just run that script to check that it
+works type: ifconfig, now you should have something like this:
+ppp0      Link encap:Point-to-Point Protocol                                 
+          inet addr:196.40.3.177  P-t-P:196.40.30.114  Mask:255.255.255.255  
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1         
+          RX packets:7 errors:1 dropped:0 overruns:0 frame:1                 
+          TX packets:9 errors:0 dropped:0 overruns:0 carrier:0               
+          Collisions:0                                                       
+
+   
+    Important: make sure at this point that you do not have eth0 up or it
+    WILL NOT WORK
+   
+okey after you have this working type this:
+ifconfig eth0 up                                                             
+ifconfig eth0 10.0.0.1 netmask 255.255.255.240                               
+route add -host 10.0.0.1 eth0                                                
+
+now type ifconfig you should have something like this:
+eth0      Link encap:Ethernet  HWaddr 00:00:21:61:7C:F0                      
+          inet addr:10.0.0.1  Bcast:10.255.255.255  Mask:255.255.255.240     
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1                 
+          RX packets:5594 errors:0 dropped:0 overruns:0 frame:0              
+          TX packets:241 errors:0 dropped:0 overruns:0 carrier:0             
+          Collisions:0                                                       
+          Interrupt:11 Base address:0xde00                                   
+                                                                             
+ppp0      Link encap:Point-to-Point Protocol                                 
+          inet addr:196.40.3.142  P-t-P:196.40.30.114  Mask:255.255.255.255  
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1         
+          RX packets:7 errors:2 dropped:0 overruns:0 frame:0                 
+          TX packets:65 errors:0 dropped:0 overruns:0 carrier:0              
+          Collisions:0                                                       
+
+and voila , your conection is up and running !!
+
+some tips:
+
+when you are not connected your eth should be DOWN activate eth only AFTER
+ppp is running OR IT WILL NOT WORK.
+
+To make this you can add the eth up and down scripts to /etc/ppp/ip-up and /
+etc/ppp/ip-down scripts ( on debian just place them on /etc/ppp/ip-up.d and /
+etc/ppp/ip-down.d )
+
+ip-up should contain this:
+ifconfig eth0 up                                                             
+ifconfig eth0 10.0.0.1 netmask 255.255.255.240                               
+route add -host 10.0.0.1 eth0                                                
+
+and ip-down this:
+ifconfig eth0 down                                                           
+
+now here is a WORKING route table that might help you troubleshooting the
+system: ( my HOSTN = hostname )
+Destination     Gateway         Genmask         Flags Metric Ref    Use      
+Iface                                                                        
+HOSTN.amnet.co. *               255.255.255.255 UH    0      0        0 eth0 
+196.40.30.114   *               255.255.255.255 UH    0      0        0 ppp0 
+HOSTN.amnet.co. *               255.255.255.240 U     0      0        0 eth0 
+default         196.40.30.114   0.0.0.0         UG    0      0        0 ppp0 
+
+Relevant Information:
+DNS      : 196.40.3.10                                                       
+----- eth0 -----                                                             
+IP       : 10.0.0.1                                                          
+NetMask  : 255.255.255.240                                                   
+Bcast    : 10.255.255.255                                                    
+Gateway  : NONE                                                              
+----- ppp ------                                                             
+IP       : 196.40.X.X (Dhcp Pool)                                            
+NetMask  : 255.255.255.255                                                   
+Bcast    : Unknown                                                           
+Gateway  : Self Default                                                      
+
+that's all folks !!
+
+if you need this in spanish look for it in: [http://www.internetTICO.com/
+cablemodem.html] http://www.internetTICO.com/cablemodem.html
+
+Questions/comments: <chuby@internettico.com>. Please use the subject
+CABLEMODEM or I will not answer.
+
+Biography: Linux Cable Modem mini-how-to Chapter: Hybrid cable modems
+sections, 4.2 and 4.4
+
+* about using 2.3.x kernels, this are unstable as anyone knows but I found
+that the performace with this kernel and amnet is LOUSY ( like a 14K modem )
+I DO NOT RECOMEND USING IT, but anyhow if you do use it and you get that your
+machine does not have ppp do not panic just upgrade your pppd program, 2.3.x
+kernels use a split async sync interface so pppd < 2.3.10 will NOT work.
+
+** sometimes when I'm using the cable modem on windows and I reboot to linux
+the modem gets "stupid" so I need to turn off the modem, the machine, then
+turn on the modem and restart the machine after that it always work. I have
+no Idea why this happens but I'm guessing that the ethernet card has a
+different hardware address on windows and linux (wierd) and that the modem
+keeps this config on an memory, and that it needs to be cleand up for it to
+work, so if it was working on windows and you are not getting even a ping on
+linux try this.
+
+More info about Amnet can be obtained at [http://www.amnet.co.cr/] http://
+www.amnet.co.cr/.
+-----------------------------------------------------------------------------
+
+4.8. Prime Cable, Chicago, IL
+
+This information is provided by Eric Agnew <agnew@goku.dyndns.org>:
+
+I just got a hybrid com21 setup w/ Prime Cable in Chicago, and I have a very
+important addition that will save other users (particularly debian users w/
+newer kernels) a LOT of grief:
+
+When I initially set everything up, I was able to establish the ppp
+connection just fine, but the only things coming back over eth1 were
+broadcast packets from an internal (10.0.0.x) network. After 3 weeks of
+extreme frustration, I finally found the solution in the kernel docs under
+Documentation/networking/README.sb1000:
+
+Solution -- As root type:
+echo 0 > /proc/sys/net/ipv4/conf/cm0/rp_filter'                              
+
+so it can share the same IP address as the ppp0 interface.
+
+The boot-time script that sets this normally on debian systems is in /etc/
+init.d/networking, in the 'spoofprotect_rp_filter' function. I simply added
+'echo 0 > /proc/sys/net/ipv4/conf/eth1/rp_filter' after it had done
+everything else. To be sure, I also added it to a script I added to /etc/ppp/
+ip-up.d that brought eth1 up if I was using the cable connection (as opposed
+to my other straight-ppp connection).
+-----------------------------------------------------------------------------
+
+4.9. Millennium Digital Media, Maryland
+
+This information is provided by Mike Miller <CableModem@mikemiller.net>:
+
+I live in Maryland (Anne Arundel County) where my cable company is Millennium
+Digital Media ( [http://millenniumdigitalmd.com/] http://
+millenniumdigitalmd.com/ ), which offers Cable Modem service from Cablespeed
+( [http://cablespeed.com/] http://cablespeed.com/ ). Since most areas aren't
+currently upgraded to 2-way digital service, for now they're giving us a
+General Instruments SURFboard SB2100D external (hybrid) cable modem (which
+includes a 33.6 modem), so you plug the cable and phone line right into the
+cable modem -- no need to use your own modem or set up ppp or anything. The
+modem uses DHCP to determine all the settings and connect to the network, so
+all I have to do it switch on the modem and it automatically dials up and
+connects to the network. To get Linux working, all I had to do was load and
+configure dhcpd (or dhcp-client). Since I'm using Debian, all I ran was:
+   apt-get install dhcp-client                                               
+
+and voila! I was on the net.
+
+If you're running something other than Debian, please read DHCP mini-HOWTO at
+[http://www.oswg.org/oswg-nightly/DHCP.html] http://www.oswg.org/oswg-nightly
+/DHCP.html. 
+-----------------------------------------------------------------------------
+
+4.10. Rock Hill Telephone (RHTC) and Fort Mill Telephone (FMTC), South
+Carolina
+
+This information is provided by Ryan T Rhea <rhear@ruby.winthrop.edu>:
+
+Rock Hill Telephone (RHTC) and Fort Mill Telephone (FMTC) offer hybid cable
+modem access through a partnership with the Info Avenue ISP. The cable modem
+is built by Hybrid, and offers high bandwidth downstream over the cable line
+(I've seen 900+ kpbs), and upstream over the builtin modem (around 33.6
+kbps). The cable modem connects to an ethernet 10baseT card and a regular
+phone line. The cable modem acts as a router from your machine to the
+internet.
+
+RHTC and FMTC 's tech support is performed by Info Avenue, and they offer no
+support for Linux whatsover. They were unable to provide any help or
+documentation regarding Linux and cable modems. Luckily, I was aware through
+my initial Win NT setup (as I looked over the tech's shoulder) that DHCP was
+used to assign IP addresses and DNS information. What I had to learn the hard
+way was that the cable modem apparently relies on the MAC address of the NIC
+that it is originally installed on. In otherwords, when I went to move the
+cable modem from my NT machine (which was using a proxy server and a second
+NIC to share internet access) to my new Linux firewall, I had to move the NIC
+into the new Linux computer. Without the same NIC, the network link light on
+the back of the cable modem will never come on, and the modem will not
+communicate with your computer at all. I assume if you bought a new computer
+with a new NIC, you could call RHTC or FMTC and ask them to update your MAC,
+however, they would probably not know what you were talking about, and want
+to send a technician. When the technician gets there, expect "we do not
+support Linux" to be the first words out of his mouth.
+
+Anyway, after installing the original NIC (which probably won't be a problem
+for most of you, because you only have 1 NIC in your computer - which the
+tech setup under Windows), all I had to do was configure DHCP. Considering my
+NIC was already working under Linux, my Mandrake Linux distribution made this
+especially easy. I just type 'netconf', then choose 'Basic Host Information',
+then enable DHCP for the NIC in question (in my case 'Adapter 1'). The
+program should restart the device for you, if not, you may need to reboot, or
+manually restart the device with ifconfig.
+
+If you have trouble with DHCP you could check out [http://www.oswg.org/
+oswg-nightly/DHCP.html] DHCP mini-HOWTO.

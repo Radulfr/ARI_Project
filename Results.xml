@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Resultado SYSTEM "Resultados.dtd">
+<xml-stylesheet type="text/xsl" href="Resultados.xsl"/>
+<resultado>
+  <pregunta>
+    <item>ruby</item>
+    <item>compiler</item>
+  </pregunta>
+  <documento id="529926ca185e99169600ef07">
+    <titulo>XML-RPC-HOWTO</titulo>
+    <relevancia>97.96%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/XML-RPC-HOWTO.txt</texto>
+  </documento>
+  <documento id="52993456185e9916960102a4">
+    <titulo>Assembly-HOWTO</titulo>
+    <relevancia>97.92%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Assembly-HOWTO.txt</texto>
+  </documento>
+  <documento id="52999eb4185e991696017847">
+    <titulo>MIPS-HOWTO</titulo>
+    <relevancia>97.5%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/MIPS-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299fe38185e99169601b489">
+    <titulo>C++Programming-HOWTO</titulo>
+    <relevancia>97.4%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/C++Programming-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299cb49185e991696018d6d">
+    <titulo>AI-Alife-HOWTO</titulo>
+    <relevancia>97.31%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/AI-Alife-HOWTO.txt</texto>
+  </documento>
+  <documento id="52991d72185e99169600e14b">
+    <titulo>Enterprise-Java-for-Linux-HOWTO</titulo>
+    <relevancia>97.03%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Enterprise-Java-for-Linux-HOWTO.txt</texto>
+  </documento>
+  <documento id="52992c48185e99169600f8d6">
+    <titulo>Commercial-HOWTO</titulo>
+    <relevancia>96.72%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Commercial-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299c3a0185e991696018a41">
+    <titulo>GCC-HOWTO</titulo>
+    <relevancia>96.1%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/GCC-HOWTO.txt</texto>
+  </documento>
+  <documento id="52997caa185e991696015027">
+    <titulo>Parallel-Processing-HOWTO</titulo>
+    <relevancia>95.54%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Parallel-Processing-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299df03185e991696019ac4">
+    <titulo>PostgreSQL-HOWTO</titulo>
+    <relevancia>94.33%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/PostgreSQL-HOWTO.txt</texto>
+  </documento>
+  <documento id="5298fca4185e99169600a159">
+    <titulo>C-C++Beautifier-HOWTO</titulo>
+    <relevancia>92.2%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/C-C++Beautifier-HOWTO.txt</texto>
+  </documento>
+  <documento id="529912e5185e99169600d275">
+    <titulo>Secure-Programs-HOWTO</titulo>
+    <relevancia>92.2%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Secure-Programs-HOWTO.txt</texto>
+  </documento>
+  <documento id="52992443185e99169600eb29">
+    <titulo>SMP-HOWTO</titulo>
+    <relevancia>89.6%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/SMP-HOWTO.txt</texto>
+  </documento>
+  <documento id="529995ed185e99169601758c">
+    <titulo>Program-Library-HOWTO</titulo>
+    <relevancia>89.6%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Program-Library-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299f856185e99169601b362">
+    <titulo>Linux-From-Scratch-HOWTO</titulo>
+    <relevancia>89.6%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Linux-From-Scratch-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299d42d185e991696019433">
+    <titulo>VME-HOWTO</titulo>
+    <relevancia>87.52%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/VME-HOWTO.txt</texto>
+  </documento>
+  <documento id="5298feaa185e99169600a608">
+    <titulo>TeTeX-HOWTO</titulo>
+    <relevancia>87.52%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/TeTeX-HOWTO.txt</texto>
+  </documento>
+  <documento id="5298edac185e99169600400a">
+    <titulo>VMS-to-Linux-HOWTO</titulo>
+    <relevancia>87.52%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/VMS-to-Linux-HOWTO.txt</texto>
+  </documento>
+  <documento id="52993bef185e991696010a94">
+    <titulo>Text-Terminal-HOWTO</titulo>
+    <relevancia>87.52%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Text-Terminal-HOWTO.txt</texto>
+  </documento>
+  <documento id="52997026185e991696014467">
+    <titulo>DOS-Win-to-Linux-HOWTO</titulo>
+    <relevancia>84.4%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/DOS-Win-to-Linux-HOWTO.txt</texto>
+  </documento>
+  <documento id="5298eb23185e991696000001">
+    <titulo>Java-Decompiler-HOWTO</titulo>
+    <relevancia>84.4%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Java-Decompiler-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299d956185e991696019718">
+    <titulo>MGR-HOWTO</titulo>
+    <relevancia>84.4%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/MGR-HOWTO.txt</texto>
+  </documento>
+  <documento id="52995523185e99169601317d">
+    <titulo>NLM-HOWTO</titulo>
+    <relevancia>84.4%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/NLM-HOWTO.txt</texto>
+  </documento>
+  <documento id="529952f7185e99169601301e">
+    <titulo>Beowulf-HOWTO</titulo>
+    <relevancia>84.4%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Beowulf-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299764f185e991696014815">
+    <titulo>Unix-and-Internet-Fundamentals-HOWTO</titulo>
+    <relevancia>84.4%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Unix-and-Internet-Fundamentals-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299d6ca185e991696019543">
+    <titulo>PHP-HOWTO</titulo>
+    <relevancia>79.2%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/PHP-HOWTO.txt</texto>
+  </documento>
+  <documento id="52996c65185e99169601420a">
+    <titulo>Emacspeak-HOWTO</titulo>
+    <relevancia>79.2%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Emacspeak-HOWTO.txt</texto>
+  </documento>
+  <documento id="5298f57a185e991696008a3a">
+    <titulo>Software-Building-HOWTO</titulo>
+    <relevancia>79.2%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Software-Building-HOWTO.txt</texto>
+  </documento>
+  <documento id="5298fa61185e991696009959">
+    <titulo>RPM-for-Unix-HOWTO</titulo>
+    <relevancia>79.2%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/RPM-for-Unix-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299901e185e991696016863">
+    <titulo>Unicode-HOWTO</titulo>
+    <relevancia>79.2%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Unicode-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299a094185e991696017942">
+    <titulo>Cable-Modem</titulo>
+    <relevancia>69.24%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Cable-Modem.txt</texto>
+  </documento>
+  <documento id="5299b28a185e991696018337">
+    <titulo>Winmodems-and-Linux-HOWTO</titulo>
+    <relevancia>68.81%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Winmodems-and-Linux-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299c5ff185e991696018b32">
+    <titulo>Vim-HOWTO</titulo>
+    <relevancia>68.81%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Vim-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299509f185e991696012d7d">
+    <titulo>UPS-HOWTO</titulo>
+    <relevancia>68.81%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/UPS-HOWTO.txt</texto>
+  </documento>
+  <documento id="52992f20185e99169600feb7">
+    <titulo>Kernel-HOWTO</titulo>
+    <relevancia>68.81%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Kernel-HOWTO.txt</texto>
+  </documento>
+  <documento id="52991e07185e99169600e246">
+    <titulo>C-editing-with-VIM-HOWTO</titulo>
+    <relevancia>68.81%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/C-editing-with-VIM-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299f4f2185e99169601b0cb">
+    <titulo>Chinese-HOWTO</titulo>
+    <relevancia>68.81%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Chinese-HOWTO.txt</texto>
+  </documento>
+  <documento id="52995446185e991696013101">
+    <titulo>Online-Troubleshooting-HOWTO</titulo>
+    <relevancia>68.81%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Online-Troubleshooting-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299ea1f185e99169601a031">
+    <titulo>Glibc2-HOWTO</titulo>
+    <relevancia>68.81%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Glibc2-HOWTO.txt</texto>
+  </documento>
+  <documento id="529a1685185e99169601bfe3">
+    <titulo>Diskless-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Diskless-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299ed2c185e99169601a1ad">
+    <titulo>Francophones-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Francophones-HOWTO.txt</texto>
+  </documento>
+  <documento id="5298ec5f185e99169600310d">
+    <titulo>Firewall-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Firewall-HOWTO.txt</texto>
+  </documento>
+  <documento id="5298ecda185e99169600369b">
+    <titulo>PCI-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/PCI-HOWTO.txt</texto>
+  </documento>
+  <documento id="52996634185e991696013e13">
+    <titulo>PalmOS-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/PalmOS-HOWTO.txt</texto>
+  </documento>
+  <documento id="5298f35e185e9916960073bf">
+    <titulo>Hellenic-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Hellenic-HOWTO.txt</texto>
+  </documento>
+  <documento id="529a07a0185e99169601b9c4">
+    <titulo>Printing-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Printing-HOWTO.txt</texto>
+  </documento>
+  <documento id="529922dd185e99169600ea22">
+    <titulo>DB2-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/DB2-HOWTO.txt</texto>
+  </documento>
+  <documento id="529a0c31185e99169601bc2b">
+    <titulo>Process-Monitor-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Process-Monitor-HOWTO.txt</texto>
+  </documento>
+  <documento id="529955a4185e9916960131da">
+    <titulo>Infrared-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Infrared-HOWTO.txt</texto>
+  </documento>
+  <documento id="52993f59185e991696010dbd">
+    <titulo>CPU-Design-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/CPU-Design-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299185e185e99169600dc2f">
+    <titulo>NIS-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/NIS-HOWTO.txt</texto>
+  </documento>
+  <documento id="529901d5185e99169600acb4">
+    <titulo>Shadow-Password-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Shadow-Password-HOWTO.txt</texto>
+  </documento>
+  <documento id="529a0fec185e99169601bd31">
+    <titulo>Software-RAID-0</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Software-RAID-0.txt</texto>
+  </documento>
+  <documento id="5299eb42185e99169601a0ae">
+    <titulo>TclTk-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/TclTk-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299037a185e99169600aef3">
+    <titulo>Keyboard-and-Console-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Keyboard-and-Console-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299288e185e99169600f07c">
+    <titulo>LDAP-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/LDAP-HOWTO.txt</texto>
+  </documento>
+  <documento id="5299b570185e991696018414">
+    <titulo>WWW-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/WWW-HOWTO.txt</texto>
+  </documento>
+  <documento id="5298ef73185e991696004e0b">
+    <titulo>Module-HOWTO</titulo>
+    <relevancia>37.61%</relevancia>
+    <texto>/home/radulfr/Dropbox/ARI_DEVELOP/Docs/Module-HOWTO.txt</texto>
+  </documento>
+</resultado>
+

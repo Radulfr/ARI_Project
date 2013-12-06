@@ -1,0 +1,1576 @@
+English-language GNU/Linux distributions on CD-ROM
+
+(formerly: The Linux distributions HOWTO)
+
+Martin S. Wheeler
+
+[http://www.startext.co.uk/] StarTEXT document engineering
+
+        Glastonbury
+        England, UK
+         msw@startext.co.uk
+      
+
+Copyright © 2001 by Martin S. Wheeler
+Revision History                                                             
+Revision v7.0    2000-01-31   Revised by: [mailto:msw@startext.co.uk]  msw   
+
+
+This document is intended to show prospective users or administrators of a
+GNU/Linux system the range of choices open to them when deciding on a
+distribution for the first time. It also aims to help experienced users track
+the state of the GNU/Linux distributions market. It emphatically does not aim
+to be a complete list of all GNU/Linux distributions for all platforms and in
+all languages. The focus is on popular English-language distributions;
+specifically compiled for the Intel platform; available on CD-ROM; and easily
+accessible to the first-time user.
+
+-----------------------------------------------------------------------------
+Table of Contents
+1. Introduction
+    1.1. Background
+    1.2. New versions of this document
+    1.3. Recent changes
+    1.4. Overview of the Linux market
+    1.5. Personal opinions
+   
+   
+2. Best-known distributions
+    2.1. Caldera OpenLinux
+    2.2. Debian GNU/Linux
+    2.3. Mandrake Linux
+    2.4. Red Hat Linux
+    2.5. Slackware Linux
+    2.6. S.u.S.E. Linux
+   
+   
+3. Other distributions
+    3.1. KRUD - Kevin's Red Hat Uber Distribution
+    3.2. Linux by Libranet
+    3.3. LinuxGT
+    3.4. Linux Pro
+    3.5. Trans-Ameritech Linuxware
+    3.6. Turbo Linux
+    3.7. xxxxx Linux
+   
+   
+4. Hall of Remembrance
+    4.1. Corel Linux
+   
+   
+5. Submissions for inclusion in this document
+    5.1. Types of submissions
+    5.2. How to submit
+    5.3. Submission guidelines
+   
+   
+6. Administrivia
+    6.1. Terms of use
+    6.2. Acknowledgements
+   
+   
+
+-----------------------------------------------------------------------------
+1. Introduction
+
+1.1. Background
+
+There is no one single authoritative master distribution of the GNU/Linux
+operating system software suites. Instead, there are many such distributions
+(over one hundred and sixty at the last count) ?? available over the net via
+anonymous FTP; by mail order from various emporia; directly from the shelves
+of your local bookshop or computer store; as a boxed set or as loose CD-ROMs;
+as an insert in the back of a book; or as a cover disk on specialist
+magazines.
+
+The purpose of this document is to provide short summaries of those
+English-language GNU/Linux CD-ROM distributions available as loose or as
+boxed CD-ROM sets (with or without manuals); and to provide pointers for the
+reader to find more information. Distributions in languages other than
+English also exist, but are outwith the scope of this document.
+
+The information presented here is in no way complete; i.e. there are
+certainly more English-language distributions than all those listed in this
+document. By the nature of open source software, anyone who changes anything
+in their GNU/Linux installation and then makes that particular version
+available to others can be said to be in some way creating a `distribution'.
+A document such as this has to choose somewhere to draw the line between what
+is, and what is not, suitable for consideration as a distinct distribution in
+its own right. The editors have chosen `available on CD' as their simple
+criterion.
+
+Note that this is by no means the authoritative definition of a distribution.
+There are numerous small distributions available on floppy disk that offer
+things the big distributions don't ?? not the least of which is smallness
+itself. A good list of such distributions is to be found at: [http://
+www.toms.net/] Tom's rescue and boot disk site; or the [http://
+www.fokus.gmd.de/linux-distrib-small.html] small distributions site.
+
+The rationale behind producing this document in the first place ?? given that
+there are very many similar texts to be found on the WWW at any one moment ??
+is to provide a distributable version of the same information, accessible by
+other than online means. (Not everyone who could use this information has
+access to a telephone line or to the web.)
+
+If you are associated with a CD-ROM distribution we don't list, please see 
+Section 5 near the end of this document for information on making a
+submission. It's easy to do and should take less than five minutes.
+
+For a more complete list of distributions (albeit with perhaps slightly less
+information on each), see the [http://www.linuxhq.com/dist-index.html] Linux
+HQ distributions list; or the [http://www.fokus.gmd.de/
+linux-distrib-full.html] full distributions site.
+
+Disclaimer: We make absolutely no guarantee as to the correctness of the
+information, prices, and ordering details given in this document. Check the
+date-last-modified field of each distribution to get an idea of its currency,
+then go to the vendor's web page for up-to-date information. Furthermore,
+unless otherwise stated, all GNU/Linux software comes with ABSOLUTELY NO
+WARRANTY.
+
+The editor tries to stick to facts in most of this document, but ??
+inevitably ?? has personal opinions on the state of the Linux market. You can
+read these under Section 1.5.
+
+Personal disclaimer: I [msw] have no financial connection with any Linux
+vendor, nor have I accepted any remuneration or perquisites from any vendor.
+No free disks for review; not even as much as a T-shirt. (But hey ?? I'm
+always open to offers. XXL.)
+-----------------------------------------------------------------------------
+
+1.2. New versions of this document
+
+This document will be regularly posted to the newsgroup comp.os.linux.answers
+The document is also archived on a number of Linux FTP sites, including
+metalab.unc.edu in pub/Linux/docs/HOWTO.
+
+You can also view the latest version of this document on the World Wide Web
+via the url [http://www.startext.co.uk/msw/NEW_Distributions-HOWTO/
+index.html] http://www.startext.co.uk/msw/NEW_Distributions-HOWTO/index.html.
+
+Feel free to mail any questions or comments about this document to the
+current editor, Martin Wheeler (msw@startext.co.uk). Please do not send
+general Linux questions or requests for help in choosing a distribution
+(unless you're willing to hire me at my commercial consultancy rates); I
+don't have time to deal with them; and I try to put everything I know about
+choosing a suitable distribution into this document.
+-----------------------------------------------------------------------------
+
+1.3. Recent changes
+
+- details of individual distributions brought up to date
+
+- text markup upgraded from DocBook 3.0 to DocBook 4.1
+
+- division of distributions into two lists
+
+- increased number of distributions covered
+
+- inclusion of inline images for company logos
+
+- added scope for inclusion of reviewers' remarks
+
+The editorship and maintenance of this document was taken over from Eric S.
+Raymond (esr@thyrsus.com) by Martin Wheeler in January 2001; and although
+much of the original text has been retained, all controversial statements and
+opinions should be considered solely those of the current editor.
+-----------------------------------------------------------------------------
+
+1.4. Overview of the Linux market
+
+In the beginning (say 1993), a GNU/Linux distribution was something you
+downloaded off the Internet onto floppies. Installation was a lengthy,
+laborious and error-prone process; repeated frustrations due to bad
+(magnetic-disk) media were common.
+
+Then came cheap CD-ROM drives, and the cheap-to-produce CD-ROM ?? a medium
+ideally suited for shipping large volumes of operating-system software at low
+cost. A whole mini-industry has now built up around commercial CD-ROM GNU/
+Linuxes; and because the vendors have the actual cash flow to fund support
+and marketing these days, they have come to dominate the Linux world. Debian
+is now the only significant non-commercial release; and despite the ease with
+which software may be downloaded from the internet these days, even it seems
+to be propagated to new users largely by the ubiquitous CD-ROM.
+
+(In all fairness, it should be noted here that the rise in popularity of GNU/
+Linux systems over the past five years has been due in no small measure to
+the increased number of applications packages bundled with each distribution
+?? from circa 400 in 1995 to just under 4,000 in 2000. What used to be
+distributable on a single CD is now usually spread over four or six disks.
+Downloading a `full' distribution is no longer a real option for most users,
+whether experienced or novice.)
+
+Most of the CD-ROM distributions (including Slackware, S.u.S.E. Debian and
+Red Hat) are still available for FTP from the home sites of their developers.
+But if you have a CD-ROM drive and a few euros to spare, you will have many
+more distributions and more support options to choose from (and you'll
+usually get some well-produced and useful paper documentation with it). For
+more on the details of installation, see the Linux Installation HOWTO,
+([http://www.linuxdoc.org/HOWTO/Installation-HOWTO/index.html] http://
+www.linuxdoc.org/HOWTO/Installation-HOWTO/index.html).
+
+Prices for CD-ROM distributions of Intel GNU/Linux software start at around 4
+or 5 euros for a single disk, and can go all the way up to EUR 100 for a
+boxed set, with manuals. (And those extra euros can buy real value.) Many
+vendors also sell subscription deals that will lower your cost-per-CD for
+regular updates over the subscription period. Prices may be even higher when
+commercial packages (e.g. graphics or word-processing applications) are
+bundled in with the basic distribution.
+
+Price correlates with features and quality pretty well (as one would expect
+in a very competitive market). I would personally recommend paying the few
+extra euros for a top-drawer original CD-ROM distribution; this will pay off
+in fewer installation and administration hassles down the road. (For example,
+installation of S.u.S.E. 7.0 from DVD now takes little over 20 mins on a
+fairly run-of-the-mill machine, with automatic detection of most network and
+video cards. Compare that with the one-and-a-half hours it took me to install
+my first copy of Linux-FT, which ?? at the time ?? I thought was a dream
+installation.)
+
+Making good choices is also much simpler than it used to be. In 1995-96 the
+Linux market underwent a serious shakeout, with only a very few commercial
+distributions emerging as leaders, while the weaker ones disappeared or
+stagnated. (My own personal favourite at the time ?? Linux-FT ?? went down
+without trace. RIP Unifix ?? welcome S.u.S.E.) The toll among general-purpose
+non-commercial distributions has been even fiercer. Essentially, only Debian
+(and derivatives) survive in this role.
+
+As a result, the three-tier structure of primary distribution builders,
+value-added repackagers, and bottom-feeding CD shovellers that used to define
+the market has nearly collapsed. To be competitive in the third millennium, a
+Linux vendor (whether commercial or non-commercial) has to offer reasonable
+support and behave like a primary distribution builder, whether it really is
+one or not.
+
+As long as you look for a recent freeze date though, it is pretty hard to get
+stuck with a duff distribution these days.
+-----------------------------------------------------------------------------
+
+1.5. Personal opinions
+
+[msw1]
+
+Martin Wheeler
+
+In this section, I present my own opinions, for what they're worth. However,
+there is no substitute for making your own evaluation, based on experience ??
+plus the data in this guide, of course. These opinions are intended more to
+show up any possible personal bias than as a guide to what anyone else should
+do.
+
+In the beginning was Slackware ?? usually to be found along with a few other
+goodies on the cover disks of the more enlightened magazines. But from the
+beginnings of the Linux (CD-ROM) industry circa 1993 until the autumn of
+1995, Yggdrasil was top distribution ?? it essentially founded the CD-ROM
+market in North America, then set the standard for everybody else. (In Europe
+of course, Slackware reigned.) The previous editor of this document, Eric
+Raymond, described how he used Yggdrasil, and recommended it over commercial
+System V versions for its "superior documentation, large collection of
+applications, and enlightened policy of sending free releases to open-source
+authors, then dedicating part of the price of each CD-ROM to financially
+supporting free software". Unfortunately, Yggdrasil hasn't issued a new
+release since 1995, and they've now been left well behind by the market.
+
+Personally, after playing with Slackware for a while, I toyed with the idea
+of Yggdrasil, but instead moved on to a distribution which gave me what I
+wanted at the time ?? my own personal webserver; an X interface; and enough
+development and SGML editing tools to keep me happy for years. (Plus a rather
+nice system which loaded and unloaded applications for me automatically,
+according to how much I used them.) Unfortunately, Linux-FT was not to
+endure; and in 1996 I finally settled on Debian as my ideal distribution, as
+I had come to want more, and was also a far more experienced user by then.
+There is an important point to be noted by first-time buyers here ?? go for
+whatever distribution gives you what you most want at the time; then change
+with your needs. The financial costs incurred in doing this are negligible.
+
+In previous versions of this document, Eric Raymond wrote: "I now run Red Hat
+Linux and am quite satisfied with it. They have successfully created a
+de-facto standard in distribution packaging with RPM (now also used by SuSE
+and Mandrake, among others). They've made most of the right moves at the
+right times and I consider them the current market leader."
+
+This may still be true for North America; but in Europe Red Hat is rapidly
+falling into third place behind the very much more popular S.u.S.E. and
+Mandrake distributions; and the "standard" RPM application packaging is
+turning out to be not quite as standard as one might wish for ?? as RPMs from
+one distribution do not necessarily always transfer to another.
+
+Eric himself has now given up vanilla Red Hat and has written to tell me he's
+been running the KRUD version for the last year and is very happy with it. It
+just goes to show...
+
+However, one of the major influences in decision-making for most newcomers to
+GNU/Linux is not so much the number of useful packages included with any
+distribution, but the perceived sexiness of the user interface it uses as its
+default. (All distributions will run all X desktop environments and window
+managers, given the right hardware resources ?? but not all distributions are
+set to default on startup to the most attractive screen presentation for the
+novice user.) Be aware of this when evaluating different distributions ?? it
+is surprising how many potential new users interpret the sizzle as the steak.
+
+But if you're ideologically wedded to using a non-commercial distribution,
+Debian seems to be the clear choice: the only one left with a serious support
+team behind it, and a rock-solid package management system, allowing
+trouble-free translation to and from other package management systems.
+
+Certainly, in my own experience, Debian suits my personal needs best.
+Nevertheless, despite any efforts I might make to persuade them otherwise, my
+commercial clients invariably plump for S.u.S.E. or Mandrake as their choice
+of first distribution. (As ever, it's a case of horses for courses.)
+
+These opinions should certainly not be interpreted as an unconditional
+endorsement; different Linux distributions are optimized for different needs,
+and yours may well be best served by some other distribution (especially if,
+unlike us, you're mainly a DOS user and are looking for a distribution tuned
+for dual-boot systems and being launched from DOS).
+
+Furthermore, industry standing is volatile. By the time you read this,
+Debian, S.u.S.E. or Red Hat may well have fallen out of favour or fashion,
+and been displaced by hungrier newcomers offering more and better features.
+(And the obligatory sexier graphical interface of course.)
+-----------------------------------------------------------------------------
+
+2. Best-known distributions
+
+(listed in alphabetical order)
+
+The handful of distributions listed here are those which are most widely
+known by the general public, or referred to most often by the specialist
+media, or those most commonly found in retail outlets in English-speaking
+countries. What exact sales percentage of the total GNU/Linux distributions
+market they represent is unknown ?? but it is certainly extremely high.
+Between them, they account for almost all that the (generally uninformed)
+public knows about "Linux".
+-----------------------------------------------------------------------------
+
+2.1. Caldera OpenLinux
+
+Name:
+    Caldera OpenLinux
+   
+Distributor:
+                Caldera, Inc.
+                633 South 550 East
+                Provo, Utah 84606
+        
+   
+                E-mail: [mailto:info@caldera.com] info@caldera.com
+                WWW: [http://www.caldera.com/] http://www.caldera.com/
+                FTP: [ftp://ftp.caldera.com] ftp://ftp.caldera.com
+                Vox: (801)-377-7678
+                Fax: (801)-377-8752
+        
+   
+Provider's description:
+    Caldera logo
+   
+    Caldera is shipping OpenLinux 1.2 in a three-tiered family of products:
+    OpenLinux Lite, OpenLinux Base, and OpenLinux Standard.
+   
+    OpenLinux Lite is a freely available evaluation of the OpenLinux product
+    (it includes a 90-day evaluation of the Caldera integrated desktop ?? the
+    full licensed version of the desktop is included in the Base and Standard
+    products). OpenLinux Lite can be downloaded from Caldera's ftp site, or
+    obtained on CD for the cost of shipping. It is also designed for use by
+    book and software publishers to provide a commercially stable Linux
+    offering with their books and software products.
+   
+    OpenLinux Base contains everything that is in Lite plus it is a complete,
+    easy-to-install Linux operating system, with integrated desktop, Internet
+    client and server components, and Intranet connectivity. OpenLinux Base
+    includes Netscape Navigator and full documentation.
+   
+    OpenLinux Standard includes what is in Base plus more high-end, name
+    brand, commercial software components (such as Netscape FastTrack Web
+    Server, Netscape Navigator Gold Web browser and authoring tools, ADABAS D
+    database, StarOffice productivity suite, Caldera OpenDOS, and NetWare
+    client and administration tools).
+   
+    All three tiers of the OpenLinux 1.2 release are currently available.
+   
+    With Caldera OpenLinux, you can see a whole world of powerful new
+    computing, even the power of a UNIX workstation on your PC! By using a
+    Linux kernel, OpenLinux gives you speed and stability that compare to
+    systems costing thousands of dollars. Open Linux also gives you:
+   
+      + Real multi-tasking runs many text or graphical applications at once;
+        no application can cause another to crash, unlike less robust
+        systems.
+       
+      + The Linux 2.0 kernel gives super-fast TCP/IP access to the Internet,
+        plus loadable device drivers, for the most efficient use of your
+        system resources.
+       
+      + Easy-to-follow, quick installation with menu-based choices and
+        auto-detection of your hardware make installation a snap on most
+        systems. The Getting Started Guide (included) provides a step-by-step
+        illustrated procedure, with troubleshooting tips.
+       
+   
+    No other Linux system includes a complete, integrated desktop interface
+    with configuration tools and graphical editor. Its powerful drag-and-drop
+    capabilities come pre-configured with thousands of icons and application
+    settings. The Desktop provides a convenient place where you can store
+    your favorite programs and data files for instant access. The Desktop
+    gives you:
+   
+      + Drag-and-drop launching of programs with data files.
+       
+      + An integrated graphical text editor.
+       
+      + Easy access to an array of powerful system configuration tools.
+       
+      + A configurable icon bar, custom layouts, and preference settings.
+       
+      + Powerful file management using drag-and-drop or graphical dialogs.
+       
+   
+Internet access:
+                WWW: [http://www.caldera.com/] http://www.caldera.com/
+                FTP: [ftp://ftp.caldera.com] ftp://ftp.caldera.com
+                
+   
+Ordering:
+    By e-mail with PGP key, by phone, by fax, or by conventional mail. Full
+    ordering details are at [http://www.caldera.com/mpro/orinfo/
+    orderinfo.html] http://www.caldera.com/mpro/orinfo/orderinfo.html.
+   
+Support:
+    Caldera is one of the only Linux distributors to offer E-mail and
+    telephone support. OpenLinux Base (E-mail only) and Standard (Telephone
+    and E-mail) users are fully supported (Standard users receive 5 free
+    incident calls during the first 30 days). There is no technical support
+    for the Lite product.
+   
+    OpenLinux Base and Standard ship with full licensed versions of the
+    Caldera Desktop, which do not expire. OpenLinux Lite ships with a 90-day
+    evaluation version of the Desktop.
+   
+Last freeze date:
+   
+Entry last modified:
+    21 January 2001
+   
+Reviewer's comments:
+   
+
+-----------------------------------------------------------------------------
+2.2. Debian GNU/Linux
+
+Name:
+    Debian GNU/Linux
+   
+Distributor:
+                Software in the Public Interest, Inc.
+                PO Box 1326
+                Boston, Ma. 02117 USA
+        
+   
+                Net: [mailto:info@debian.org] info@debian.org
+                WWW: [http://www.debian.org/] http://www.debian.org/
+                FTP: [ftp://ftp.debian.org/debian] ftp://ftp.debian.org/
+    debian
+        
+   
+Provider's description:
+    Debian logo
+   
+    Debian GNU/Linux is the result of a volunteer effort to create a
+    high-quality non-commercial Linux distribution. Debian GNU/Linux 2.2 is a
+    complete and fully-functional Unix-compatible operating system for the
+    personal computer. It contains around 4000 packages, making it by far the
+    largest free software distribution.
+   
+    Debian GNU/Linux is available for the IBM PC architecture (386/486/
+    Pentium), m68k, SPARC, Alpha, PowerPC, and ARM. Ports to MIPS, HP
+    PA-RISC, IA64 and GNU/Hurd are under way.
+   
+    Debian GNU/Linux is an easy-to-upgrade distribution that consists of
+    freely redistributable software from a number of different sources and
+    systems. Non-free packages may also obtained, making Debian a
+    well-rounded system.
+   
+    The benefits of Debian GNU/Linux are its upgradability, well-defined
+    dependencies between packages, and its open development. It is the only
+    GNU/Linux distribution that is being developed co-operatively by many
+    individuals over the Internet, in the same spirit as the Linux kernel and
+    other open-source operating systems. More than 500 package maintainers
+    are working on over 5000 packages and improving Debian GNU/Linux. A
+    sophisticated bug tracking system allows users to easily report bugs and
+    security concerns which are quickly dealt with by the Debian community. A
+    command-line tool, 'apt-get', can be used to dynamically upgrade your
+    system from the large Debian archive network.
+   
+    Debian GNU/Linux is a very dynamic distribution, although it does prefer
+    well-tested stability to having the very latest available. Major releases
+    are generally made about every year, although the Debian archives are
+    updated daily; and upgrading discrete elements of the system is a common
+    and supported operation.
+   
+    For more information about Debian GNU/Linux, please visit our World Wide
+    Web page at [http://www.debian.org/] http://www.debian.org/. There is
+    also a book, Running Debian GNU/Linux, from O'Reilly & Associates.
+   
+    If you're interested in joining this project, you are invited to
+    subscribe to either debian-user@lists.debian.org, or
+    debian-devel@lists.debian.org by sending a mail to [mailto:
+    debian-user-request@lists.debian.org]
+    debian-user-request@lists.debian.org (or [mailto:
+    debian-devel-request@lists.debian.org] debian-devel-request respectively)
+    with the word "help" in the subject line.
+   
+Internet access:
+    Debian GNU/Linux is available for download via anonymous FTP or HTTP; see
+    [http://www.debian.org/distrib/ftplist/] http://www.debian.org/distrib/
+    ftplist/.
+   
+Ordering:
+    A number of [http://www.debian.org/distrib/vendors/] vendors can provide
+    CD-ROMs or snapshots.
+   
+Support:
+    Aside from self-serve [http://www.debian.org/support/] support via
+    mailing lists, IRC, or the online Bug Tracking System, there is also a
+    number of [http://www.debian.org/consultants/] consultants providing
+    support.
+   
+Last freeze date:
+    5 December 2000 (2.2r2)
+   
+Entry last modified:
+    31 January 2001
+   
+Reviewer's comments:
+   
+
+-----------------------------------------------------------------------------
+2.3. Mandrake Linux
+
+Name:
+    Mandrake Linux
+   
+Distributor:
+                MandrakeSoft
+                Daniel Morales - MandrakeSoft 818.834.9860
+                Caroline Carmagnol - Alizé Public Relations 650.323.1607
+                <mandrake@linux-mandrake.com>
+        
+   
+                Net: [mailto:mandrake@linux-mandrake.com]
+    mandrake@linux-mandrake.com (orders)
+                WWW: [http://www.linux-mandrake.com] http://
+    www.linux-mandrake.com
+                Vox: 818.834.9860
+        
+   
+Provider's description:
+    mandrake logo
+   
+    Mandrake is inspired by Red Hat(tm) Linux, with many improvements and
+    pre-configured applications which make it easier to use for beginners,
+    and faster for everyone.
+   
+    Mandrake is available both in GPL Edition and in the PowerPack Edition
+    which includes 5 CDs and commercial applications. The GPL Edition CD
+    (base system and applications) is freely available from the Internet as
+    an iso image.
+   
+    Mandrake 6.0 won two LinuxWorld Editors' Choice Awards and was a runner
+    up at LinuxWorld Expo, San Jose, CA in August 1999:
+   
+     1. Best Linux Product of the Year.
+       
+     2. Best Distribution/Server.
+       
+     3. finalist for Best Distribution/Client.
+       
+   
+    Mandrake 6.1 (Helios) features:
+   
+     1. Linux-Kernel: 2.2.13 (pre4)
+       
+     2. XFree86: 3.3.5
+       
+     3. Glibc: 2.1.1
+       
+     4. RPM: 3.0.3
+       
+     5. Bash: 2.03
+       
+     6. KDE: 1.1.2 (with Mandrake customization)
+       
+     7. Gnome: built from 1.0.4->1.0.14 versions (with Mandrake
+        customization)
+       
+     8. Enlightenment 0.16-dev5, Windowmaker 0.60, AfterStep 1.7.111, XFCE
+        3.0.2, IceWM 0.9.48
+       
+   
+    and many applications such as Apache, MySQL etc.
+   
+    In Mandrake, packages have been compiled with CPU optimizations for
+    pentium-class (intel, amd, cyrix, winchip...) and higher processors
+    resulting in speed improvements up to 30%.
+   
+Internet access:
+    [http://www.linux-mandrake.com/en/ftp.php3] http://www.linux-mandrake.com
+    /en/ftp.php3
+   
+Ordering:
+    Free download available from Internet. The Linux-Mandrake PowerPack price
+    is typically between $45 and $50. Payment method depends on the
+    distributor. Distributor lists available at: [http://
+    www.linux-mandrake.com/en/fsinglecd.php3] http://www.linux-mandrake.com/
+    en/fsinglecd.php3.
+   
+Support:
+    The PowerPack is provided with 100 days of support by e-mail.
+   
+    Several specialized mailing-lists and a USENET newsgroup
+    (alt.os.linux.mandrake) are available for support between users.
+   
+    Bynari Systems Group and LinuxCare also provide complete support for
+    Mandrake.
+   
+Last freeze date:
+    Sep 17, 1999 for Mandrake 6.1 (Helios). Update frequency: about 4 months.
+   
+Entry last modified:
+    18 September 1999
+   
+Reviewer's comments:
+   
+
+-----------------------------------------------------------------------------
+2.4. Red Hat Linux
+
+Name:
+    Red Hat Linux
+   
+Distributor:
+        Red Hat Software
+                3201 Yorktown Rd, Suite 123 DeKalb Center
+                Durham, NC 27713
+        
+   
+                Vox: (800) 546-7274 or (919) 572-6500
+                Fax: (919) 572-6726
+                Net: [mailto:redhat@redhat.com] redhat@redhat.com
+                WWW: [http://www.redhat.com/] http://www.redhat.com/
+                FTP: [ftp://ftp.redhat.com] ftp://ftp.redhat.com
+        
+   
+Provider's description:
+    Red Hat logo
+   
+    Red Hat 6.1 is based on the 2.2 kernel and is available for Intel, Sparc
+    and Alpha platforms.
+   
+    Four installation innovations make Red Hat the easiest Linux to install
+    ever. Our graphical installation mode brings you straight up into X for
+    most of the installation. Our boot disk creation script eases selection
+    of the proper boot disk, and it saves your existing network configuration
+    information and XF86Config so you don't have to configure TCP/IP or X!
+    Our FTP install allows you to install simply by downloading 3 floppy disk
+    images ?? the rest is done automatically! And finally, the installation
+    includes seamless support for PCMCIA devices ?? install Red Hat on your
+    laptop as easily as on your desktop machine!
+   
+    After installing Red Hat Linux once, you will never need to reinstall
+    Linux again! The new RPM packaging system is sophisticated enough to
+    allow upgrading to new Red Hat releases without reinstalling your system
+    - no partitioning, no backing up all your files, no headaches.
+   
+Internet access:
+   
+Ordering:
+    Available directly from Red Hat Software and most distributors of Linux
+    related products. Please contact Red Hat Software for ordering details
+    (on-line ordering is available through Red Hat's Web). Suggested retail
+    price for the Standard version is $29.95; for the Professional (server)
+    version $149.95; for the Deluxe version $79.95.
+   
+Support:
+   
+Last freeze date:
+    Unknown.
+   
+Entry last modified:
+    1 Nov 1999.
+   
+Reviewer's comments:
+    The big selling point of this distribution is RPM, the Red Hat Package
+    Manager. This piece of software is a remarkable advance; it allows you to
+    cleanly install and de-install applications and operating-system
+    components, including the kernel and OS base itself. RPM is now used as
+    well by essentially all other distributions except Debian. [esr]
+   
+
+-----------------------------------------------------------------------------
+2.5. Slackware Linux
+
+Name:
+    Slackware Linux
+   
+Distributor:
+                Walnut Creek CDROM
+                4041 Pike Lane, Suite D
+                Concord, CA  94520
+        
+   
+                Net: [mailto:info@cdrom.com] info@cdrom.com (information),
+                     [mailto:order@cdrom.com] order@cdrom.com (orders),
+                     [mailto:support@cdrom.com] support@cdrom.com (support).
+                
+   
+Provider's description:
+    Slackware logo
+   
+    Ftp.cdrom.com is the home of Slackware Linux. We are the publishers of
+    the Official Slackware Linux CDROM. Our distribution is a 4-disc set with
+    the current version being Slackware 96. The current disc is based on the
+    2.0.34 kernel.
+   
+    Slackware Linux is a full-featured distribution of the Linux operating
+    system designed for 386/486 computers with a 3.5" floppy and CD-ROM
+    drive.
+   
+Internet access:
+                WWW: [http://www.cdrom.com/titles/os/slack96.htm] http://
+    www.cdrom.com/titles/os/slack96.htm
+                FTP: [ftp:ftp.cdrom.com/pub/linux/slackware] ftp:
+    ftp.cdrom.com/pub/linux/slackware
+        
+   
+Ordering:
+    The cost of the CD-ROM set from Walnut Creek is $39.95.
+   
+Support:
+   
+Last freeze date:
+    July 1998 (3.5)
+   
+Entry last modified:
+    13 August 1998.
+   
+Reviewer's comments:
+   
+
+-----------------------------------------------------------------------------
+2.6. S.u.S.E. Linux
+
+Name:
+    S.u.S.E. Linux
+   
+Distributor:
+                S.u.S.E., Inc.
+                458 Santa Clara Ave
+                Oakland CA 94610 USA
+        
+   
+                Net: [mailto:info@suse.com] info@suse.com
+                WWW: [http://www.suse.com] http://www.suse.com/
+                FTP: [ftp://ftp.suse.com] ftp://ftp.suse.com
+                Vox: +1-510-835-7873
+                Fax: +1-510-835-7875 fax
+        
+   
+Provider's description:
+    S.u.S.E. logo
+   
+    S.u.S.E. Linux offers users of all levels, from novice to expert, quick
+    and easy entry into the world of Linux and Unix. Resources such as a
+    menu-driven installation from CD-ROM, a modular boot diskette, 400-page
+    reference book and S.u.S.E.'s own system administration tool YaST, allow
+    one to quickly get Linux installed and running, and to keep it running
+    smoothly.
+   
+    Furthermore, S.u.S.E. offers a series of supported X servers, which
+    support the newest graphics cards. These servers are created in
+    co-operation with the XFree86 (tm) development team. See the following
+    url for more details: [http://www.suse.de/XSuSE/] http://www.suse.de/
+    XSuSE/.
+   
+    New in S.u.S.E. Linux 5.3:
+   
+      + Kernel 2.0.35
+       
+      + KDE 1.0
+       
+      + GIMP 1.0
+       
+      + SaX (SuSE advanced XF86 configuration tool)
+       
+   
+    Quick overview of other features:
+   
+      + The Linux OS, over 875 software packages, including complete sources
+        and live file system on 4 CD-ROMs
+       
+      + 400 page reference book
+       
+      + Packages in RPM format; TGZ packages installable
+       
+      + System V compatible boot concept, compliance with file system
+        standard
+       
+      + Installation and administration utility 'YaST' configures network,
+        ISDN, e-mail, printer, X Window System
+       
+      + S.u.S.E. X servers which support new graphics cards
+       
+      + Administration of file systems, users, groups
+       
+      + Automatic configuration of several window managers
+       
+      + Online help system and documentation
+       
+      + Demo mode, either directly from CD-ROM, or on DOS partition
+       
+   
+Internet access:
+   
+Ordering:
+    You can download from [ftp://ftp.suse.com/pub/SuSE-Linux] ftp://
+    ftp.suse.com/pub/SuSE-Linux. For the CD-ROM with support, order vphone,
+    secure WWW order form, fax, or post. Price is $49.95, or $34.95 per
+    edition by subscription. Use order code LSUE520 for the English version,
+    LSUD520.
+   
+    Also available: OSF Motif 2.1 for $129.95 (price for update to be
+    determined; order code: LMEA210
+   
+Support:
+    60 days of free installation support are included with each purchase of
+    S.u.S.E. Linux. See the web page for contact info and conditions.
+   
+Last freeze date:
+    Unknown.
+   
+Entry last modified:
+    13 Aug 1998 (5.3)
+   
+Reviewer's comments:
+   
+
+-----------------------------------------------------------------------------
+3. Other distributions
+
+All these distributions are available on CD-ROM (some of the non-commercial
+ones only show up on network-archive snapshots). Most of these are available
+for free over the network (but the commercial ones won't support you if you
+buy this way). They are custom-assembled, rather than just being
+re-packagings of a pre-existing network release.
+
+They are listed in alphabetical order.
+-----------------------------------------------------------------------------
+
+3.1. KRUD - Kevin's Red Hat Uber Distribution
+
+Name:
+    KRUD
+   
+Distributor:
+               tummy.com, ltd
+               200A North College Avenue
+               Fort Collins CO 80524
+              
+   
+               Net: [mailto:info@tummy.com] info@tummy.com
+               WWW: [http://www.tummy.com/krud/] http://www.tummy.com/krud
+               FTP: [ftp://ftp.tummy.com] ftp://ftp.tummy.com
+               Vox: (970)-494-0355
+               Fax: (408)-490-2728
+              
+   
+Provider's description:
+    KRUD logo
+   
+    KRUD is a monthly updated distribution based on Red Hat. It includes all
+    of the current Red Hat distribution with full errata, and is available by
+    subscription or as a single CD. Also included are a variety of useful
+    packages for Linux, including several security-related packages such as
+    ssh and isinglass. These additions are hand-selected by the author of the
+    Linux Security HOWTO. Requires standard RedHat-compatible hardware.
+    Currently, KRUD is not for export because it contains crypto software.
+   
+Internet access:
+    Available on CD-ROM only because of export restrictions.
+   
+    http://www.tummy.com/krud/
+   
+Ordering:
+    KRUD is available on CD. You can purchase a 12 month subscription for
+    $65, a single issue for $7. Special rates available for subscription
+    renewals. International shipping available.
+   
+    [https://www.tummy.com/krud/onlineorder.html] https://www.tummy.com/krud/
+    onlineorder.html (online) [http://www.tummy.com/krud/mailorder.html]
+    http://www.tummy.com/krud/mailorder.htm (by mail) $7/US each $65/US 12
+    issue subscription (monthly update). Visa/Mastercard/Discover/Amex credit
+    cards accepted. University and large business purchase orders. Postal
+    money orders are also accepted.
+   
+Support:
+    tummy.com is a full service Linux consulting firm. KRUD support is
+    available on an hourly or contract basis from tummy.com, Ltd. Rates start
+    at $150/hour.
+   
+    KRUD helps you keep up with the flood of errata and package upgrades by
+    offering a monthly CD-ROM subscription delivered to you at a reasonable
+    price.
+   
+Last freeze date:
+    KRUD is updated monthly. Most recent version is dated 2001-01-01.
+   
+Entry last modified:
+    2001-01-30
+   
+Reviewer's comments:
+    (coming shortly)
+   
+
+-----------------------------------------------------------------------------
+3.2. Linux by Libranet
+
+Name:
+    Linux by Libranet
+   
+Distributor:
+                Libra Computer Systems Ltd.
+                1860 Langworthy Street
+                North Vancouver, BC
+                V7K 1N8
+        
+   
+                Net: [mailto:sales@libranet.com] sales@libranet.com (orders)
+                Net: [mailto:support@libranet.com] support@libranet.com 
+    (support)
+                Net: [mailto:faq@libranet.com] faq@libranet.com (faq)
+                WWW: [http://www.libranet.com/] http://www.libranet.com/
+        
+   
+Provider's description:
+    Libranet logo
+   
+    Based on the Debian distribution, it allows users to start with an
+    already configured desktop complete with the most commonly used
+    applications. The simple installation gets the system up and running
+    easily. This is a major benefit to those new to Linux and a great
+    time-saver for the experienced.
+   
+Internet access:
+     
+   
+Ordering:
+    Available on CD for intel i386 and higher compatibles. Order via the web
+    at http://www.libranet.com or fax/mail order One year free support via
+    email and fax.
+   
+Support:
+    The Linux by Libranet Desktop brings Debian, traditionally the choice of
+    developers, to the desktop user.
+   
+Last freeze date:
+    Updated CD about every 4 months.
+   
+Entry last modified:
+    1 November 1999
+   
+Reviewer's comments:
+     
+   
+
+-----------------------------------------------------------------------------
+3.3. LinuxGT
+
+Name:
+    LinuxGT
+   
+Distributor:
+                Grey Technology
+                PMB 205
+                2479 Murphreesboro Rd.
+                Nashville, TN 37217
+        
+   
+                Net: [mailto:rick@greysite.com] rick@greysite.com (orders)
+                WWW: [http://www.greysite.com/] http://www.greysite.com/
+                FTP: [ftp://metalab.unc.edu/pub/Linux/distributions/linuxGT]
+    ftp://metalab.unc.edu/pub/Linux/distributions/linuxGT
+        
+   
+Provider's description:
+    LinuxGT logo
+   
+    LinuxGT is based in the Linux 2.2 kernel, available for Intel only at
+    this point, a PPC and SPARC are on the way! With a simple, to the point
+    installation, we believe it is the easiest to get running server
+    solutions available today! Creating a boot disk is a simple click of a
+    button (from Windows), or running a simple script (DOS/Linux). Other
+    installation methods are via ftp, http, NFS, or from your existing hard
+    disk partition. By following the steps in the QuickStart Guide, you can't
+    go wrong, most people won't NEED the Guide if they have ANY familiarity
+    with Linux. Further product information can be found at our website
+    (http://www.greysite.com) or via e-mail.
+   
+Internet access:
+     
+   
+Ordering:
+    Available through Grey Technologies, GT Partners, and Distribution
+    Vendors. Please contact Grey Technology for ordering details (on-line
+    ordering is available through GreySite.Com). Suggested retail price is
+    for the Intel Server version is $dollar;24.95. Other platforms will be
+    priced at time of availability.
+   
+Support:
+    Technical support is available via telephone, e-mail, chatroom, or online
+    Web Forum.
+   
+Last freeze date:
+    24 Jun 1999
+   
+Entry last modified:
+    24 Jun 1999
+   
+Reviewer's comments:
+     
+   
+
+-----------------------------------------------------------------------------
+3.4. Linux Pro
+
+Name:
+    Linux Pro
+   
+Distributor:
+                WorkGroup Solutions, Inc.
+                P.O. Box 460190
+                Aurora, CO 80046-0190
+        
+   
+                Vox: (303)-699-7470
+                Fax: (303)-699-2793
+                Net: [mailto:info@wgs.com] info@wgs.com (orders)
+                FTP: [ftp://ftp.wgs.com/pub2/wgs] ftp://ftp.wgs.com/pub2/wgs
+        
+   
+Provider's description:
+    Linux PRO logo
+   
+    The charter of the WGS Linux Pro CD is different from all other
+    distributions currently on the market. We are actively pursuing
+    penetration into the commercial marketplace for Linux. Everything we do
+    is aimed at increasing the size of the Linux community, and helping Linux
+    to become THE one true operating system, not just an operating system.
+   
+    WGS Linux Pro consists of our Main "Stable" Linux CD, for which we select
+    what we consider to be the best Linux distribution available. Then we
+    make bug fixes & minor enhancements. This CD often contains software
+    older than the latest, under the theory that "the latest is not always
+    the greatest". Together with this approach we provide technical support
+    as well as support agreements. For this reason WGS Linux Pro is
+    considered a primary Linux distribution. Optionally, and in addition to
+    our primary CD, we supply supplemental CDs containing all the latest
+    Linux software (including current archives of the tsx-11, metalab, and
+    Red Hat sites). Virtually anything you will get with anyone's Linux
+    product can be found on these supplemental CDs. We continually add more
+    to these supplemental CDs as software becomes available. Even with all
+    this, pricing on our product line is very favorable when correctly
+    compared to other Linux distributions. Also optional (included with Linux
+    Pro+) is a professionally produced and printed manual containing the
+    Linux documentation project and more!
+   
+    Current version is 4.0a; kernel is 1.2.13 with installable 2.0.x on the
+    CD.
+   
+Internet access:
+    Look in [http://www.wgs.com/] http://www.wgs.com/ for a list of WGS
+    products, and latest information on the CD-ROM.
+   
+Ordering:
+    WGS Linux Pro is available on CD from dealers and distributors worldwide,
+    and soon from our FTP site.
+   
+    You may call, fax, email, or mail us, to purchase, or request additional
+    information. We will be happy to respond to any question you have. We
+    accept American Express, Visa, Discover, and MasterCard, or purchase
+    orders with approval of credit.
+   
+Support:
+    Complete information is available on our FTP site.
+   
+    WGS publishes a free E-Mail newsletter on Linux and FlagShip to which you
+    may subscribe by just emailing us your request.
+   
+    In addition we carry Motif, FlagShip, A line of books, and other products
+    to make your experience with Linux more complete and fulfilling. Check us
+    out!
+   
+Last freeze date:
+    1 October 1996.
+   
+Entry last modified:
+    13 March 1997
+   
+Reviewer's comments:
+    They describe their current distribution as "Red Hat 3.03 plus".
+   
+
+-----------------------------------------------------------------------------
+3.5. Trans-Ameritech Linuxware
+
+Name:
+    Linuxware
+   
+Distributor:
+              Trans-Ameritech
+              2342A Walsh Avenue
+              Santa Clara, CA 95051
+              
+   
+              Net: [mailto:info@trans-am.com] info@trans-am.com
+              WWW: http://www.trans-am.com
+              Vox: (408)-727-3883
+              Fax: (408)-727-3882
+              BBS: (408)-980-9840
+              
+   
+Provider's description:
+    Linuxware logo
+   
+    Trans-Ameritech has published 10 releases of Linux by early 1997.
+    Traditionally, Trans-Ameritech has set new standards for combining ease
+    of use and straightforward installation, even for a first-time user, with
+    its line of LinuxWare CD-ROMs. This is a flexible, easy-to-install
+    operating system geared toward those interested in learning Unix as well
+    as technical people, students and home PC users.
+   
+      + New Linux users will appreciate a Windows-based set up program from
+        the CD.
+       
+      + To minimize the possibility of hardware conflicts many extra kernels
+        are provided for different configurations. They are usable for
+        installation and normal operation.
+       
+      + Many on-line documents are provided for quick reference, including
+        the Linux Documentation Project files in source, dvi and ps formats.
+       
+   
+    Many applications are included:
+   
+      + MS-Windows based X configuration program
+       
+      + C/C++,Pascal and Ada compilers as well as converters fron Fortran
+       
+      + TCP/IP networking, UUCP, SLIP, CSLIP, PPP
+       
+      + Internet access with binaries and sources for FTP, Telnet, News and
+        E-mail
+       
+      + Multiple terminals and X-Windows environment
+       
+      + Gnu and international versions of the ispell spell-checker
+       
+      + The communications apps: term, minicom, Seyon (X-Windows based)
+       
+      + Editors: elvis (vi clone), joe, jove, Emacs
+       
+      + PostScript clone ghostscript
+       
+      + Object oriented GNU Smalltalk and the Smalltalk interface to X
+       
+      + TCL/Tk (Powerful scripting language with Motif-like X interface)
+       
+      + Programs for electrical engineers and ham enthusiasts
+       
+      + Interviews libraries,include files and doc Word-processor and idraw
+        drawing program
+       
+      + Typesetting: TeX, LaTeX, xdvi, dvips, Metafont, groff
+       
+      + Andrew multimedia word processor with hyperlinks
+       
+      + FAX send and receive on either class 1 or class 2 fax modems
+       
+      + DOOM for game enthusiasts
+       
+   
+    All the sources are available on the CD-ROM. The often needed sources are
+    uncompressed and can be used directly from the CD-ROM.
+   
+    An uncompressed Linux filesystem is available for references and disk
+    space conversaion. You can run programs directly from the CD-ROM! There
+    is a large info directory for on-line reference and many manpages.
+   
+    For hacker's reference, uncompressed FreeBSD and netBSD sources are
+    provided.
+   
+    Our distribution is targeted for Windows and DOS users who want an easy
+    migration path upwards, rather than for UNIX experts.
+   
+Internet access:
+     
+   
+Ordering:
+    Email orders are taken at [mailto:order@trans-am.com] order@trans-am.com
+   
+    The price for our current release of LinuxWare 2.5 is $19.95
+   
+    The price for a package order: LinuxWare 2.5,Supplement 5 and Supplement
+    4 (Ultimate LinuxWare Bundle) in one shipment is $30
+   
+    If you order with a credit card (VISA, MC, AmEx, Discovery), please,
+    indicate the card number, expiration date and your mailing address.
+   
+    Shipping and handling in US: single CD-ROM or Ultimate LinuxWare Bundle
+    is $5(first class US mail).
+   
+    Overseas shipping is $8 for single CD-ROM , $12 for the bundle.
+   
+    COD is available in the US only for $4.50. California residents, please
+    add 7.75% sales tax.
+   
+    Annual subscription (4 releases) is available for $80 plus S&H (note:
+    there are 4 shipments in a subscription). Example: subscription in US is:
+    $80+$5x4=$100. Subscription in Europe/Japan etc. $80 + $8x4 = $112.
+   
+Support:
+    If you have any further questions,please contact us through E-mail:
+    info@trans-am.com or order@trans-am.com.
+   
+Last freeze date:
+    January 1997 (Supplement 5)
+   
+Entry last modified:
+    13 August 1998
+   
+Reviewer's comments:
+     
+   
+
+-----------------------------------------------------------------------------
+3.6. Turbo Linux
+
+Name:
+    Turbo Linux
+   
+Distributor:
+              TurboLinux, Inc.
+              2000 Sierra Point Parkway
+              Suite 401
+              Brisbane, CA 94005
+              
+   
+              Net: [mailto:info@turbolinux.com] info@turbolinux.com (orders)
+              WWW: [http://www.turbolinux.com/] http://www.turbolinux.com/
+              FTP: [ftp://ftp.turbolinux.com/] ftp://ftp.turbolinux.com/
+              Vox: (650)-244-7777
+              Fax: 650-244-7766
+              
+   
+Provider's description:
+    Turbo Linux logo
+   
+    TurboLinux makes a suite of high-performance Linux products for the
+    workstation and server markets. Our products are available from our Web
+    site, at more than 3,000 retail stores in North America and from our
+    value-added reseller partners around the world. Our products:
+   
+    Workstation 6.0
+        TurboLinux Workstation 6.0 is your high-performance choice for Linux
+        on the desktop. The powerful office productivity suite StarOffice
+        gives you full Microsoft Office compatibility and Netscape gets you
+        quickly online for e-mail and Web surfing.
+       
+    Server 6.0
+        TurboLinux Server 6.0, completely re-engineered as a secure,
+        high-performance backend server for business workgroups in the
+        enterprise, now includes robust e-commerce software for
+        business-to-business transactions.
+       
+    TurboCluster Server 4.0
+        Build affordable, scalable and available server clusters (25+ cluster
+        nodes!) with TurboCluster Server 4.0, voted Best Web Solution by the
+        editors of Linux Journal. TurboCluster Server, also named Corporate
+        IT Best Product winner for enterprise-class customers at the IT 2000
+        Sydney computer show, integrates seamlessly into your existing IT
+        environment to cluster Solaris and Windows NT server nodes as well as
+        Linux..
+       
+    enFuzion 6.0>
+        Turn your existing network into a supercomputer! Based on a simple
+        but powerful concept called parametric execution, enFuzion turns your
+        existing computer network into a high speed, fault tolerant, highly
+        available supercomputer.
+       
+   
+   
+Internet access:
+     
+   
+Ordering:
+    See [http://www.turbolinux.com/products/] http://www.turbolinux.com/
+    products/ TurboLinux is also offered in retail stores and many online
+    stores.
+   
+Support:
+   
+Last freeze date:
+    Workstation 6.0 - January 3. Server 6.0 - January 3. TurboCluster Server
+    - October 4.
+   
+    Estimated update frequency can vary from 2 weeks to 3 months depending on
+    the product.
+   
+Entry last modified:
+    22 Mar 2000.
+   
+Reviewer's comments:
+     
+   
+
+-----------------------------------------------------------------------------
+3.7. xxxxx Linux
+
+Name:
+    xxxxx Linux
+   
+Distributor:
+                xxxxxxxxxxx
+                xxxxxxxxxxx
+                xxxxxxxxxxx
+        
+   
+                Net: [mailto:info@xxx.com] info@xxx.com
+                WWW: [http://www.xxx.com] http://www.xxx.com
+                FTP: [ftp://ftp.xxx.com] ftp://ftp.xxx.com
+                Vox: (000)-000-1234
+                Fax: (000)-000-1234
+        
+   
+Provider's description:
+    xxxxx Linux logo
+   
+   
+Internet access:
+   
+Ordering:
+   
+Support:
+   
+Last freeze date:
+     
+   
+Entry last modified:
+     
+   
+Reviewer's comments:
+     
+   
+
+-----------------------------------------------------------------------------
+4. Hall of Remembrance
+
+The distributions listed in this section are no longer maintained. They are
+included here for historical reasons, and for those who may be attempting to
+locate information about the distribution.
+
+They are listed in alphabetical order.
+-----------------------------------------------------------------------------
+
+4.1. Corel Linux
+
+Name:
+    Corel Linux
+   
+Distributor:
+                xxxxxxxxxxx
+                xxxxxxxxxxx
+                xxxxxxxxxxx
+        
+   
+                Net: [mailto:info@xxx.com] info@xxx.com
+                WWW: [http://www.xxx.com] http://www.xxx.com
+                FTP: [ftp://ftp.xxx.com] ftp://ftp.xxx.com
+                Vox: (000)-000-1234
+                Fax: (000)-000-1234
+        
+   
+Provider's description:
+    Corel logo
+   
+   
+Internet access:
+   
+Ordering:
+   
+Support:
+   
+Last freeze date:
+     
+   
+Entry last modified:
+     
+   
+Reviewer's comments:
+     
+   
+
+-----------------------------------------------------------------------------
+5. Submissions for inclusion in this document
+
+We encourage anyone and everyone who maintains a Linux distribution or mail
+order service, to submit information on their service to this document. It's
+easy and fun, and it's free advertising. This document is posted to many
+places and is archived (see the next section).
+-----------------------------------------------------------------------------
+
+5.1. Types of submissions
+
+We are interested in submissions for:
+
+  * Complete distributions of GNU/Linux software available on CD-ROM. (We no
+    longer carry FTP-only distributions, as this document is aimed primarily
+    at new users for whom such a means of distribution is not appropriate.)
+    By `complete distribution' we mean any set of software which can be used
+    to build a complete GNU/Linux system from scratch.
+   
+  * Layered products or individual software packages available only via mail
+    order. If your software package is available via anonymous FTP, chances
+    are people can find it. Software products only available via mail-order
+    include commercial things such as Motif, and any other commercial
+    software ported to Linux.
+   
+  * Any other Linux-specific goods available via mail order, such as
+    Linux-specific books and documentation, T-shirts, and assorted
+    paraphernalia. Note: our interest in the latter categories is marginal ??
+    this is a Linux Distributions HOWTO, not a catalogue of cutesy Linux
+    junk. Whatever you're selling will have to be (a) very useful, (b) very
+    original, or (c) very funny, to get listed here.
+   
+
+If the number of submissions for services and layered products is large,
+we'll create a separate document for these items.
+-----------------------------------------------------------------------------
+
+5.2. How to submit
+
+To submit an entry to this document, please send mail to msw@startext.co.uk
+with the following information. This format is not machine-parsable; any of
+the fields may be any length that you wish, but I'd like to keep each entry
+down to, say, 50 lines.
+
+Name:
+    - name of service or distribution
+   
+Distributor:
+    - name of company, person, etc. who distributes/maintains the service or
+    distribution. Should include mail, e-mail, phone contact information, and
+    (if possible) a WWW reference.
+   
+Provider's description:
+    - description of the distribution or service that you provide. If this is
+    a software distribution, please include information such as what software
+    is included, versions, general overview of installation, requirements,
+    and so on.
+   
+Internet access:
+    - where your service or distribution is available over the Internet;
+    typically a WWW or FTP address.
+   
+Ordering:
+    - how to order your distribution or service, if applicable. Include
+    prices, shipping information, methods of payment, etc.
+   
+Support:
+    - information on support terms and support contracts.
+   
+Last freeze date:
+    - last freeze date of the current version(s). Also, your estimated update
+    frequency.
+   
+Entry last modified:
+    - date of submission of this entry.
+   
+Reviewer's comments:
+    - independent reviewer's comments.
+   
+
+-----------------------------------------------------------------------------
+5.3. Submission guidelines
+
+Please keep your entry as short as possible. If you need to include extensive
+information, please make a reference to where one can FTP or mail to get more
+information on your distribution; these entries are only meant to be pointers
+to where one can find information on your service or distribution.
+
+If you provide more than one service or distribution, please use separate
+entries for each.
+
+We may edit your entries for conciseness and brevity if we find any
+irrelevant information, or if the entry is overly verbose. Otherwise the
+content should remain the same.
+
+When making submissions to this document, you grant implicit permission for
+the LDP to use the entries in other materials, such as printed books, or
+further online documents. For example, information taken from this document
+may be included in a published Linux book. If you do not want us to include
+your entry in materials other than the current online document, please say
+so.
+-----------------------------------------------------------------------------
+
+6. Administrivia
+
+6.1. Terms of use
+
+This document is copyright 2001 by Martin S. Wheeler. You may use,
+disseminate, and reproduce it freely, provided you:
+
+  * do not omit or alter this copyright notice.
+   
+  * do not omit or alter the version number and date.
+   
+  * do not omit or alter the document's pointer to the current WWW version.
+   
+  * clearly mark any condensed, or altered versions as such.
+   
+
+These restrictions are intended to protect potential readers from stale or
+mangled versions. If you think you have a good case for an exception, ask me.
+-----------------------------------------------------------------------------
+
+6.2. Acknowledgements
+
+This document was originated by Bill Riemers. Matt Welsh maintained the
+second version. Erik Troan then maintained the document to release 3.0.
+
+In January 1995, Eric Raymond, while unaware of the existence of this
+document, began to develop a similar FAQ in the format of his
+not-quite-yet-discontinued PC-clone UNIX Software Buyer's Guide, which
+covered mainly System V UNIXes and BSD/OS. (This Buyer's Guide should still
+be available on Eric's site somewhere, if he has not yet turned it into a
+useful HOWTO.)
+
+In March 1995, Eric approached Erik about cooperating on a merged version. In
+early April 1995, Erik went to work for Red Hat Software, and (wishing to
+avoid a conflict of interest) handed the document to Eric. Eric merged in a
+lot of new information and added several new fields to the distribution
+entries, taking the document through releases 4, 5 and 6.
+
+In January 2001, Martin Wheeler took over editorship of the document, which
+with the enormous expansion in numbers of distributions available, had become
+extremely time-consuming to maintain, and which Eric had decided to abandon.
+
+Accordingly, this document is the result of serial collaboration. The
+editorial `we' generally tags observations by all the maintainers; `I' is
+Martin (the current editor/maintainer) speaking.
+
+We are delighted to acknowledge the contributions of all the Linux users and
+Internet hackers who have contributed information and feedback.
+
+      Martin Wheeler
+      Glastonbury
+      January 2001
+      

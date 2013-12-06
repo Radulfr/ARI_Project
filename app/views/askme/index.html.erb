@@ -1,0 +1,44 @@
+<center><h1>ARI App</h1></center>
+
+<br>
+<center>
+<p>
+<%= form_tag do %>
+<p>
+<%= text_field_tag 'visitor_question'%></p>
+<%= submit_tag "Search" %><%= submit_tag "I feel lucky" %><br>
+<% end %>
+</p>
+</center>
+<hr>
+<% if @data_size >0 %>
+<%= link_to "Results.xml", {:action => "download"} %>
+<br>
+<b> <%= @data_size + 1 %> </b> Results in <%= @time %> seconds: 
+<br>
+<br>
+<table border="1" align="center">
+  <tr>
+    <th>INDEX</th>
+    <th>ID</th>
+    <th>FILE</th>
+    <th>RELEVANCY</th>
+  </tr>
+  
+  <% for i in 0..@data_size %>
+  <tr>
+    <td> 
+      <%= i+1 %>
+    <td>
+      <%= @data[i][2] %>
+    </td>
+    <td>
+      <%= @data[i][0] %>
+    </td>
+    <td>
+      <%= (@data[i][1]*100).round(2).to_s + "%" %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% end %>
