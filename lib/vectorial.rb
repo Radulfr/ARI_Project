@@ -183,6 +183,6 @@ end
 #Init
 #a = Vectorial.new
 #Quetion
-#a.start("I have a ruby compiler emacs")
+#a.start("I have a ruby compiler in emacs")
 
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Resultado (Pregunta, Documento+)>
+<!ELEMENT Pregunta (Item)+>
+<!ELEMENT Documento (Titulo, Relevancia, Texto)>
+<!ATTLIST Documento
+	ID CDATA #REQUIRED
+>
+<!ELEMENT Titulo (#PCDATA)>
+<!ELEMENT Relevancia (#PCDATA)>
+<!ELEMENT Texto (#PCDATA)>
+<!ELEMENT Item (#PCDATA)>

@@ -2,6 +2,8 @@
 
 This app is an indexer that use vectorial model for index a given set of documents. 
 
+This is a project for the subject "Almacenamiento y Recuperación de la Información" (Information Recovery and Storage), Escuela Superior de Informática, Ciudad Real. 
+
 == Technology
 
 * Ruby 1.9.3
@@ -15,7 +17,7 @@ The app works as following:
 1) Execute launcher.sh in lib folder: 
 
  * ruby init_stoplist.rb: initializes the stop-list of empty words that are no important to make an analysis
- * ruby init_docs.rb: search in folder lib/Docs and for each document there, is saved with id, name and complete path
+ * ruby init_docs.rb: search in lib/Docs folder and for each document there, is saved with id, name and complete path
  * ruby indexer.rb: initializes the indexer (this may take a while): for each document, removes the stop words and count the other terms. The App uses three tables: 
 
 * Documents Table (init_docs.rb has created it): the list of documents in the system
