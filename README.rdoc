@@ -1,28 +1,32 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is an indexer that use vectorial model for index a given set of documents. 
 
-Things you may want to cover:
+= Technology
 
-* Ruby version
+* Ruby 1.9.3
+* Rails 4.0.2
+* MongoDB 2.4.8
 
-* System dependencies
+The app works as following:
 
-* Configuration
+1. Execute launcher.sh in lib folder: 
 
-* Database creation
+ * ruby init_stoplist.rb: initializes the stop-list of empty words that are no important to make an analysis
+ * ruby init_docs.rb: search in folder lib/Docs and for each document there, is saved with id, name and complete path
+ * ruby indexer.rb: initializes the indexer (this may take a while): for each document, removes the stop words and count the other terms. The App uses three tables: 
 
-* Database initialization
+a) Documents (init_docs.rb has created it): the list of documents in the system
+b) Terms: the list of all terms that are found in all documents and the number that appears in all collection
+c) Postings: for each term, paris key=>value, where key is the name of the file and value is the number of times this term appeared in that document. 
 
-* How to run the test suite
+2. Once finished, you can ask the system for a phrase and it will return a list of documents ordered by relevancy. You can do it by two ways: 
 
-* Services (job queues, cache servers, search engines, etc.)
+* executing vectorial.rb (ruby vectorial.rb) in lib folder, and specifiyng previously in the code (at the very bottom, in the method a.start("YOUR QUESTION HERE")) the question you want to analyze. 
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* using rails:
+ - cd ~/.../ariproject/
+ - rails s
+ - then in your browser: localhost:3000 and put your question there. 
+ 
+The results are presented in a table and in a XML file (in the folder, if you've used command-line option or in a link in the web, next to the table, if you've used the rails option). 
