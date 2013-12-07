@@ -36,3 +36,7 @@ b) using rails:
  - then in your browser: localhost:3000 and put your question there. 
  
 The results are presented in a table and in a XML file (in the folder, if you've used command-line option or in a link in the web, next to the table, if you've used the rails option). 
+
+== Examples
+
+- You can find an example of the XML file in the lib/ folder, named Resuls.xml. 
