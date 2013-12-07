@@ -4,6 +4,8 @@ This app is an indexer that use vectorial model for index a given set of documen
 
 This is a project for the subject "Almacenamiento y Recuperación de la Información" (Information Recovery and Storage), Escuela Superior de Informática, Ciudad Real. 
 
+By Raúl Reguillo Carmona
+
 == Technology
 
 * Ruby 1.9.3
