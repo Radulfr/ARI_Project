@@ -2,11 +2,13 @@
 
 This app is an indexer that use vectorial model for index a given set of documents. 
 
-= Technology
+== Technology
 
 * Ruby 1.9.3
 * Rails 4.0.2
 * MongoDB 2.4.8
+
+== How it works
 
 The app works as following:
 
@@ -17,7 +19,9 @@ The app works as following:
  * ruby indexer.rb: initializes the indexer (this may take a while): for each document, removes the stop words and count the other terms. The App uses three tables: 
 
 a) Documents (init_docs.rb has created it): the list of documents in the system
+
 b) Terms: the list of all terms that are found in all documents and the number that appears in all collection
+
 c) Postings: for each term, paris key=>value, where key is the name of the file and value is the number of times this term appeared in that document. 
 
 2. Once finished, you can ask the system for a phrase and it will return a list of documents ordered by relevancy. You can do it by two ways: 
