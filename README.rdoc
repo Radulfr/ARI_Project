@@ -26,9 +26,9 @@ The app works as following:
 
 2) Once finished, you can ask the system for a phrase and it will return a list of documents ordered by relevancy. You can do it by two ways: 
 
-* executing vectorial.rb (ruby vectorial.rb) in lib folder, and specifiyng previously in the code (at the very bottom, in the method a.start("YOUR QUESTION HERE")) the question you want to analyze. 
+a) executing vectorial.rb (ruby vectorial.rb) in lib folder, and specifiyng previously in the code (at the very bottom, in the method a.start("YOUR QUESTION HERE")) the question you want to analyze. 
 
-* using rails:
+b) using rails:
  - cd ~/.../ariproject/
  - rails s
  - then in your browser: localhost:3000 and put your question there. 
