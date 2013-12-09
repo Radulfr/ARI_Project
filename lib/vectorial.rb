@@ -181,8 +181,8 @@ class Vectorial
 end
 
 #Init
-#a = Vectorial.new
+a = Vectorial.new
 #Quetion
-#a.start("I have a ruby compiler in emacs")
+#print a.start("I have a ruby compiler in emacs")
 
 

@@ -33,7 +33,7 @@
       <%= @data[i][2] %>
     </td>
     <td>
-      <%= @data[i][0] %>
+      <%= link_to @data[i][0], {:action => "download_file", :doc => @data[i][3]} %>
     </td>
     <td>
       <%= (@data[i][1]*100).round(2).to_s + "%" %>

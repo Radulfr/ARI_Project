@@ -7,7 +7,7 @@ class Indexer
   #Constructor
   def initialize
     @connection = MongoClient.new("localhost", "27017")
-    @db         = @connection.db("ARI_T2")
+    @db         = @connection.db("ARI_DB")
     @stopwords  = @db.collection("stopWords")
     @docs       = @db.collection("documents")
     @termscoll  = @db.collection("terms")
@@ -131,7 +131,7 @@ class Indexer
       value += prev_value
 #      @termscoll.update({:term => term}, {"$set" => { :value => value }})
       updateTermValue(term,value)
-    pelse
+    else
 #      puts term + " exists!"
       #Creating in postings
       @postings.insert({"term" => term, doc => value})
