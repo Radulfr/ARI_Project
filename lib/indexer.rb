@@ -131,7 +131,7 @@ class Indexer
       value += prev_value
 #      @termscoll.update({:term => term}, {"$set" => { :value => value }})
       updateTermValue(term,value)
-    else
+    pelse
 #      puts term + " exists!"
       #Creating in postings
       @postings.insert({"term" => term, doc => value})
@@ -181,12 +181,17 @@ end
 #Main
 t1 = Time.now 
 a = Indexer.new
-a.start
-#a.insertDocumentValue("calimocho", "Java-Decompiler-HOWTO", 8000)
+
+if ARGV[0] != nil
+  puts "Adding new document..."
+  a.count_words(ARGV[0])
+  puts "Done!"
+else
+  puts "Indexer started!"
+  a.start
+end
+
 t2 = Time.now
 puts "Total time: " + ((t2 - t1)/60).to_s + " minutes"
 
 
-
-
-#let's change something

@@ -1,0 +1,54 @@
+require 'mongo'
+
+include Mongo
+
+class Addoc
+
+  def initialize
+    @connection = MongoClient.new("localhost", "27017")
+    @db         = @connection.db("TEST")
+    @stopwords  = @db.collection("stopWords")
+    @docs       = @db.collection("documents")
+    @termscoll  = @db.collection("terms")
+    @postings   = @db.collection("postings")
+    @sw         = getSW
+    @all_files  = Dir.entries('Docs') - ['.', '..']
+    @terms      = Array.new
+    @indexed    = Array.new
+    @ID_INDEX   = 0
+    @ID_VALUE   = 1
+  end
+
+
+
+
+  def count_words(file)
+    f = File.open(file, 'r')
+    content = f.read
+    content.encode!('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
+    content = content.downcase
+    words_file = content.scan(/[a-z]+/)
+    words_file -= @sw
+    words = words_file.uniq
+    puts "File: "+ file+ "... ("+ words_file.size.to_s+ " words)"
+    words.each { |term| fdj = words_file.count(term); 
+      self.insertDocumentValue(term, file.gsub(/.txt/,""), fdj);
+    }
+    f.close
+    GC.start
+  end 
+
+
+  def getSW
+    @sw = Array.new
+    stopWords = @stopwords.find.to_a
+    stopWords.size.times { |i| @sw[i] = stopWords[i].to_s.scan(/=>"[a-z]+"/)}
+    @sw.size.times { |i| @sw[i].to_s.scan(/\w+/){ |w| @sw[i] = w} }
+    return @sw
+  end
+
+end
+
+a = Addoc.new
+a.index_words(ARGV[0])
+
