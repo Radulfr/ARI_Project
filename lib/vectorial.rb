@@ -39,6 +39,13 @@ class Vectorial
     @question = q - @sw
   end
 
+#TO DO
+# 1. max of column
+# 2. new array = first array / max of column i
+# 3. ni = sum of column 
+# 4. log2(N/ni), N = total documents
+# 5. final_array = new array * #4i
+
   #Vectorial
   def initVectorial
     docs = Array.new

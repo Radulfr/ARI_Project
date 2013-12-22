@@ -21,7 +21,6 @@ class AskmeController < ApplicationController
   end
 
   def download_file
-#    @filename = "lib/Doc/"+params[:doc] + ".txt"
     @filename = params[:doc]
     send_file @filename
   end
